@@ -1,0 +1,887 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OWASP Top 10 2021 Draft">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>A05 Security Misconfiguration - OWASP Top 10</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a052021-security-misconfiguration" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OWASP Top 10" class="md-header__button md-logo" aria-label="OWASP Top 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OWASP Top 10
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A05 Security Misconfiguration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../" hreflang="it" class="md-select__link">
+                    Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OWASP/Top10/" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OWASP Top 10" class="md-nav__button md-logo" aria-label="OWASP Top 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OWASP Top 10
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OWASP/Top10/" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0x00-notice/" class="md-nav__link">
+        Notice
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="md-nav__link">
+        Come utilizzare l'OWASP Top 10 come standard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-nav__link">
+        Come avviare un programma AppSec con OWASP Top 10
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00-about-owasp/" class="md-nav__link">
+        About OWASP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Lista top 10
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Lista top 10" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Lista top 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A01_2021-Broken_Access_Control/" class="md-nav__link">
+        A01 Controllo accessi rotto
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A02_2021-Cryptographic_Failures/" class="md-nav__link">
+        A02 Cryptographic Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A03_2021-Injection/" class="md-nav__link">
+        A03 Injection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A04_2021-Insecure_Design/" class="md-nav__link">
+        A04 Insecure Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          A05 Security Misconfiguration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        A05 Security Misconfiguration
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#factors" class="md-nav__link">
+    Factors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-prevent" class="md-nav__link">
+    How to Prevent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-attack-scenarios" class="md-nav__link">
+    Example Attack Scenarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-mapped-cwes" class="md-nav__link">
+    List of Mapped CWEs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-nav__link">
+        A06 Vulnerable and Outdated Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-nav__link">
+        A07 Identification and Authentication Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-nav__link">
+        A08 Software and Data Integrity Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-nav__link">
+        A09 Security Logging and Monitoring Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="md-nav__link">
+        A10 Server Side Request Forgery (SSRF)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11_2021-Next_Steps/" class="md-nav__link">
+        Next Steps
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#factors" class="md-nav__link">
+    Factors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-prevent" class="md-nav__link">
+    How to Prevent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-attack-scenarios" class="md-nav__link">
+    Example Attack Scenarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-mapped-cwes" class="md-nav__link">
+    List of Mapped CWEs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/OWASP/Top10/edit/master/docs/A05_2021-Security_Misconfiguration.md" title="Modifica" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="a052021-security-misconfiguration">A05:2021 – Security Misconfiguration</h1>
+<h2 id="factors">Factors</h2>
+<table>
+<thead>
+<tr>
+<th align="center">CWEs Mapped</th>
+<th align="center">Max Incidence Rate</th>
+<th align="center">Avg Incidence Rate</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
+<th align="center">Avg Weighted Exploit</th>
+<th align="center">Avg Weighted Impact</th>
+<th align="center">Total Occurrences</th>
+<th align="center">Total CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">20</td>
+<td align="center">19.84%</td>
+<td align="center">4.51%</td>
+<td align="center">89.58%</td>
+<td align="center">44.84%</td>
+<td align="center">8.12</td>
+<td align="center">6.56</td>
+<td align="center">208,387</td>
+<td align="center">789</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overview">Overview</h2>
+<p>Moving up from #6 in the previous edition, 90% of applications were
+tested for some form of misconfiguration. With more shifts into highly
+configurable software, it's not surprising to see this category move up.
+Notable CWEs included are <em>CWE-16 Configuration</em> and <em>CWE-611 Improper
+Restriction of XML External Entity Reference</em>.</p>
+<h2 id="description">Description</h2>
+<p>The application might be vulnerable if the application is:</p>
+<ul>
+<li>
+<p>Missing appropriate security hardening across any part of the
+    application stack or improperly configured permissions on cloud
+    services.</p>
+</li>
+<li>
+<p>Unnecessary features are enabled or installed (e.g., unnecessary
+    ports, services, pages, accounts, or privileges).</p>
+</li>
+<li>
+<p>Default accounts and their passwords are still enabled and
+    unchanged.</p>
+</li>
+<li>
+<p>Error handling reveals stack traces or other overly informative
+    error messages to users.</p>
+</li>
+<li>
+<p>For upgraded systems, the latest security features are disabled or
+    not configured securely.</p>
+</li>
+<li>
+<p>The security settings in the application servers, application
+    frameworks (e.g., Struts, Spring, ASP.NET), libraries, databases,
+    etc., are not set to secure values.</p>
+</li>
+<li>
+<p>The server does not send security headers or directives, or they are
+    not set to secure values.</p>
+</li>
+<li>
+<p>The software is out of date or vulnerable (see A06:2021-Vulnerable
+    and Outdated Components).</p>
+</li>
+</ul>
+<p>Without a concerted, repeatable application security configuration
+process, systems are at a higher risk.</p>
+<h2 id="how-to-prevent">How to Prevent</h2>
+<p>Secure installation processes should be implemented, including:</p>
+<ul>
+<li>
+<p>A repeatable hardening process makes it fast and easy to deploy
+    another environment that is appropriately locked down. Development,
+    QA, and production environments should all be configured
+    identically, with different credentials used in each environment.
+    This process should be automated to minimize the effort required to
+    set up a new secure environment.</p>
+</li>
+<li>
+<p>A minimal platform without any unnecessary features, components,
+    documentation, and samples. Remove or do not install unused features
+    and frameworks.</p>
+</li>
+<li>
+<p>A task to review and update the configurations appropriate to all
+    security notes, updates, and patches as part of the patch management
+    process (see A06:2021-Vulnerable and Outdated Components). Review
+    cloud storage permissions (e.g., S3 bucket permissions).</p>
+</li>
+<li>
+<p>A segmented application architecture provides effective and secure
+    separation between components or tenants, with segmentation,
+    containerization, or cloud security groups (ACLs).</p>
+</li>
+<li>
+<p>Sending security directives to clients, e.g., Security Headers.</p>
+</li>
+<li>
+<p>An automated process to verify the effectiveness of the
+    configurations and settings in all environments.</p>
+</li>
+</ul>
+<h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
+<p><strong>Scenario #1:</strong> The application server comes with sample applications
+not removed from the production server. These sample applications have
+known security flaws attackers use to compromise the server. Suppose one
+of these applications is the admin console, and default accounts weren't
+changed. In that case, the attacker logs in with default passwords and
+takes over.</p>
+<p><strong>Scenario #2:</strong> Directory listing is not disabled on the server. An
+attacker discovers they can simply list directories. The attacker finds
+and downloads the compiled Java classes, which they decompile and
+reverse engineer to view the code. The attacker then finds a severe
+access control flaw in the application.</p>
+<p><strong>Scenario #3:</strong> The application server's configuration allows detailed
+error messages, e.g., stack traces, to be returned to users. This
+potentially exposes sensitive information or underlying flaws such as
+component versions that are known to be vulnerable.</p>
+<p><strong>Scenario #4:</strong> A cloud service provider has default sharing
+permissions open to the Internet by other CSP users. This allows
+sensitive data stored within cloud storage to be accessed.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/README">OWASP Testing Guide: Configuration
+    Management</a></p>
+</li>
+<li>
+<p>OWASP Testing Guide: Testing for Error Codes</p>
+</li>
+<li>
+<p>Application Security Verification Standard V19 Configuration</p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/800-123/final">NIST Guide to General Server
+    Hardening</a></p>
+</li>
+<li>
+<p><a href="https://www.cisecurity.org/cis-benchmarks/">CIS Security Configuration
+    Guides/Benchmarks</a></p>
+</li>
+<li>
+<p><a href="https://blog.websecurify.com/2017/10/aws-s3-bucket-discovery.html">Amazon S3 Bucket Discovery and
+    Enumeration</a></p>
+</li>
+</ul>
+<h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
+<p>CWE-2 Configuration</p>
+<p>CWE-11 ASP.NET Misconfiguration: Creating Debug Binary</p>
+<p>CWE-13 ASP.NET Misconfiguration: Password in Configuration File</p>
+<p>CWE-15 External Control of System or Configuration Setting</p>
+<p>CWE-16 Configuration</p>
+<p>CWE-260 Password in Configuration File</p>
+<p>CWE-315 Cleartext Storage of Sensitive Information in a Cookie</p>
+<p>CWE-520 .NET Misconfiguration: Use of Impersonation</p>
+<p>CWE-526 Exposure of Sensitive Information Through Environmental
+Variables</p>
+<p>CWE-537 Java Runtime Error Message Containing Sensitive Information</p>
+<p>CWE-541 Inclusion of Sensitive Information in an Include File</p>
+<p>CWE-547 Use of Hard-coded, Security-relevant Constants</p>
+<p>CWE-611 Improper Restriction of XML External Entity Reference</p>
+<p>CWE-614 Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</p>
+<p>CWE-756 Missing Custom Error Page</p>
+<p>CWE-776 Improper Restriction of Recursive Entity References in DTDs
+('XML Entity Expansion')</p>
+<p>CWE-942 Overly Permissive Cross-domain Whitelist</p>
+<p>CWE-1004 Sensitive Cookie Without 'HttpOnly' Flag</p>
+<p>CWE-1032 OWASP Top Ten 2017 Category A6 - Security Misconfiguration</p>
+<p>CWE-1174 ASP.NET Misconfiguration: Improper Model Validation</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../A04_2021-Insecure_Design/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: A04 Insecure Design" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Precedente
+              </span>
+              A04 Insecure Design
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-footer__link md-footer__link--next" aria-label="Prossimo: A06 Vulnerable and Outdated Components" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Prossimo
+              </span>
+              A06 Vulnerable and Outdated Components
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copia", "clipboard.copied": "Copiato", "search.config.lang": "it", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Cerca", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,871 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OWASP Top 10 2021 Draft">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Next Steps - OWASP Top 10</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a112021-next-steps" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="OWASP Top 10" class="md-header__button md-logo" aria-label="OWASP Top 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OWASP Top 10
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Next Steps
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OWASP/Top10/" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OWASP Top 10" class="md-nav__button md-logo" aria-label="OWASP Top 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OWASP Top 10
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OWASP/Top10/" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Page d'accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0x00-notice/" class="md-nav__link">
+        Notice
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="md-nav__link">
+        Comment utiliser le Top 10 OWASP comme standard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-nav__link">
+        Comment démarrer un programme AppSec avec le Top 10 OWASP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00-about-owasp/" class="md-nav__link">
+        About OWASP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Liste top 10
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Liste top 10" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Liste top 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A01_2021-Broken_Access_Control/" class="md-nav__link">
+        A01 Contrôle d'accès cassé
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A02_2021-Cryptographic_Failures/" class="md-nav__link">
+        A02 Cryptographic Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A03_2021-Injection/" class="md-nav__link">
+        A03 Injection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A04_2021-Insecure_Design/" class="md-nav__link">
+        A04 Insecure Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A05_2021-Security_Misconfiguration/" class="md-nav__link">
+        A05 Security Misconfiguration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-nav__link">
+        A06 Vulnerable and Outdated Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-nav__link">
+        A07 Identification and Authentication Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-nav__link">
+        A08 Software and Data Integrity Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-nav__link">
+        A09 Security Logging and Monitoring Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="md-nav__link">
+        A10 Server Side Request Forgery (SSRF)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Next Steps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Next Steps
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-quality-issues" class="md-nav__link">
+    Code Quality issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#denial-of-service" class="md-nav__link">
+    Denial of Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management-errors" class="md-nav__link">
+    Memory Management Errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-control-failures" class="md-nav__link">
+    Security Control Failures
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-quality-issues" class="md-nav__link">
+    Code Quality issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#denial-of-service" class="md-nav__link">
+    Denial of Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management-errors" class="md-nav__link">
+    Memory Management Errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-control-failures" class="md-nav__link">
+    Security Control Failures
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/OWASP/Top10/edit/master/docs/A11_2021-Next_Steps.md" title="Editer cette page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="a112021-next-steps">A11:2021 – Next Steps</h1>
+<p>By design, the OWASP Top 10 is innately limited to the ten most
+significant risks. Every OWASP Top 10 has “on the cusp” risks considered
+at length for inclusion, but in the end, they didn’t make it. No matter
+how we tried to interpret or twist the data, the other risks were more
+prevalent and impactful.</p>
+<p>Organizations working towards a mature appsec program or security
+consultancies or tool vendors wishing to expand coverage for their
+offerings, the following four issues are well worth the effort to
+identify and remediate.</p>
+<h2 id="code-quality-issues">Code Quality issues</h2>
+<table>
+<thead>
+<tr>
+<th align="center">CWEs Mapped </th>
+<th align="center">Max Incidence Rate </th>
+<th align="center">Avg Incidence Rate </th>
+<th align="center">Max Coverage </th>
+<th align="center">Avg Coverage </th>
+<th align="center">Avg Weighted Exploit </th>
+<th align="center">Avg Weighted Impact </th>
+<th align="center">Total Occurrences </th>
+<th align="center">Total CVEs </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">38</td>
+<td align="center">49.46%</td>
+<td align="center">2.22%</td>
+<td align="center">60.85%</td>
+<td align="center">23.42%</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">101736</td>
+<td align="center">7564</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Description.</strong> Code quality issues include known security defects
+    or patterns, reusing variables for multiple purposes, exposure of
+    sensitive information in debugging output, off-by-one errors, time
+    of check/time of use (TOCTOU) race conditions, unsigned or signed
+    conversion errors, use after free, and more. The hallmark of this
+    section is that they can usually be identified with stringent
+    compiler flags, static code analysis tools, and linter IDE plugins.
+    Modern languages by design eliminated many of these issues, such as
+    Rust’s memory ownership and borrowing concept, Rust’s threading
+    design, and Go’s strict typing and bounds checking.</p>
+</li>
+<li>
+<p><strong>How to prevent</strong>. Enable and use your editor and language’s static
+    code analysis options. Consider using a static code analysis tool.
+    Consider if it might be possible to use or migrate to a language or
+    framework that eliminates bug classes, such as Rust or Go.</p>
+</li>
+<li>
+<p><strong>Example attack scenarios</strong>. An attacker might obtain or update
+    sensitive information by exploiting a race condition using a
+    statically shared variable across multiple threads.</p>
+</li>
+<li>
+<p><strong>References</strong>. TBA</p>
+</li>
+</ul>
+<h2 id="denial-of-service">Denial of Service</h2>
+<table>
+<thead>
+<tr>
+<th align="center">CWEs Mapped </th>
+<th align="center">Max Incidence Rate </th>
+<th align="center">Avg Incidence Rate </th>
+<th align="center">Max Coverage </th>
+<th align="center">Avg Coverage </th>
+<th align="center">Avg Weighted Exploit </th>
+<th align="center">Avg Weighted Impact </th>
+<th align="center">Total Occurrences </th>
+<th align="center">Total CVEs </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">8</td>
+<td align="center">17.54%</td>
+<td align="center">4.89%</td>
+<td align="center">79.58%</td>
+<td align="center">33.26%</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">66985</td>
+<td align="center">973</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Description</strong>. Denial of service is always possible given
+    sufficient resources. However, design and coding practices have a
+    significant bearing on the magnitude of the denial of service.
+    Suppose anyone with the link can access a large file, or a
+    computationally expensive transaction occurs on every page. In that
+    case, denial of service requires less effort to conduct.</p>
+</li>
+<li>
+<p><strong>How to prevent</strong>. Performance test code for CPU, I/O, and memory
+    usage, re-architect, optimize, or cache expensive operations.
+    Consider access controls for larger objects to ensure that only
+    authorized individuals can access huge files or objects or serve
+    them by an edge caching network.</p>
+</li>
+<li>
+<p><strong>Example attack scenarios</strong>. An attacker might determine that an
+    operation takes 5-10 seconds to complete. When running four
+    concurrent threads, the server seems to stop responding. The
+    attacker uses 1000 threads and takes the entire system offline.</p>
+</li>
+<li>
+<p><strong>References</strong>. TBA</p>
+</li>
+</ul>
+<h2 id="memory-management-errors">Memory Management Errors</h2>
+<table>
+<thead>
+<tr>
+<th align="center">CWEs Mapped </th>
+<th align="center">Max Incidence Rate </th>
+<th align="center">Avg Incidence Rate </th>
+<th align="center">Max Coverage </th>
+<th align="center">Avg Coverage </th>
+<th align="center">Avg Weighted Exploit </th>
+<th align="center">Avg Weighted Impact </th>
+<th align="center">Total Occurrences </th>
+<th align="center">Total CVEs </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">14</td>
+<td align="center">7.03%</td>
+<td align="center">1.16%</td>
+<td align="center">56.06%</td>
+<td align="center">31.74%</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">26576</td>
+<td align="center">16184</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Description</strong>. Web applications tend to be written in managed
+    memory languages, such as Java, .NET, or node.js (JavaScript or
+    TypeScript). However, these languages are written in systems
+    languages that have memory management issues, such as buffer or heap
+    overflows, use after free, integer overflows, and more. There have
+    been many sandbox escapes over the years that prove that just
+    because the web application language is nominally memory “safe,” the
+    foundations are not.</p>
+</li>
+<li>
+<p><strong>How to prevent</strong>. Many modern APIs are now written in memory-safe
+    languages such as Rust or Go. In the case of Rust, memory safety is
+    a crucial feature of the language. For existing code, the use of
+    strict compiler flags, strong typing, static code analysis, and fuzz
+    testing can be beneficial in identifying memory leaks, memory, and
+    array overruns, and more.</p>
+</li>
+<li>
+<p><strong>Example attack scenarios</strong>. Buffer and heap overflows have been a
+    mainstay of</p>
+</li>
+<li>
+<p><strong>References</strong>. TBA</p>
+</li>
+</ul>
+<h2 id="security-control-failures">Security Control Failures</h2>
+<table>
+<thead>
+<tr>
+<th align="center">CWEs Mapped </th>
+<th align="center">Max Incidence Rate </th>
+<th align="center">Avg Incidence Rate </th>
+<th align="center">Max Coverage </th>
+<th align="center">Avg Coverage </th>
+<th align="center">Avg Weighted Exploit </th>
+<th align="center">Avg Weighted Impact </th>
+<th align="center">Total Occurrences </th>
+<th align="center">Total CVEs </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2</td>
+<td align="center">11.35%</td>
+<td align="center">9.64%</td>
+<td align="center">76.60%</td>
+<td align="center">45.23%</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">44911</td>
+<td align="center">329</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Description</strong>.</p>
+</li>
+<li>
+<p><strong>How to prevent</strong>.</p>
+</li>
+<li>
+<p><strong>Example attack scenarios</strong>.</p>
+</li>
+<li>
+<p><strong>References</strong>. TBA</p>
+</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: A10 Server Side Request Forgery (SSRF)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              A10 Server Side Request Forgery (SSRF)
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>

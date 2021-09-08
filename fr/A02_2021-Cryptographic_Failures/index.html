@@ -1,0 +1,902 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OWASP Top 10 2021 Draft">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>A02 Cryptographic Failures - OWASP Top 10</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a022021-cryptographic-failures" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="OWASP Top 10" class="md-header__button md-logo" aria-label="OWASP Top 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OWASP Top 10
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A02 Cryptographic Failures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OWASP/Top10/" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OWASP Top 10" class="md-nav__button md-logo" aria-label="OWASP Top 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OWASP Top 10
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OWASP/Top10/" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Page d'accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0x00-notice/" class="md-nav__link">
+        Notice
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="md-nav__link">
+        Comment utiliser le Top 10 OWASP comme standard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-nav__link">
+        Comment démarrer un programme AppSec avec le Top 10 OWASP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00-about-owasp/" class="md-nav__link">
+        About OWASP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Liste top 10
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Liste top 10" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Liste top 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A01_2021-Broken_Access_Control/" class="md-nav__link">
+        A01 Contrôle d'accès cassé
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          A02 Cryptographic Failures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        A02 Cryptographic Failures
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#factors" class="md-nav__link">
+    Factors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-prevent" class="md-nav__link">
+    How to Prevent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-attack-scenarios" class="md-nav__link">
+    Example Attack Scenarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-mapped-cwes" class="md-nav__link">
+    List of Mapped CWEs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A03_2021-Injection/" class="md-nav__link">
+        A03 Injection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A04_2021-Insecure_Design/" class="md-nav__link">
+        A04 Insecure Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A05_2021-Security_Misconfiguration/" class="md-nav__link">
+        A05 Security Misconfiguration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-nav__link">
+        A06 Vulnerable and Outdated Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-nav__link">
+        A07 Identification and Authentication Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-nav__link">
+        A08 Software and Data Integrity Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-nav__link">
+        A09 Security Logging and Monitoring Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="md-nav__link">
+        A10 Server Side Request Forgery (SSRF)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11_2021-Next_Steps/" class="md-nav__link">
+        Next Steps
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#factors" class="md-nav__link">
+    Factors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-prevent" class="md-nav__link">
+    How to Prevent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-attack-scenarios" class="md-nav__link">
+    Example Attack Scenarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-mapped-cwes" class="md-nav__link">
+    List of Mapped CWEs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/OWASP/Top10/edit/master/docs/A02_2021-Cryptographic_Failures.md" title="Editer cette page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="a022021-cryptographic-failures">A02:2021 – Cryptographic Failures</h1>
+<h2 id="factors">Factors</h2>
+<table>
+<thead>
+<tr>
+<th align="center">CWEs Mapped</th>
+<th align="center">Max Incidence Rate</th>
+<th align="center">Avg Incidence Rate</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
+<th align="center">Avg Weighted Exploit</th>
+<th align="center">Avg Weighted Impact</th>
+<th align="center">Total Occurrences</th>
+<th align="center">Total CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">29</td>
+<td align="center">46.44%</td>
+<td align="center">4.49%</td>
+<td align="center">79.33%</td>
+<td align="center">34.85%</td>
+<td align="center">7.29</td>
+<td align="center">6.81</td>
+<td align="center">233,788</td>
+<td align="center">3,075</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overview">Overview</h2>
+<p>Shifting up one position to #2, previously known as <em>Sensitive Data
+Exposure</em>, which is more of a broad symptom rather than a root cause,
+the focus is on failures related to cryptography (or lack thereof).
+Which often lead to exposure of sensitive data. Notable CWEs included
+are <em>CWE-259: Use of Hard-coded Password</em>, <em>CWE-327: Broken or Risky
+Crypto Algorithm</em>, and <em>CWE-331 Insufficient Entropy</em> .</p>
+<h2 id="description">Description</h2>
+<p>The first thing is to determine the protection needs of data in transit
+and at rest. For example, passwords, credit card numbers, health
+records, personal information, and business secrets require extra
+protection, mainly if that data falls under privacy laws, e.g., EU's
+General Data Protection Regulation (GDPR), or regulations, e.g.,
+financial data protection such as PCI Data Security Standard (PCI DSS).
+For all such data:</p>
+<ul>
+<li>
+<p>Is any data transmitted in clear text? This concerns protocols such
+    as HTTP, SMTP, and FTP. External internet traffic is hazardous.
+    Verify all internal traffic, e.g., between load balancers, web
+    servers, or back-end systems.</p>
+</li>
+<li>
+<p>Are any old or weak cryptographic algorithms used either by default
+    or in older code?</p>
+</li>
+<li>
+<p>Are default crypto keys in use, weak crypto keys generated or
+    re-used, or is proper key management or rotation missing?</p>
+</li>
+<li>
+<p>Is encryption not enforced, e.g., are any user agent (browser)
+    security directives or headers missing?</p>
+</li>
+<li>
+<p>Does the user agent (e.g., app, mail client) not verify if the
+    received server certificate is valid?</p>
+</li>
+</ul>
+<p>See ASVS Crypto (V7), Data Protection (V9), and SSL/TLS (V10)</p>
+<h2 id="how-to-prevent">How to Prevent</h2>
+<p>Do the following, at a minimum, and consult the references:</p>
+<ul>
+<li>
+<p>Classify data processed, stored, or transmitted by an application.
+    Identify which data is sensitive according to privacy laws,
+    regulatory requirements, or business needs.</p>
+</li>
+<li>
+<p>Apply controls as per the classification.</p>
+</li>
+<li>
+<p>Don't store sensitive data unnecessarily. Discard it as soon as
+    possible or use PCI DSS compliant tokenization or even truncation.
+    Data that is not retained cannot be stolen.</p>
+</li>
+<li>
+<p>Make sure to encrypt all sensitive data at rest.</p>
+</li>
+<li>
+<p>Ensure up-to-date and strong standard algorithms, protocols, and
+    keys are in place; use proper key management.</p>
+</li>
+<li>
+<p>Encrypt all data in transit with secure protocols such as TLS with
+    perfect forward secrecy (PFS) ciphers, cipher prioritization by the
+    server, and secure parameters. Enforce encryption using directives
+    like HTTP Strict Transport Security (HSTS).</p>
+</li>
+<li>
+<p>Disable caching for response that contain sensitive data.</p>
+</li>
+<li>
+<p>Store passwords using strong adaptive and salted hashing functions
+    with a work factor (delay factor), such as Argon2, scrypt, bcrypt or
+    PBKDF2.</p>
+</li>
+<li>
+<p>Verify independently the effectiveness of configuration and
+    settings.</p>
+</li>
+</ul>
+<h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
+<p><strong>Scenario #1</strong>: An application encrypts credit card numbers in a
+database using automatic database encryption. However, this data is
+automatically decrypted when retrieved, allowing a SQL injection flaw to
+retrieve credit card numbers in clear text.</p>
+<p><strong>Scenario #2</strong>: A site doesn't use or enforce TLS for all pages or
+supports weak encryption. An attacker monitors network traffic (e.g., at
+an insecure wireless network), downgrades connections from HTTPS to
+HTTP, intercepts requests, and steals the user's session cookie. The
+attacker then replays this cookie and hijacks the user's (authenticated)
+session, accessing or modifying the user's private data. Instead of the
+above they could alter all transported data, e.g., the recipient of a
+money transfer.</p>
+<p><strong>Scenario #3</strong>: The password database uses unsalted or simple hashes to
+store everyone's passwords. A file upload flaw allows an attacker to
+retrieve the password database. All the unsalted hashes can be exposed
+with a rainbow table of pre-calculated hashes. Hashes generated by
+simple or fast hash functions may be cracked by GPUs, even if they were
+salted.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c8-protect-data-everywhere">OWASP Proactive Controls: Protect Data
+    Everywhere</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP Application Security Verification Standard (V7,
+    9, 10)</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html">OWASP Cheat Sheet: Transport Layer
+    Protection</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/User_Privacy_Protection_Cheat_Sheet.html">OWASP Cheat Sheet: User Privacy
+    Protection</a></p>
+</li>
+<li>
+<p>OWASP Cheat Sheet: Password and Cryptographic Storage</p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html">OWASP Cheat Sheet:
+    HSTS</a></p>
+</li>
+<li>
+<p>OWASP Testing Guide: Testing for weak cryptography</p>
+</li>
+</ul>
+<h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
+<p>CWE-261 Weak Encoding for Password</p>
+<p>CWE-296 Improper Following of a Certificate's Chain of Trust</p>
+<p>CWE-310 Cryptographic Issues</p>
+<p>CWE-319 Cleartext Transmission of Sensitive Information</p>
+<p>CWE-321 Use of Hard-coded Cryptographic Key</p>
+<p>CWE-322 Key Exchange without Entity Authentication</p>
+<p>CWE-323 Reusing a Nonce, Key Pair in Encryption</p>
+<p>CWE-324 Use of a Key Past its Expiration Date</p>
+<p>CWE-325 Missing Required Cryptographic Step</p>
+<p>CWE-326 Inadequate Encryption Strength</p>
+<p>CWE-327 Use of a Broken or Risky Cryptographic Algorithm</p>
+<p>CWE-328 Reversible One-Way Hash</p>
+<p>CWE-329 Not Using a Random IV with CBC Mode</p>
+<p>CWE-330 Use of Insufficiently Random Values</p>
+<p>CWE-331 Insufficient Entropy</p>
+<p>CWE-335 Incorrect Usage of Seeds in Pseudo-Random Number Generator
+(PRNG)</p>
+<p>CWE-336 Same Seed in Pseudo-Random Number Generator (PRNG)</p>
+<p>CWE-337 Predictable Seed in Pseudo-Random Number Generator (PRNG)</p>
+<p>CWE-338 Use of Cryptographically Weak Pseudo-Random Number Generator
+(PRNG)</p>
+<p>CWE-340 Generation of Predictable Numbers or Identifiers</p>
+<p>CWE-347 Improper Verification of Cryptographic Signature</p>
+<p>CWE-523 Unprotected Transport of Credentials</p>
+<p>CWE-720 OWASP Top Ten 2007 Category A9 - Insecure Communications</p>
+<p>CWE-757 Selection of Less-Secure Algorithm During Negotiation
+('Algorithm Downgrade')</p>
+<p>CWE-759 Use of a One-Way Hash without a Salt</p>
+<p>CWE-760 Use of a One-Way Hash with a Predictable Salt</p>
+<p>CWE-780 Use of RSA Algorithm without OAEP</p>
+<p>CWE-818 Insufficient Transport Layer Protection</p>
+<p>CWE-916 Use of Password Hash With Insufficient Computational Effort</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../A01_2021-Broken_Access_Control/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: A01 Contrôle d&#39;accès cassé" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              A01 Contrôle d'accès cassé
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../A03_2021-Injection/" class="md-footer__link md-footer__link--next" aria-label="Suivant: A03 Injection" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              A03 Injection
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>
