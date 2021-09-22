@@ -123,8 +123,26 @@
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../" hreflang="it" class="md-select__link">
                     Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
                   </a>
                 </li>
                 
@@ -633,10 +651,10 @@
 <th align="center">CWEs Mapped</th>
 <th align="center">Max Incidence Rate</th>
 <th align="center">Avg Incidence Rate</th>
-<th align="center">Max Coverage</th>
-<th align="center">Avg Coverage</th>
 <th align="center">Avg Weighted Exploit</th>
 <th align="center">Avg Weighted Impact</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
 <th align="center">Total Occurrences</th>
 <th align="center">Total CVEs</th>
 </tr>
@@ -646,10 +664,10 @@
 <td align="center">33</td>
 <td align="center">19.09%</td>
 <td align="center">3.37%</td>
-<td align="center">94.04%</td>
-<td align="center">47.90%</td>
 <td align="center">7.25</td>
 <td align="center">7.15</td>
+<td align="center">94.04%</td>
+<td align="center">47.90%</td>
 <td align="center">274,228</td>
 <td align="center">32,078</td>
 </tr>
@@ -657,7 +675,7 @@
 </table>
 <h2 id="overview">Overview</h2>
 <p>Injection slides down to the third position. 94% of the applications
-were tested for some form of injection. Notable CWEs included are
+were tested for some form of injection with a max incidence rate of 19%, an average incidence rate of 3%, and 274k occurances. Notable CWEs included are
 <em>CWE-79: Cross-site Scripting</em>, <em>CWE-89: SQL Injection</em>, and <em>CWE-73:
 External Control of File Name or Path</em>.</p>
 <h2 id="description">Description</h2>
@@ -687,23 +705,18 @@ Graph Navigation Library (OGNL) injection. The concept is identical
 among all interpreters. Source code review is the best method of
 detecting if applications are vulnerable to injections. Automated
 testing of all parameters, headers, URL, cookies, JSON, SOAP, and XML
-data inputs is strongly encouraged. Organizations can include the static
-source (SAST) and dynamic application test (DAST) tools into the CI/CD
+data inputs is strongly encouraged. Organizations can include
+static (SAST), dynamic (DAST), and interactive (IAST) application security testing tools into the CI/CD
 pipeline to identify introduced injection flaws before production
 deployment.</p>
 <h2 id="how-to-prevent">How to Prevent</h2>
+<p>Preventing injection requires keeping data separate from commands and queries:</p>
 <ul>
-<li>
-<p>Preventing injection requires keeping data separate from commands
-    and queries.</p>
-</li>
 <li>
 <p>The preferred option is to use a safe API, which avoids using the
     interpreter entirely, provides a parameterized interface, or
-    migrates to Object Relational Mapping Tools (ORMs).</p>
-</li>
-<li>
-<p>Note: Even when parameterized, stored procedures can still introduce
+    migrates to Object Relational Mapping Tools (ORMs).<br/>
+    <strong>Note:</strong> Even when parameterized, stored procedures can still introduce
     SQL injection if PL/SQL or T-SQL concatenates queries and data or
     executes hostile data with EXECUTE IMMEDIATE or exec().</p>
 </li>
@@ -714,10 +727,8 @@ deployment.</p>
 </li>
 <li>
 <p>For any residual dynamic queries, escape special characters using
-    the specific escape syntax for that interpreter.</p>
-</li>
-<li>
-<p>Note: SQL structures such as table names, column names, and so on
+    the specific escape syntax for that interpreter.<br/>
+    <strong>Note:</strong> SQL structures such as table names, column names, and so on
     cannot be escaped, and thus user-supplied structure names are
     dangerous. This is a common issue in report-writing software.</p>
 </li>
@@ -729,8 +740,10 @@ deployment.</p>
 <h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
 <p><strong>Scenario #1:</strong> An application uses untrusted data in the construction
 of the following vulnerable SQL call:</p>
+<blockquote>
 <p>String query = "SELECT * FROM accounts WHERE custID='" +
 request.getParameter("id") + "'";</p>
+</blockquote>
 <p><strong>Scenario #2:</strong> Similarly, an application’s blind trust in frameworks
 may result in queries that are still vulnerable, (e.g., Hibernate Query
 Language (HQL)):</p>
@@ -740,104 +753,83 @@ request.getParameter("id") + "'");</p>
 </blockquote>
 <p>In both cases, the attacker modifies the ‘id’ parameter value in their
 browser to send: ‘ or ‘1’=’1. For example:</p>
-<p>http://example.com/app/accountView?id=' or '1'='1</p>
+<blockquote>
+<p>htt<span>p://example.com/app/accountView?id=' or '1'='1</span></p>
+</blockquote>
 <p>This changes the meaning of both queries to return all the records from
 the accounts table. More dangerous attacks could modify or delete data
 or even invoke stored procedures.</p>
 <h2 id="references">References</h2>
 <ul>
 <li>
-<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c3-secure-database">OWASP Proactive Controls: Secure Database
-    Access</a></p>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c3-secure-database">OWASP Proactive Controls: Secure Database Access</a></p>
 </li>
 <li>
-<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP ASVS: V5 Input Validation and
-    Encoding</a></p>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP ASVS: V5 Input Validation and Encoding</a></p>
 </li>
 <li>
-<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection">OWASP Testing Guide: SQL
-    Injection,</a> <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/12-Testing_for_Command_Injection">Command
-    Injection</a>,
-    and <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.7-Testing_for_ORM_Injection">ORM
-    Injection</a></p>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection">OWASP Testing Guide: SQL Injection,</a> <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/12-Testing_for_Command_Injection">Command Injection</a>,
+    and <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.7-Testing_for_ORM_Injection">ORM Injection</a></p>
 </li>
 <li>
-<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: Injection
-    Prevention</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: Injection Prevention</a></p>
 </li>
 <li>
-<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: SQL Injection
-    Prevention</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: SQL Injection Prevention</a></p>
 </li>
 <li>
-<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet_in_Java.html">OWASP Cheat Sheet: Injection Prevention in
-    Java</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet_in_Java.html">OWASP Cheat Sheet: Injection Prevention in Java</a></p>
 </li>
 <li>
-<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html">OWASP Cheat Sheet: Query
-    Parameterization</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html">OWASP Cheat Sheet: Query Parameterization</a></p>
 </li>
 <li>
-<p><a href="https://owasp.org/www-project-automated-threats-to-web-applications/">OWASP Automated Threats to Web Applications –
-    OAT-014</a></p>
+<p><a href="https://owasp.org/www-project-automated-threats-to-web-applications/">OWASP Automated Threats to Web Applications – OAT-014</a></p>
 </li>
 <li>
-<p><a href="https://portswigger.net/kb/issues/00101080_serversidetemplateinjection">PortSwigger: Server-side template
-    injection</a></p>
+<p><a href="https://portswigger.net/kb/issues/00101080_serversidetemplateinjection">PortSwigger: Server-side template injection</a></p>
 </li>
 </ul>
 <h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
-<p>CWE-20 Improper Input Validation</p>
-<p>CWE-74 Improper Neutralization of Special Elements in Output Used by a
-Downstream Component ('Injection')</p>
-<p>CWE-75 Failure to Sanitize Special Elements into a Different Plane
-(Special Element Injection)</p>
-<p>CWE-77 Improper Neutralization of Special Elements used in a Command
-('Command Injection')</p>
-<p>CWE-78 Improper Neutralization of Special Elements used in an OS Command
-('OS Command Injection')</p>
-<p>CWE-79 Improper Neutralization of Input During Web Page Generation
-('Cross-site Scripting')</p>
-<p>CWE-80 Improper Neutralization of Script-Related HTML Tags in a Web Page
-(Basic XSS)</p>
-<p>CWE-83 Improper Neutralization of Script in Attributes in a Web Page</p>
-<p>CWE-87 Improper Neutralization of Alternate XSS Syntax</p>
-<p>CWE-88 Improper Neutralization of Argument Delimiters in a Command
-('Argument Injection')</p>
-<p>CWE-89 Improper Neutralization of Special Elements used in an SQL
-Command ('SQL Injection')</p>
-<p>CWE-90 Improper Neutralization of Special Elements used in an LDAP Query
-('LDAP Injection')</p>
-<p>CWE-91 XML Injection (aka Blind XPath Injection)</p>
-<p>CWE-93 Improper Neutralization of CRLF Sequences ('CRLF Injection')</p>
-<p>CWE-94 Improper Control of Generation of Code ('Code Injection')</p>
-<p>CWE-95 Improper Neutralization of Directives in Dynamically Evaluated
-Code ('Eval Injection')</p>
-<p>CWE-96 Improper Neutralization of Directives in Statically Saved Code
-('Static Code Injection')</p>
-<p>CWE-97 Improper Neutralization of Server-Side Includes (SSI) Within a
-Web Page</p>
-<p>CWE-98 Improper Control of Filename for Include/Require Statement in PHP
-Program ('PHP Remote File Inclusion')</p>
-<p>CWE-99 Improper Control of Resource Identifiers ('Resource Injection')</p>
-<p>CWE-100 Deprecated: Was catch-all for input validation issues</p>
-<p>CWE-113 Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP
-Response Splitting')</p>
-<p>CWE-116 Improper Encoding or Escaping of Output</p>
-<p>CWE-138 Improper Neutralization of Special Elements</p>
-<p>CWE-184 Incomplete List of Disallowed Inputs</p>
-<p>CWE-470 Use of Externally-Controlled Input to Select Classes or Code
-('Unsafe Reflection')</p>
-<p>CWE-471 Modification of Assumed-Immutable Data (MAID)</p>
-<p>CWE-564 SQL Injection: Hibernate</p>
-<p>CWE-610 Externally Controlled Reference to a Resource in Another Sphere</p>
-<p>CWE-643 Improper Neutralization of Data within XPath Expressions ('XPath
-Injection')</p>
-<p>CWE-644 Improper Neutralization of HTTP Headers for Scripting Syntax</p>
-<p>CWE-652 Improper Neutralization of Data within XQuery Expressions
-('XQuery Injection')</p>
-<p>CWE-917 Improper Neutralization of Special Elements used in an
-Expression Language Statement ('Expression Language Injection')</p>
+<p><a href="https://cwe.mitre.org/data/definitions/20.html">CWE-20 Improper Input Validation</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/74.html">CWE-74 Improper Neutralization of Special Elements in Output Used by a
+Downstream Component ('Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/75.html">CWE-75 Failure to Sanitize Special Elements into a Different Plane
+(Special Element Injection)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/77.html">CWE-77 Improper Neutralization of Special Elements used in a Command
+('Command Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78 Improper Neutralization of Special Elements used in an OS Command
+('OS Command Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79 Improper Neutralization of Input During Web Page Generation
+('Cross-site Scripting')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/80.html">CWE-80 Improper Neutralization of Script-Related HTML Tags in a Web Page
+(Basic XSS)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/83.html">CWE-83 Improper Neutralization of Script in Attributes in a Web Page</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/87.html">CWE-87 Improper Neutralization of Alternate XSS Syntax</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/88.html">CWE-88 Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/90.html">CWE-90 Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/91.html">CWE-91 XML Injection (aka Blind XPath Injection)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93 Improper Neutralization of CRLF Sequences ('CRLF Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94 Improper Control of Generation of Code ('Code Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95 Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/96.html">CWE-96 Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/97.html">CWE-97 Improper Neutralization of Server-Side Includes (SSI) Within a Web Page</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/98.html">CWE-98 Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/99.html">CWE-99 Improper Control of Resource Identifiers ('Resource Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/100.html">CWE-100 Deprecated: Was catch-all for input validation issues</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/113.html">CWE-113 Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/116.html">CWE-116 Improper Encoding or Escaping of Output</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/138.html">CWE-138 Improper Neutralization of Special Elements</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/184.html">CWE-184 Incomplete List of Disallowed Inputs</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/470.html">CWE-470 Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/471.html">CWE-471 Modification of Assumed-Immutable Data (MAID)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/564.html">CWE-564 SQL Injection: Hibernate</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/610.html">CWE-610 Externally Controlled Reference to a Resource in Another Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/643.html">CWE-643 Improper Neutralization of Data within XPath Expressions ('XPath Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/644.html">CWE-644 Improper Neutralization of HTTP Headers for Scripting Syntax</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/652.html">CWE-652 Improper Neutralization of Data within XQuery Expressions ('XQuery Injection')</a></p>
+<p>[CWE-917 Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')] (https://cwe.mitre.org/data/definitions/917.html)</p>
                 
               
               

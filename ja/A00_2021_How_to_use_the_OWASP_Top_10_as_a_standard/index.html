@@ -1,0 +1,770 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OWASP Top 10:2021 (DRAFT)">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>How to use the OWASP Top 10 as a standard - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#owasp-top-10" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-header__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to use the OWASP Top 10 as a standard
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OWASP/Top10/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OWASP/Top10/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0x00-notice/" class="md-nav__link">
+        Notice
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        How to use the OWASP Top 10 as a standard
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-nav__link">
+        How to start an AppSec program with the OWASP Top 10
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00-about-owasp/" class="md-nav__link">
+        About OWASP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Top 10 List
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Top 10 List" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Top 10 List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A01_2021-Broken_Access_Control/" class="md-nav__link">
+        A01 Broken Access Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A02_2021-Cryptographic_Failures/" class="md-nav__link">
+        A02 Cryptographic Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A03_2021-Injection/" class="md-nav__link">
+        A03 Injection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A04_2021-Insecure_Design/" class="md-nav__link">
+        A04 Insecure Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A05_2021-Security_Misconfiguration/" class="md-nav__link">
+        A05 Security Misconfiguration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-nav__link">
+        A06 Vulnerable and Outdated Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-nav__link">
+        A07 Identification and Authentication Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-nav__link">
+        A08 Software and Data Integrity Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-nav__link">
+        A09 Security Logging and Monitoring Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10_2021-Server-Side_Request_Forgery_(SSRF)/" class="md-nav__link">
+        A10 Server Side Request Forgery (SSRF)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11_2021-Next_Steps/" class="md-nav__link">
+        Next Steps
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/OWASP/Top10/edit/master/docs/A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.ja.md" title="編集" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="owasp-top-10">OWASP Top 10 をスタンダードとして使うには</h1>
+<p>OWASP Top 10 は、主に意識向上を目的とした文書です。
+しかし 2003 年に開始されて以来、組織は事実上の業界におけるアプリケーションセキュリティのスタンダードとして使い続けています。
+OWASP トップ 10 をコーディングやテストの基準として使用したい場合は、それが最低限のものであり、出発点に過ぎないことを知っておいてください。</p>
+<p>OWASP トップ 10 をスタンダードとして使うことの難しさの 1 つは、OWASP Top 10 はアプリケーションセキュリティのリスクを文書化しているものであり、必ずしも簡単にテストできるわけではないということです。
+例えば「A04:2021-安全が確認されない不安な設計」は、ほとんどの形式のテストの範囲を超えています。
+他の例としては、設置、使用、効果的なロギングとモニタリングのテストがあります。これらのテストは、インタビューを行い効果的なインシデントレスポンスのサンプルを要求しなければ実施できません。
+静的なコード解析ツールは、ロギングが行われていないかどうかを調べることができますが、ビジネスロジックやアクセス制御が重要なセキュリティ違反のロギングを行っているかどうかを判断することは不可能かもしれません。
+侵入テスト担当者は、本番環境と同じように監視されることがほとんどないテスト環境で、インシデントレスポンスを起動したことを判断することしかできない可能性があります。</p>
+<p>ここでは、OWASP Top 10 を使用することが推奨されるユースケースを示します。</p>
+<table>
+<thead>
+<tr>
+<th>ユースケース</th>
+<th align="center">OWASP Top 10 2021</th>
+<th align="center">OWASPアプリケーションセキュリティ検証標準 (OWASP ASVS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>意識向上</td>
+<td align="center">推奨</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>訓練</td>
+<td align="center">入門レベル</td>
+<td align="center">包括的</td>
+</tr>
+<tr>
+<td>設計とアーキテクチャ</td>
+<td align="center">適切である場合もある</td>
+<td align="center">推奨</td>
+</tr>
+<tr>
+<td>コーディングスタンダード</td>
+<td align="center">必要最低限</td>
+<td align="center">推奨</td>
+</tr>
+<tr>
+<td>セキュアコードレビュー</td>
+<td align="center">必要最低限</td>
+<td align="center">推奨</td>
+</tr>
+<tr>
+<td>ピアレビューにおけるチェックリスト</td>
+<td align="center">必要最低限</td>
+<td align="center">推奨</td>
+</tr>
+<tr>
+<td>ユニットテスト</td>
+<td align="center">適切である場合もある</td>
+<td align="center">推奨</td>
+</tr>
+<tr>
+<td>統合テスト</td>
+<td align="center">適切である場合もある</td>
+<td align="center">推奨</td>
+</tr>
+<tr>
+<td>侵入テスト</td>
+<td align="center">必要最低限</td>
+<td align="center">推奨</td>
+</tr>
+<tr>
+<td>ツール支援</td>
+<td align="center">必要最低限</td>
+<td align="center">推奨</td>
+</tr>
+<tr>
+<td>セキュアサプライチェーン</td>
+<td align="center">適切である場合もある</td>
+<td align="center">推奨</td>
+</tr>
+</tbody>
+</table>
+<p>アプリケーション・セキュリティにおけるスタンダードをを採用したいと考えている人には、OWASP Application Security Verification Standard（ASVS）を使用することをお勧めします。</p>
+<p>OWASP ASVS は、ツールベンダーにとって唯一受け入れられる選択肢です。
+OWASP トップ 10 におけるリスクの性質上、ツールは OWASP トップ 10 を包括的に検出、テスト、あるいは保護することはできません。例えば「A04:2021-安全が確認されない不安な設計」があげられます。
+OWASP は、ツールが OWASP トップ 10 を完全に網羅していると主張することは、単純に事実と異なるため、推奨しません。</p>
+<h1 id="how-to-use-the-owasp-top-10-as-a-standard">How to use the OWASP Top 10 as a standard</h1>
+<p>The OWASP Top 10 is primarily an awareness document. However, this has
+not stopped organizations using it as a de facto industry AppSec
+standard since its inception in 2003. If you want to use the OWASP Top
+10 as a coding or testing standard, know that it is the bare minimum and
+just a starting point.</p>
+<p>One of the difficulties of using the OWASP Top 10 as a standard is that
+we document appsec risks, and not necessarily easily testable issues.
+For example, A04:2021-Insecure Design is beyond the scope of most forms
+of testing. Another example is testing in place, in use, and effective
+logging and monitoring can only be done with interviews and requesting a
+sampling of effective incident responses. A static code analysis tool
+can look for the absence of logging, but it might be impossible to
+determine if business logic or access control is logging critical
+security breaches. Penetration testers may only be able to determine
+that they have invoked incident response in a test environment, which
+are rarely monitored in the same way as production.</p>
+<p>Here are our recommendations for when it is appropriate to use the OWASP
+Top 10:</p>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th align="center">OWASP Top 10 2021</th>
+<th align="center">OWASP Application Security Verification Standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Awareness</td>
+<td align="center">Yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Training</td>
+<td align="center">Entry level</td>
+<td align="center">Comprehensive</td>
+</tr>
+<tr>
+<td>Design and architecture</td>
+<td align="center">Occasionally</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Coding standard</td>
+<td align="center">Bare minimum</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Secure Code review</td>
+<td align="center">Bare minimum</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Peer review checklist</td>
+<td align="center">Bare minimum</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Unit testing</td>
+<td align="center">Occasionally</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Integration testing</td>
+<td align="center">Occasionally</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Penetration testing</td>
+<td align="center">Bare minimum</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Tool support</td>
+<td align="center">Bare minimum</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Secure Supply Chain</td>
+<td align="center">Occasionally</td>
+<td align="center">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>We would encourage anyone wanting to adopt an application security
+standard to use the OWASP Application Security Verification Standard
+(ASVS), as it’s designed to be verifiable and tested, and can be used in
+all parts of a secure development lifecycle.</p>
+<p>The ASVS is the only acceptable choice for tool vendors. Tools cannot
+comprehensively detect, test, or protect against the OWASP Top 10 due to
+the nature of several of the OWASP Top 10 risks, with reference to
+A04:2021-Insecure Design. OWASP discourages any claims of full coverage
+of the OWASP Top 10, because it’s simply untrue.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../A00_2021_Introduction/" class="md-footer__link md-footer__link--prev" aria-label="前: Introduction" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              Introduction
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-footer__link md-footer__link--next" aria-label="次: How to start an AppSec program with the OWASP Top 10" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              How to start an AppSec program with the OWASP Top 10
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>

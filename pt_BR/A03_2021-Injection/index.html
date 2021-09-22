@@ -1,0 +1,914 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OWASP Top 10:2021 (DRAFT)">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>A03 Injection - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a032021-injection" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-header__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A03 Injection
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OWASP/Top10/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OWASP/Top10/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Início
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0x00-notice/" class="md-nav__link">
+        Notas
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_Introduction/" class="md-nav__link">
+        Introdução
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="md-nav__link">
+        Como usar o OWASP Top 10 como padrão
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-nav__link">
+        Como iniciar um programa AppSec com o OWASP Top 10
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00-about-owasp/" class="md-nav__link">
+        Sobre OWASP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Lista top 10
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Lista top 10" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Lista top 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A01_2021-Broken_Access_Control/" class="md-nav__link">
+        A01 Quebra de Controle de Acesso
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A02_2021-Cryptographic_Failures/" class="md-nav__link">
+        A02 Cryptographic Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          A03 Injection
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        A03 Injection
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#factors" class="md-nav__link">
+    Factors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-prevent" class="md-nav__link">
+    How to Prevent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-attack-scenarios" class="md-nav__link">
+    Example Attack Scenarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-mapped-cwes" class="md-nav__link">
+    List of Mapped CWEs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A04_2021-Insecure_Design/" class="md-nav__link">
+        A04 Insecure Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A05_2021-Security_Misconfiguration/" class="md-nav__link">
+        A05 Security Misconfiguration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-nav__link">
+        A06 Vulnerable and Outdated Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-nav__link">
+        A07 Identification and Authentication Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-nav__link">
+        A08 Software and Data Integrity Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-nav__link">
+        A09 Security Logging and Monitoring Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="md-nav__link">
+        A10 Server Side Request Forgery (SSRF)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11_2021-Next_Steps/" class="md-nav__link">
+        Próximos passos
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#factors" class="md-nav__link">
+    Factors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-prevent" class="md-nav__link">
+    How to Prevent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-attack-scenarios" class="md-nav__link">
+    Example Attack Scenarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-mapped-cwes" class="md-nav__link">
+    List of Mapped CWEs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/OWASP/Top10/edit/master/docs/A03_2021-Injection.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="a032021-injection">A03:2021 – Injection</h1>
+<h2 id="factors">Factors</h2>
+<table>
+<thead>
+<tr>
+<th align="center">CWEs Mapped</th>
+<th align="center">Max Incidence Rate</th>
+<th align="center">Avg Incidence Rate</th>
+<th align="center">Avg Weighted Exploit</th>
+<th align="center">Avg Weighted Impact</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
+<th align="center">Total Occurrences</th>
+<th align="center">Total CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">33</td>
+<td align="center">19.09%</td>
+<td align="center">3.37%</td>
+<td align="center">7.25</td>
+<td align="center">7.15</td>
+<td align="center">94.04%</td>
+<td align="center">47.90%</td>
+<td align="center">274,228</td>
+<td align="center">32,078</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overview">Overview</h2>
+<p>Injection slides down to the third position. 94% of the applications
+were tested for some form of injection with a max incidence rate of 19%, an average incidence rate of 3%, and 274k occurances. Notable CWEs included are
+<em>CWE-79: Cross-site Scripting</em>, <em>CWE-89: SQL Injection</em>, and <em>CWE-73:
+External Control of File Name or Path</em>.</p>
+<h2 id="description">Description</h2>
+<p>An application is vulnerable to attack when:</p>
+<ul>
+<li>
+<p>User-supplied data is not validated, filtered, or sanitized by the
+    application.</p>
+</li>
+<li>
+<p>Dynamic queries or non-parameterized calls without context-aware
+    escaping are used directly in the interpreter.</p>
+</li>
+<li>
+<p>Hostile data is used within object-relational mapping (ORM) search
+    parameters to extract additional, sensitive records.</p>
+</li>
+<li>
+<p>Hostile data is directly used or concatenated. The SQL or command
+    contains the structure and malicious data in dynamic queries,
+    commands, or stored procedures.</p>
+</li>
+</ul>
+<p>Some of the more common injections are SQL, NoSQL, OS command, Object
+Relational Mapping (ORM), LDAP, and Expression Language (EL) or Object
+Graph Navigation Library (OGNL) injection. The concept is identical
+among all interpreters. Source code review is the best method of
+detecting if applications are vulnerable to injections. Automated
+testing of all parameters, headers, URL, cookies, JSON, SOAP, and XML
+data inputs is strongly encouraged. Organizations can include
+static (SAST), dynamic (DAST), and interactive (IAST) application security testing tools into the CI/CD
+pipeline to identify introduced injection flaws before production
+deployment.</p>
+<h2 id="how-to-prevent">How to Prevent</h2>
+<p>Preventing injection requires keeping data separate from commands and queries:</p>
+<ul>
+<li>
+<p>The preferred option is to use a safe API, which avoids using the
+    interpreter entirely, provides a parameterized interface, or
+    migrates to Object Relational Mapping Tools (ORMs).<br/>
+    <strong>Note:</strong> Even when parameterized, stored procedures can still introduce
+    SQL injection if PL/SQL or T-SQL concatenates queries and data or
+    executes hostile data with EXECUTE IMMEDIATE or exec().</p>
+</li>
+<li>
+<p>Use positive or "whitelist" server-side input validation. This is
+    not a complete defense as many applications require special
+    characters, such as text areas or APIs for mobile applications.</p>
+</li>
+<li>
+<p>For any residual dynamic queries, escape special characters using
+    the specific escape syntax for that interpreter.<br/>
+    <strong>Note:</strong> SQL structures such as table names, column names, and so on
+    cannot be escaped, and thus user-supplied structure names are
+    dangerous. This is a common issue in report-writing software.</p>
+</li>
+<li>
+<p>Use LIMIT and other SQL controls within queries to prevent mass
+    disclosure of records in case of SQL injection.</p>
+</li>
+</ul>
+<h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
+<p><strong>Scenario #1:</strong> An application uses untrusted data in the construction
+of the following vulnerable SQL call:</p>
+<blockquote>
+<p>String query = "SELECT * FROM accounts WHERE custID='" +
+request.getParameter("id") + "'";</p>
+</blockquote>
+<p><strong>Scenario #2:</strong> Similarly, an application’s blind trust in frameworks
+may result in queries that are still vulnerable, (e.g., Hibernate Query
+Language (HQL)):</p>
+<blockquote>
+<p>Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" +
+request.getParameter("id") + "'");</p>
+</blockquote>
+<p>In both cases, the attacker modifies the ‘id’ parameter value in their
+browser to send: ‘ or ‘1’=’1. For example:</p>
+<blockquote>
+<p>htt<span>p://example.com/app/accountView?id=' or '1'='1</span></p>
+</blockquote>
+<p>This changes the meaning of both queries to return all the records from
+the accounts table. More dangerous attacks could modify or delete data
+or even invoke stored procedures.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c3-secure-database">OWASP Proactive Controls: Secure Database Access</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP ASVS: V5 Input Validation and Encoding</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection">OWASP Testing Guide: SQL Injection,</a> <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/12-Testing_for_Command_Injection">Command Injection</a>,
+    and <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.7-Testing_for_ORM_Injection">ORM Injection</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: Injection Prevention</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: SQL Injection Prevention</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet_in_Java.html">OWASP Cheat Sheet: Injection Prevention in Java</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html">OWASP Cheat Sheet: Query Parameterization</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-automated-threats-to-web-applications/">OWASP Automated Threats to Web Applications – OAT-014</a></p>
+</li>
+<li>
+<p><a href="https://portswigger.net/kb/issues/00101080_serversidetemplateinjection">PortSwigger: Server-side template injection</a></p>
+</li>
+</ul>
+<h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/20.html">CWE-20 Improper Input Validation</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/74.html">CWE-74 Improper Neutralization of Special Elements in Output Used by a
+Downstream Component ('Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/75.html">CWE-75 Failure to Sanitize Special Elements into a Different Plane
+(Special Element Injection)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/77.html">CWE-77 Improper Neutralization of Special Elements used in a Command
+('Command Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78 Improper Neutralization of Special Elements used in an OS Command
+('OS Command Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79 Improper Neutralization of Input During Web Page Generation
+('Cross-site Scripting')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/80.html">CWE-80 Improper Neutralization of Script-Related HTML Tags in a Web Page
+(Basic XSS)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/83.html">CWE-83 Improper Neutralization of Script in Attributes in a Web Page</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/87.html">CWE-87 Improper Neutralization of Alternate XSS Syntax</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/88.html">CWE-88 Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/90.html">CWE-90 Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/91.html">CWE-91 XML Injection (aka Blind XPath Injection)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93 Improper Neutralization of CRLF Sequences ('CRLF Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94 Improper Control of Generation of Code ('Code Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95 Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/96.html">CWE-96 Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/97.html">CWE-97 Improper Neutralization of Server-Side Includes (SSI) Within a Web Page</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/98.html">CWE-98 Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/99.html">CWE-99 Improper Control of Resource Identifiers ('Resource Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/100.html">CWE-100 Deprecated: Was catch-all for input validation issues</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/113.html">CWE-113 Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/116.html">CWE-116 Improper Encoding or Escaping of Output</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/138.html">CWE-138 Improper Neutralization of Special Elements</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/184.html">CWE-184 Incomplete List of Disallowed Inputs</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/470.html">CWE-470 Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/471.html">CWE-471 Modification of Assumed-Immutable Data (MAID)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/564.html">CWE-564 SQL Injection: Hibernate</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/610.html">CWE-610 Externally Controlled Reference to a Resource in Another Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/643.html">CWE-643 Improper Neutralization of Data within XPath Expressions ('XPath Injection')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/644.html">CWE-644 Improper Neutralization of HTTP Headers for Scripting Syntax</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/652.html">CWE-652 Improper Neutralization of Data within XQuery Expressions ('XQuery Injection')</a></p>
+<p>[CWE-917 Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')] (https://cwe.mitre.org/data/definitions/917.html)</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../A02_2021-Cryptographic_Failures/" class="md-footer__link md-footer__link--prev" aria-label="Previous: A02 Cryptographic Failures" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              A02 Cryptographic Failures
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../A04_2021-Insecure_Design/" class="md-footer__link md-footer__link--next" aria-label="Next: A04 Insecure Design" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              A04 Insecure Design
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>

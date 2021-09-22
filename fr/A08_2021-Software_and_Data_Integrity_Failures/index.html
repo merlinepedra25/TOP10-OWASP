@@ -16,7 +16,7 @@
     
     
       
-        <title>A08 Software and Data Integrity Failures - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
+        <title>A08 Manque d'intégrité des données et du logiciel - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
       
     
     
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              A08 Software and Data Integrity Failures
+              A08 Manque d'intégrité des données et du logiciel
             
           </span>
         </div>
@@ -123,8 +123,26 @@
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../../it/" hreflang="it" class="md-select__link">
                     Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
                   </a>
                 </li>
                 
@@ -277,7 +295,7 @@
   
     <li class="md-nav__item">
       <a href="../A00-about-owasp/" class="md-nav__link">
-        About OWASP
+        À propos de l'OWASP
       </a>
     </li>
   
@@ -317,7 +335,7 @@
   
     <li class="md-nav__item">
       <a href="../A01_2021-Broken_Access_Control/" class="md-nav__link">
-        A01 Contrôle d'accès cassé
+        A01 Contrôle d'accès rompu
       </a>
     </li>
   
@@ -329,7 +347,7 @@
   
     <li class="md-nav__item">
       <a href="../A02_2021-Cryptographic_Failures/" class="md-nav__link">
-        A02 Cryptographic Failures
+        A02 Défaillances cryptographiques
       </a>
     </li>
   
@@ -353,7 +371,7 @@
   
     <li class="md-nav__item">
       <a href="../A04_2021-Insecure_Design/" class="md-nav__link">
-        A04 Insecure Design
+        A04 Conception fragile
       </a>
     </li>
   
@@ -365,7 +383,7 @@
   
     <li class="md-nav__item">
       <a href="../A05_2021-Security_Misconfiguration/" class="md-nav__link">
-        A05 Security Misconfiguration
+        A05 Mauvaise configuration de sécurité
       </a>
     </li>
   
@@ -377,7 +395,7 @@
   
     <li class="md-nav__item">
       <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-nav__link">
-        A06 Vulnerable and Outdated Components
+        A06 Composants vulnérables et obsolètes
       </a>
     </li>
   
@@ -389,7 +407,7 @@
   
     <li class="md-nav__item">
       <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-nav__link">
-        A07 Identification and Authentication Failures
+        A07 Identification et authentification de mauvaise qualité
       </a>
     </li>
   
@@ -410,12 +428,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          A08 Software and Data Integrity Failures
+          A08 Manque d'intégrité des données et du logiciel
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        A08 Software and Data Integrity Failures
+        A08 Manque d'intégrité des données et du logiciel
       </a>
       
         
@@ -495,7 +513,7 @@
   
     <li class="md-nav__item">
       <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-nav__link">
-        A09 Security Logging and Monitoring Failures
+        A09 Carence des systèmes de contrôle et de journalisation
       </a>
     </li>
   
@@ -507,7 +525,7 @@
   
     <li class="md-nav__item">
       <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="md-nav__link">
-        A10 Server Side Request Forgery (SSRF)
+        A10 Falsification de requête côté serveur
       </a>
     </li>
   
@@ -528,7 +546,7 @@
   
     <li class="md-nav__item">
       <a href="../A11_2021-Next_Steps/" class="md-nav__link">
-        Next Steps
+        Étapes suivantes
       </a>
     </li>
   
@@ -633,10 +651,10 @@
 <th align="center">CWEs Mapped</th>
 <th align="center">Max Incidence Rate</th>
 <th align="center">Avg Incidence Rate</th>
-<th align="center">Max Coverage</th>
-<th align="center">Avg Coverage</th>
 <th align="center">Avg Weighted Exploit</th>
 <th align="center">Avg Weighted Impact</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
 <th align="center">Total Occurrences</th>
 <th align="center">Total CVEs</th>
 </tr>
@@ -646,10 +664,10 @@
 <td align="center">10</td>
 <td align="center">16.67%</td>
 <td align="center">2.05%</td>
-<td align="center">75.04%</td>
-<td align="center">45.35%</td>
 <td align="center">6.94</td>
 <td align="center">7.94</td>
+<td align="center">75.04%</td>
+<td align="center">45.35%</td>
 <td align="center">47,972</td>
 <td align="center">1,152</td>
 </tr>
@@ -707,7 +725,7 @@ installations.</p>
 set of Spring Boot microservices. Being functional programmers, they
 tried to ensure that their code is immutable. The solution they came up
 with is serializing the user state and passing it back and forth with
-each request. An attacker notices the "R00" Java object signature and
+each request. An attacker notices the "rO0" Java object signature (in base64) and
 uses the Java Serial Killer tool to gain remote code execution on the
 application server.</p>
 <p><strong>Scenario #2 Update without signing:</strong> Many home routers, set-top
@@ -727,8 +745,7 @@ most significant breaches of this nature in history.</p>
 <h2 id="references">References</h2>
 <ul>
 <li>
-<p>[OWASP Cheat Sheet: Deserialization](
-    <a href="https://www.owasp.org/index.php/Deserialization_Cheat_Sheet">https://www.owasp.org/index.php/Deserialization_Cheat_Sheet</a>)</p>
+<p><a href="https://www.owasp.org/index.php/Deserialization_Cheat_Sheet">OWASP Cheat Sheet: Deserialization</a></p>
 </li>
 <li>
 <p>[OWASP Cheat Sheet: Software Supply Chain Security]()</p>
@@ -737,31 +754,29 @@ most significant breaches of this nature in history.</p>
 <p>[OWASP Cheat Sheet: Secure build and deployment]()</p>
 </li>
 <li>
-<p>[SAFECode Software Integrity Controls](
-    https://safecode.org/publication/SAFECode_Software_Integrity_Controls0610.pdf)</p>
+<p><a href="https://safecode.org/publication/SAFECode_Software_Integrity_Controls0610.pdf">SAFECode Software Integrity Controls</a></p>
 </li>
 <li>
-<p>[A 'Worst Nightmare' Cyberattack: The Untold Story Of The
+<p><a href="https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack">A 'Worst Nightmare' Cyberattack: The Untold Story Of The
     SolarWinds
-    Hack](<a href="https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack">https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack</a>)</p>
+    Hack</a></p>
 </li>
 <li>
 <p><a href="https://www.manning.com/books/securing-devops">https://www.manning.com/books/securing-devops</a></p>
 </li>
 </ul>
 <h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
-<p>CWE-345 Insufficient Verification of Data Authenticity</p>
-<p>CWE-353 Missing Support for Integrity Check</p>
-<p>CWE-426 Untrusted Search Path</p>
-<p>CWE-494 Download of Code Without Integrity Check</p>
-<p>CWE-502 Deserialization of Untrusted Data</p>
-<p>CWE-565 Reliance on Cookies without Validation and Integrity Checking</p>
-<p>CWE-784 Reliance on Cookies without Validation and Integrity Checking in
-a Security Decision</p>
-<p>CWE-829 Inclusion of Functionality from Untrusted Control Sphere</p>
-<p>CWE-830 Inclusion of Web Functionality from an Untrusted Source</p>
-<p>CWE-915 Improperly Controlled Modification of Dynamically-Determined
-Object Attributes</p>
+<p><a href="https://cwe.mitre.org/data/definitions/345.html">CWE-345 Insufficient Verification of Data Authenticity</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353 Missing Support for Integrity Check</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/426.html">CWE-426 Untrusted Search Path</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/494.html">CWE-494 Download of Code Without Integrity Check</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502 Deserialization of Untrusted Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/565.html">CWE-565 Reliance on Cookies without Validation and Integrity Checking</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/784.html">CWE-784 Reliance on Cookies without Validation and Integrity Checking in
+a Security Decision</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/829.html">CWE-829 Inclusion of Functionality from Untrusted Control Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/830.html">CWE-830 Inclusion of Web Functionality from an Untrusted Source</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/915.html">CWE-915 Improperly Controlled Modification of Dynamically-Determined Object Attributes</a></p>
                 
               
               
@@ -781,7 +796,7 @@ Object Attributes</p>
     <nav class="md-footer__inner md-grid" aria-label="Pied de page">
       
         
-        <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: A07 Identification and Authentication Failures" rel="prev">
+        <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: A07 Identification et authentification de mauvaise qualité" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -790,20 +805,20 @@ Object Attributes</p>
               <span class="md-footer__direction">
                 Précédent
               </span>
-              A07 Identification and Authentication Failures
+              A07 Identification et authentification de mauvaise qualité
             </div>
           </div>
         </a>
       
       
         
-        <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-footer__link md-footer__link--next" aria-label="Suivant: A09 Security Logging and Monitoring Failures" rel="next">
+        <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-footer__link md-footer__link--next" aria-label="Suivant: A09 Carence des systèmes de contrôle et de journalisation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              A09 Security Logging and Monitoring Failures
+              A09 Carence des systèmes de contrôle et de journalisation
             </div>
           </div>
           <div class="md-footer__button md-icon">

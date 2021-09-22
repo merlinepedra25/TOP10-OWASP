@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OWASP Top 10:2021 (DRAFT)">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>A09 Security Logging and Monitoring Failures - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a092021" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-header__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A09 Security Logging and Monitoring Failures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OWASP/Top10/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OWASP/Top10/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0x00-notice/" class="md-nav__link">
+        Notice
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="md-nav__link">
+        How to use the OWASP Top 10 as a standard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-nav__link">
+        How to start an AppSec program with the OWASP Top 10
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00-about-owasp/" class="md-nav__link">
+        About OWASP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Top 10 List
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Top 10 List" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Top 10 List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A01_2021-Broken_Access_Control/" class="md-nav__link">
+        A01 Broken Access Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A02_2021-Cryptographic_Failures/" class="md-nav__link">
+        A02 Cryptographic Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A03_2021-Injection/" class="md-nav__link">
+        A03 Injection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A04_2021-Insecure_Design/" class="md-nav__link">
+        A04 Insecure Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A05_2021-Security_Misconfiguration/" class="md-nav__link">
+        A05 Security Misconfiguration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-nav__link">
+        A06 Vulnerable and Outdated Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-nav__link">
+        A07 Identification and Authentication Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-nav__link">
+        A08 Software and Data Integrity Failures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          A09 Security Logging and Monitoring Failures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        A09 Security Logging and Monitoring Failures
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    因子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    説明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    防止方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    攻撃シナリオの例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    参考資料
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cwe" class="md-nav__link">
+    対応する CWE のリスト
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10_2021-Server-Side_Request_Forgery_(SSRF)/" class="md-nav__link">
+        A10 Server Side Request Forgery (SSRF)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11_2021-Next_Steps/" class="md-nav__link">
+        Next Steps
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    因子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    説明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    防止方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    攻撃シナリオの例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    参考資料
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cwe" class="md-nav__link">
+    対応する CWE のリスト
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/OWASP/Top10/edit/master/docs/A09_2021-Security_Logging_and_Monitoring_Failures.ja.md" title="編集" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="a092021">A09:2021 – セキュリティログとモニタリングの失敗</h1>
+<h2 id="_1">因子</h2>
+<table>
+<thead>
+<tr>
+<th align="center">対応する CWE 数</th>
+<th align="center">最大発生率</th>
+<th align="center">平均発生率</th>
+<th align="center">最大網羅率</th>
+<th align="center">平均網羅率</th>
+<th align="center">加重平均（攻撃の難易度）</th>
+<th align="center">加重平均（攻撃による影響）</th>
+<th align="center">総発生数</th>
+<th align="center">CVE 合計件数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">4</td>
+<td align="center">19.23%</td>
+<td align="center">6.51%</td>
+<td align="center">53.67%</td>
+<td align="center">39.97%</td>
+<td align="center">6.87</td>
+<td align="center">4.99</td>
+<td align="center">53,615</td>
+<td align="center">242</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">概要</h2>
+<p>セキュリティロギングとモニタリングは、業界調査（第3位）で、OWASP トップ 10 2017 の第 10 位からわずかに上昇しました。
+ロギングとモニタリングはテストが難しく、インタビューやペネトレーションテストで攻撃が検出されたかどうかを確認することがよくあります。
+このカテゴリの CVE/CVSS データはあまりありませんが、侵害を検知して対応することは重要です。
+とはいえ、このカテゴリーで失敗が起きると、可視化、インシデントアラート、フォレンジックなどに影響があります。
+このカテゴリは、<em>CWE-778 ロギングの不足</em> だけでなく、<em>CWE-117 ログファイルへの不適切な出力</em>、<em>CWE-223 セキュリティに関連する情報の省略</em>、<em>CWE-532 ログファイルからの情報漏洩</em> なども含まれます。</p>
+<h2 id="_3">説明</h2>
+<p>OWASP Top 10 2021 に話を戻すと、このカテゴリは、アクティブな違反の検出、エスカレーション、および対応を支援するものです。
+ロギングとモニタリングがなければ、侵害を検知することはできません。
+ロギングや検知、モニタリング、適時の対応が十分に行われないという状況は、いつでも発生します:</p>
+<ul>
+<li>
+<p>ログイン、失敗したログイン、重要なトランザクションなどの監査可能なイベントがログに記録されていない。</p>
+</li>
+<li>
+<p>警告とエラーが発生してもログメッセージが生成されない、または不十分、不明確なメッセージが生成されている。</p>
+</li>
+<li>
+<p>アプリケーションとAPIのログが、疑わしいアクティビティをモニタリングしていない。</p>
+</li>
+<li>
+<p>ログがローカルにのみ格納されている。</p>
+</li>
+<li>
+<p>アラートの適切なしきい値とレスポンスのエスカレーションプロセスが整えられていない、または有効ではない。</p>
+</li>
+<li>
+<p>ペネトレーションテストやDASTツール（OWASP ZAPなど）によるスキャンがアラートをあげない。</p>
+</li>
+<li>
+<p>アプリケーションがリアルタイム、準リアルタイムにアクティブな攻撃を検知、エスカレート、またはアラートすることができない。</p>
+</li>
+</ul>
+<p>ユーザまたは攻撃者がログやアラートのイベントを閲覧できると、情報の漏えいが発生する可能性があります (A01:2021-アクセス制御の不備 を参照).</p>
+<h2 id="_4">防止方法</h2>
+<p>アプリケーションによって保存または処理されるデータのリスクに応じて対応する：</p>
+<ul>
+<li>
+<p>ログイン、アクセス制御の失敗、サーバサイドの入力検証の失敗を全てログとして記録するようにする。
+    ログは、不審なアカウントや悪意のあるアカウントを特定するために十分なユーザコンテキストを持ち、
+    後日、フォレンジック分析を行うのに十分な期間分保持するようにする。</p>
+</li>
+<li>
+<p>統合ログ管理ソリューションで簡単に使用できる形式でログが生成されていることを確認する。</p>
+</li>
+<li>
+<p>価値の高いトランザクションにおいて、監査証跡が取得されていること。
+    その際、追記型データベースのテーブルなどのような、完全性を保つコントロールを用いて、改ざんや削除を防止する。</p>
+</li>
+<li>
+<p>DevSecOps チームが疑わしい活動をタイムリーに検知して対応できるように、効果的なモニタリングとアラートを確立する。</p>
+</li>
+<li>
+<p>NIST 800-61 rev 2（またはそれ以降）のような、インシデント対応および復旧計画を策定または採用する。</p>
+</li>
+</ul>
+<p>OWASP AppSensor、OWASP ModSecurity Core Rule Setを使用したModSecurityなどのWebアプリケーションファイアウォール、
+カスタムダッシュボードとアラートを使用したログ相関分析ソフトウェアなど、商用およびオープンソースのアプリケーション保護フレームワークがあります。</p>
+<h2 id="_5">攻撃シナリオの例</h2>
+<p><strong>シナリオ #1:</strong> </p>
+<p>ある児童医療プランのウェブサイト運営者は、監視とログの不足のために侵害を検知できませんでした。
+攻撃者が 350 万人以上の子どもたちの数千もの機密性の高い健康記録にアクセスし変更したという連絡が、外部の関係者から医療機関にありました。
+事故後のレビューでは、ウェブサイトの開発者が重要な脆弱性に対処していなかったことが判明しました。
+システムのロギングやモニタリングが行われていなかったため、データ侵害は 2013 年から 7 年以上にわたって進行していた可能性があります。</p>
+<p><strong>シナリオ #2:</strong> </p>
+<p>あるインドの大手航空会社で、パスポートやクレジットカードなど数百万人の乗客の 10 年分以上の個人情報を含むデータが流出しました。
+このデータ流出は、第三者のクラウドホスティングプロバイダーで発生し、しばらくしてから航空会社に通知されました。</p>
+<p><strong>シナリオ #3:</strong> </p>
+<p>ある欧州の大手航空会社が、GDPRの報告対象となる侵害を受けました。
+この違反は、決済アプリケーションのセキュリティ脆弱性が攻撃者に悪用され、40万件以上の顧客の決済記録が収集されたことが原因とされています。
+この航空会社は、プライバシー規制機関から2,000万ポンドの罰金を科せられました。</p>
+<h2 id="_6">参考資料</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c9-security-logging.html">OWASP Proactive Controls: Implement Logging and
+    Monitoring</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP Application Security Verification Standard: V8 Logging and
+    Monitoring</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/01-Testing_for_Error_Code">OWASP Testing Guide: Testing for Detailed Error
+    Code</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html">OWASP Cheat Sheet:
+    Logging</a></p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/1800-11/final">Data Integrity: Recovering from Ransomware and Other Destructive
+    Events</a></p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/1800-25/final">Data Integrity: Identifying and Protecting Assets Against
+    Ransomware and Other Destructive
+    Events</a></p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/1800-26/final">Data Integrity: Detecting and Responding to Ransomware and Other
+    Destructive
+    Events</a></p>
+</li>
+</ul>
+<h2 id="cwe">対応する CWE のリスト</h2>
+<p>CWE-117 ログファイルへの不適切な出力</p>
+<p>CWE-223 セキュリティに関連する情報の省略</p>
+<p>CWE-532 ログファイルからの情報漏洩</p>
+<p>CWE-778 ロギングの不足</p>
+<h1 id="a092021-security-logging-and-monitoring-failures">A09:2021 – Security Logging and Monitoring Failures</h1>
+<h2 id="factors">Factors</h2>
+<table>
+<thead>
+<tr>
+<th align="center">CWEs Mapped</th>
+<th align="center">Max Incidence Rate</th>
+<th align="center">Avg Incidence Rate</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
+<th align="center">Avg Weighted Exploit</th>
+<th align="center">Avg Weighted Impact</th>
+<th align="center">Total Occurrences</th>
+<th align="center">Total CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">4</td>
+<td align="center">19.23%</td>
+<td align="center">6.51%</td>
+<td align="center">53.67%</td>
+<td align="center">39.97%</td>
+<td align="center">6.87</td>
+<td align="center">4.99</td>
+<td align="center">53,615</td>
+<td align="center">242</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overview">Overview</h2>
+<p>Security logging and monitoring came from the industry survey (#3), up
+slightly from the tenth position in the OWASP Top 10 2017. Logging and
+monitoring can be challenging to test, often involving interviews or
+asking if attacks were detected during a penetration test. There isn't
+much CVE/CVSS data for this category, but detecting and responding to
+breaches is critical. Still, it can be very impactful for visibility,
+incident alerting, and forensics. This category expands beyond <em>CWE-778
+Insufficient Logging</em> to include <em>CWE-117 Improper Output Neutralization
+for Logs</em>, <em>CWE-223 Omission of Security-relevant Information</em>, and
+<em>CWE-532</em> <em>Insertion of Sensitive Information into Log File</em>.</p>
+<h2 id="description">Description</h2>
+<p>Returning to the OWASP Top 10 2021, this category is to help detect,
+escalate, and respond to active breaches. Without logging and
+monitoring, breaches cannot be detected. Insufficient logging,
+detection, monitoring, and active response occurs any time:</p>
+<ul>
+<li>
+<p>Auditable events, such as logins, failed logins, and high-value
+    transactions, are not logged.</p>
+</li>
+<li>
+<p>Warnings and errors generate no, inadequate, or unclear log
+    messages.</p>
+</li>
+<li>
+<p>Logs of applications and APIs are not monitored for suspicious
+    activity.</p>
+</li>
+<li>
+<p>Logs are only stored locally.</p>
+</li>
+<li>
+<p>Appropriate alerting thresholds and response escalation processes
+    are not in place or effective.</p>
+</li>
+<li>
+<p>Penetration testing and scans by DAST tools (such as OWASP ZAP) do
+    not trigger alerts.</p>
+</li>
+<li>
+<p>The application cannot detect, escalate, or alert for active attacks
+    in real-time or near real-time.</p>
+</li>
+</ul>
+<p>You are vulnerable to information leakage by making logging and alerting
+events visible to a user or an attacker (see A01:2021 – Broken Access
+Control).</p>
+<h2 id="how-to-prevent">How to Prevent</h2>
+<p>Developers should implement some or all the following controls, d
+epending on the risk of the application:</p>
+<ul>
+<li>
+<p>Ensure all login, access control, and server-side input validation
+    failures can be logged with sufficient user context to identify
+    suspicious or malicious accounts and held for enough time to allow
+    delayed forensic analysis.</p>
+</li>
+<li>
+<p>Ensure that logs are generated in a format that log management
+    solutions can easily consume.</p>
+</li>
+<li>
+<p>Ensure log data is encoded correctly to prevent injections or
+    attacks on the logging or monitoring systems.</p>
+</li>
+<li>
+<p>Ensure high-value transactions have an audit trail with integrity
+    controls to prevent tampering or deletion, such as append-only
+    database tables or similar.</p>
+</li>
+<li>
+<p>DevSecOps teams should establish effective monitoring and alerting
+    such that suspicious activities are detected and responded to
+    quickly.</p>
+</li>
+<li>
+<p>Establish or adopt an incident response and recovery plan, such as
+    NIST 800-61r2 or later.</p>
+</li>
+</ul>
+<p>There are commercial and open-source application protection frameworks
+such as the OWASP ModSecurity Core Rule Set, and open-source log
+correlation software, such as the ELK stack, that feature custom
+dashboards and alerting.</p>
+<h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
+<p><strong>Scenario #1:</strong> A childrens' health plan provider's website operator
+couldn't detect a breach due to a lack of monitoring and logging. An
+external party informed the health plan provider that an attacker had
+accessed and modified thousands of sensitive health records of more than
+3.5 million children. A post-incident review found that the website
+developers had not addressed significant vulnerabilities. As there was
+no logging or monitoring of the system, the data breach could have been
+in progress since 2013, a period of more than seven years.</p>
+<p><strong>Scenario #2:</strong> A major Indian airline had a data breach involving more
+than ten years' worth of personal data of millions of passengers,
+including passport and credit card data. The data breach occurred at a
+third-party cloud hosting provider, who notified the airline of the
+breach after some time.</p>
+<p><strong>Scenario #3:</strong> A major European airline suffered a GDPR reportable
+breach. The breach was reportedly caused by payment application security
+vulnerabilities exploited by attackers, who harvested more than 400,000
+customer payment records. The airline was fined 20 million pounds as a
+result by the privacy regulator.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c9-security-logging.html">OWASP Proactive Controls: Implement Logging and
+    Monitoring</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP Application Security Verification Standard: V8 Logging and
+    Monitoring</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/01-Testing_for_Error_Code">OWASP Testing Guide: Testing for Detailed Error
+    Code</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html">OWASP Cheat Sheet:
+    Logging</a></p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/1800-11/final">Data Integrity: Recovering from Ransomware and Other Destructive
+    Events</a></p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/1800-25/final">Data Integrity: Identifying and Protecting Assets Against
+    Ransomware and Other Destructive
+    Events</a></p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/1800-26/final">Data Integrity: Detecting and Responding to Ransomware and Other
+    Destructive
+    Events</a></p>
+</li>
+</ul>
+<h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
+<p>CWE-117 Improper Output Neutralization for Logs</p>
+<p>CWE-223 Omission of Security-relevant Information</p>
+<p>CWE-532 Insertion of Sensitive Information into Log File</p>
+<p>CWE-778 Insufficient Logging</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-footer__link md-footer__link--prev" aria-label="前: A08 Software and Data Integrity Failures" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              A08 Software and Data Integrity Failures
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../A10_2021-Server-Side_Request_Forgery_(SSRF)/" class="md-footer__link md-footer__link--next" aria-label="次: A10 Server Side Request Forgery (SSRF)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              A10 Server Side Request Forgery (SSRF)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>

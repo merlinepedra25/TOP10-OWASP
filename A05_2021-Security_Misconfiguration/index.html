@@ -123,8 +123,26 @@
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../pt_BR/" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../it/" hreflang="it" class="md-select__link">
                     Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
                   </a>
                 </li>
                 
@@ -633,10 +651,10 @@
 <th align="center">CWEs Mapped</th>
 <th align="center">Max Incidence Rate</th>
 <th align="center">Avg Incidence Rate</th>
-<th align="center">Max Coverage</th>
-<th align="center">Avg Coverage</th>
 <th align="center">Avg Weighted Exploit</th>
 <th align="center">Avg Weighted Impact</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
 <th align="center">Total Occurrences</th>
 <th align="center">Total CVEs</th>
 </tr>
@@ -646,10 +664,10 @@
 <td align="center">20</td>
 <td align="center">19.84%</td>
 <td align="center">4.51%</td>
-<td align="center">89.58%</td>
-<td align="center">44.84%</td>
 <td align="center">8.12</td>
 <td align="center">6.56</td>
+<td align="center">89.58%</td>
+<td align="center">44.84%</td>
 <td align="center">208,387</td>
 <td align="center">789</td>
 </tr>
@@ -657,8 +675,7 @@
 </table>
 <h2 id="overview">Overview</h2>
 <p>Moving up from #6 in the previous edition, 90% of applications were
-tested for some form of misconfiguration. With more shifts into highly
-configurable software, it's not surprising to see this category move up.
+tested for some form of misconfiguration, with an average incidence rate of 4.%, and over 208k occurences of a CWE in this risk category. With more shifts into highly configurable software, it's not surprising to see this category move up.
 Notable CWEs included are <em>CWE-16 Configuration</em> and <em>CWE-611 Improper
 Restriction of XML External Entity Reference</em>.</p>
 <h2 id="description">Description</h2>
@@ -762,7 +779,7 @@ sensitive data stored within cloud storage to be accessed.</p>
     Management</a></p>
 </li>
 <li>
-<p>OWASP Testing Guide: Testing for Error Codes</p>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/01-Testing_For_Improper_Error_Handling">OWASP Testing Guide: Testing for Error Codes</a></p>
 </li>
 <li>
 <p>Application Security Verification Standard V19 Configuration</p>
@@ -781,28 +798,26 @@ sensitive data stored within cloud storage to be accessed.</p>
 </li>
 </ul>
 <h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
-<p>CWE-2 Configuration</p>
-<p>CWE-11 ASP.NET Misconfiguration: Creating Debug Binary</p>
-<p>CWE-13 ASP.NET Misconfiguration: Password in Configuration File</p>
-<p>CWE-15 External Control of System or Configuration Setting</p>
-<p>CWE-16 Configuration</p>
-<p>CWE-260 Password in Configuration File</p>
-<p>CWE-315 Cleartext Storage of Sensitive Information in a Cookie</p>
-<p>CWE-520 .NET Misconfiguration: Use of Impersonation</p>
-<p>CWE-526 Exposure of Sensitive Information Through Environmental
-Variables</p>
-<p>CWE-537 Java Runtime Error Message Containing Sensitive Information</p>
-<p>CWE-541 Inclusion of Sensitive Information in an Include File</p>
-<p>CWE-547 Use of Hard-coded, Security-relevant Constants</p>
-<p>CWE-611 Improper Restriction of XML External Entity Reference</p>
-<p>CWE-614 Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</p>
-<p>CWE-756 Missing Custom Error Page</p>
-<p>CWE-776 Improper Restriction of Recursive Entity References in DTDs
-('XML Entity Expansion')</p>
-<p>CWE-942 Overly Permissive Cross-domain Whitelist</p>
-<p>CWE-1004 Sensitive Cookie Without 'HttpOnly' Flag</p>
-<p>CWE-1032 OWASP Top Ten 2017 Category A6 - Security Misconfiguration</p>
-<p>CWE-1174 ASP.NET Misconfiguration: Improper Model Validation</p>
+<p><a href="https://cwe.mitre.org/data/definitions/2.html">CWE-2 7PK - Environment</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/11.html">CWE-11 ASP.NET Misconfiguration: Creating Debug Binary</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/13.html">CWE-13 ASP.NET Misconfiguration: Password in Configuration File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/15.html">CWE-15 External Control of System or Configuration Setting</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/16.html">CWE-16 Configuration</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/260.html">CWE-260 Password in Configuration File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/315.html">CWE-315 Cleartext Storage of Sensitive Information in a Cookie</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/520.html">CWE-520 .NET Misconfiguration: Use of Impersonation</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/526.html">CWE-526 Exposure of Sensitive Information Through Environmental Variables</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/537.html">CWE-537 Java Runtime Error Message Containing Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/541.html">CWE-541 Inclusion of Sensitive Information in an Include File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/547.html">CWE-547 Use of Hard-coded, Security-relevant Constants</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611 Improper Restriction of XML External Entity Reference</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/614.html">CWE-614 Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/756.html">CWE-756 Missing Custom Error Page</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/776.html">CWE-776 Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/942.html">CWE-942 Overly Permissive Cross-domain Whitelist</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1004.html">CWE-1004 Sensitive Cookie Without 'HttpOnly' Flag</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1032.html">CWE-1032 OWASP Top Ten 2017 Category A6 - Security Misconfiguration</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1174.html">CWE-1174 ASP.NET Misconfiguration: Improper Model Validation</a></p>
                 
               
               

@@ -123,8 +123,26 @@
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../pt_BR/" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../it/" hreflang="it" class="md-select__link">
                     Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
                   </a>
                 </li>
                 
@@ -633,10 +651,10 @@
 <th align="center">CWEs Mapped</th>
 <th align="center">Max Incidence Rate</th>
 <th align="center">Avg Incidence Rate</th>
-<th align="center">Max Coverage</th>
-<th align="center">Avg Coverage</th>
 <th align="center">Avg Weighted Exploit</th>
 <th align="center">Avg Weighted Impact</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
 <th align="center">Total Occurrences</th>
 <th align="center">Total CVEs</th>
 </tr>
@@ -646,10 +664,10 @@
 <td align="center">10</td>
 <td align="center">16.67%</td>
 <td align="center">2.05%</td>
-<td align="center">75.04%</td>
-<td align="center">45.35%</td>
 <td align="center">6.94</td>
 <td align="center">7.94</td>
+<td align="center">75.04%</td>
+<td align="center">45.35%</td>
 <td align="center">47,972</td>
 <td align="center">1,152</td>
 </tr>
@@ -707,7 +725,7 @@ installations.</p>
 set of Spring Boot microservices. Being functional programmers, they
 tried to ensure that their code is immutable. The solution they came up
 with is serializing the user state and passing it back and forth with
-each request. An attacker notices the "R00" Java object signature and
+each request. An attacker notices the "rO0" Java object signature (in base64) and
 uses the Java Serial Killer tool to gain remote code execution on the
 application server.</p>
 <p><strong>Scenario #2 Update without signing:</strong> Many home routers, set-top
@@ -727,8 +745,7 @@ most significant breaches of this nature in history.</p>
 <h2 id="references">References</h2>
 <ul>
 <li>
-<p>[OWASP Cheat Sheet: Deserialization](
-    <a href="https://www.owasp.org/index.php/Deserialization_Cheat_Sheet">https://www.owasp.org/index.php/Deserialization_Cheat_Sheet</a>)</p>
+<p><a href="https://www.owasp.org/index.php/Deserialization_Cheat_Sheet">OWASP Cheat Sheet: Deserialization</a></p>
 </li>
 <li>
 <p>[OWASP Cheat Sheet: Software Supply Chain Security]()</p>
@@ -737,31 +754,29 @@ most significant breaches of this nature in history.</p>
 <p>[OWASP Cheat Sheet: Secure build and deployment]()</p>
 </li>
 <li>
-<p>[SAFECode Software Integrity Controls](
-    https://safecode.org/publication/SAFECode_Software_Integrity_Controls0610.pdf)</p>
+<p><a href="https://safecode.org/publication/SAFECode_Software_Integrity_Controls0610.pdf">SAFECode Software Integrity Controls</a></p>
 </li>
 <li>
-<p>[A 'Worst Nightmare' Cyberattack: The Untold Story Of The
+<p><a href="https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack">A 'Worst Nightmare' Cyberattack: The Untold Story Of The
     SolarWinds
-    Hack](<a href="https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack">https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack</a>)</p>
+    Hack</a></p>
 </li>
 <li>
 <p><a href="https://www.manning.com/books/securing-devops">https://www.manning.com/books/securing-devops</a></p>
 </li>
 </ul>
 <h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
-<p>CWE-345 Insufficient Verification of Data Authenticity</p>
-<p>CWE-353 Missing Support for Integrity Check</p>
-<p>CWE-426 Untrusted Search Path</p>
-<p>CWE-494 Download of Code Without Integrity Check</p>
-<p>CWE-502 Deserialization of Untrusted Data</p>
-<p>CWE-565 Reliance on Cookies without Validation and Integrity Checking</p>
-<p>CWE-784 Reliance on Cookies without Validation and Integrity Checking in
-a Security Decision</p>
-<p>CWE-829 Inclusion of Functionality from Untrusted Control Sphere</p>
-<p>CWE-830 Inclusion of Web Functionality from an Untrusted Source</p>
-<p>CWE-915 Improperly Controlled Modification of Dynamically-Determined
-Object Attributes</p>
+<p><a href="https://cwe.mitre.org/data/definitions/345.html">CWE-345 Insufficient Verification of Data Authenticity</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353 Missing Support for Integrity Check</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/426.html">CWE-426 Untrusted Search Path</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/494.html">CWE-494 Download of Code Without Integrity Check</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502 Deserialization of Untrusted Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/565.html">CWE-565 Reliance on Cookies without Validation and Integrity Checking</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/784.html">CWE-784 Reliance on Cookies without Validation and Integrity Checking in
+a Security Decision</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/829.html">CWE-829 Inclusion of Functionality from Untrusted Control Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/830.html">CWE-830 Inclusion of Web Functionality from an Untrusted Source</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/915.html">CWE-915 Improperly Controlled Modification of Dynamically-Determined Object Attributes</a></p>
                 
               
               

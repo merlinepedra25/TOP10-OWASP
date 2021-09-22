@@ -123,8 +123,26 @@
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../../it/" hreflang="it" class="md-select__link">
                     Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
                   </a>
                 </li>
                 
@@ -633,10 +651,10 @@
 <th align="center">CWEs Mapped</th>
 <th align="center">Max Incidence Rate</th>
 <th align="center">Avg Incidence Rate</th>
-<th align="center">Max Coverage</th>
-<th align="center">Avg Coverage</th>
 <th align="center">Avg Weighted Exploit</th>
 <th align="center">Avg Weighted Impact</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
 <th align="center">Total Occurrences</th>
 <th align="center">Total CVEs</th>
 </tr>
@@ -646,17 +664,17 @@
 <td align="center">4</td>
 <td align="center">19.23%</td>
 <td align="center">6.51%</td>
-<td align="center">53.67%</td>
-<td align="center">39.97%</td>
 <td align="center">6.87</td>
 <td align="center">4.99</td>
+<td align="center">53.67%</td>
+<td align="center">39.97%</td>
 <td align="center">53,615</td>
 <td align="center">242</td>
 </tr>
 </tbody>
 </table>
 <h2 id="overview">Overview</h2>
-<p>Security logging and monitoring came from the industry survey (#3), up
+<p>Security logging and monitoring came from the Top 10 community survey (#3), up
 slightly from the tenth position in the OWASP Top 10 2017. Logging and
 monitoring can be challenging to test, often involving interviews or
 asking if attacks were detected during a penetration test. There isn't
@@ -704,8 +722,8 @@ detection, monitoring, and active response occurs any time:</p>
 events visible to a user or an attacker (see A01:2021 – Broken Access
 Control).</p>
 <h2 id="how-to-prevent">How to Prevent</h2>
-<p>Developers should implement some or all the following controls, d
-epending on the risk of the application:</p>
+<p>Developers should implement some or all the following controls, 
+depending on the risk of the application:</p>
 <ul>
 <li>
 <p>Ensure all login, access control, and server-side input validation
@@ -774,8 +792,12 @@ result by the privacy regulator.</p>
     Code</a></p>
 </li>
 <li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Application_Logging_Vocabulary_Cheat_Sheet.html">OWASP Cheat Sheet:
+    Application Logging Vocabulary</a></p>
+</li>
+<li>
 <p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html">OWASP Cheat Sheet:
-    Logging</a></p>
+    Logging</a>)   </p>
 </li>
 <li>
 <p><a href="https://csrc.nist.gov/publications/detail/sp/1800-11/final">Data Integrity: Recovering from Ransomware and Other Destructive
@@ -793,10 +815,10 @@ result by the privacy regulator.</p>
 </li>
 </ul>
 <h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
-<p>CWE-117 Improper Output Neutralization for Logs</p>
-<p>CWE-223 Omission of Security-relevant Information</p>
-<p>CWE-532 Insertion of Sensitive Information into Log File</p>
-<p>CWE-778 Insufficient Logging</p>
+<p><a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117 Improper Output Neutralization for Logs</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/223.html">CWE-223 Omission of Security-relevant Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/532.html">CWE-532 Insertion of Sensitive Information into Log File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/778.html">CWE-778 Insufficient Logging</a></p>
                 
               
               

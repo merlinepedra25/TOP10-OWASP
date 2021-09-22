@@ -16,7 +16,7 @@
     
     
       
-        <title>A07 Identification and Authentication Failures - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
+        <title>A07 Identification et authentification de mauvaise qualité - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
       
     
     
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              A07 Identification and Authentication Failures
+              A07 Identification et authentification de mauvaise qualité
             
           </span>
         </div>
@@ -123,8 +123,26 @@
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../../it/" hreflang="it" class="md-select__link">
                     Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
                   </a>
                 </li>
                 
@@ -277,7 +295,7 @@
   
     <li class="md-nav__item">
       <a href="../A00-about-owasp/" class="md-nav__link">
-        About OWASP
+        À propos de l'OWASP
       </a>
     </li>
   
@@ -317,7 +335,7 @@
   
     <li class="md-nav__item">
       <a href="../A01_2021-Broken_Access_Control/" class="md-nav__link">
-        A01 Contrôle d'accès cassé
+        A01 Contrôle d'accès rompu
       </a>
     </li>
   
@@ -329,7 +347,7 @@
   
     <li class="md-nav__item">
       <a href="../A02_2021-Cryptographic_Failures/" class="md-nav__link">
-        A02 Cryptographic Failures
+        A02 Défaillances cryptographiques
       </a>
     </li>
   
@@ -353,7 +371,7 @@
   
     <li class="md-nav__item">
       <a href="../A04_2021-Insecure_Design/" class="md-nav__link">
-        A04 Insecure Design
+        A04 Conception fragile
       </a>
     </li>
   
@@ -365,7 +383,7 @@
   
     <li class="md-nav__item">
       <a href="../A05_2021-Security_Misconfiguration/" class="md-nav__link">
-        A05 Security Misconfiguration
+        A05 Mauvaise configuration de sécurité
       </a>
     </li>
   
@@ -377,7 +395,7 @@
   
     <li class="md-nav__item">
       <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-nav__link">
-        A06 Vulnerable and Outdated Components
+        A06 Composants vulnérables et obsolètes
       </a>
     </li>
   
@@ -398,12 +416,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          A07 Identification and Authentication Failures
+          A07 Identification et authentification de mauvaise qualité
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        A07 Identification and Authentication Failures
+        A07 Identification et authentification de mauvaise qualité
       </a>
       
         
@@ -483,7 +501,7 @@
   
     <li class="md-nav__item">
       <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-nav__link">
-        A08 Software and Data Integrity Failures
+        A08 Manque d'intégrité des données et du logiciel
       </a>
     </li>
   
@@ -495,7 +513,7 @@
   
     <li class="md-nav__item">
       <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-nav__link">
-        A09 Security Logging and Monitoring Failures
+        A09 Carence des systèmes de contrôle et de journalisation
       </a>
     </li>
   
@@ -507,7 +525,7 @@
   
     <li class="md-nav__item">
       <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="md-nav__link">
-        A10 Server Side Request Forgery (SSRF)
+        A10 Falsification de requête côté serveur
       </a>
     </li>
   
@@ -528,7 +546,7 @@
   
     <li class="md-nav__item">
       <a href="../A11_2021-Next_Steps/" class="md-nav__link">
-        Next Steps
+        Étapes suivantes
       </a>
     </li>
   
@@ -633,10 +651,10 @@
 <th align="center">CWEs Mapped</th>
 <th align="center">Max Incidence Rate</th>
 <th align="center">Avg Incidence Rate</th>
-<th align="center">Max Coverage</th>
-<th align="center">Avg Coverage</th>
 <th align="center">Avg Weighted Exploit</th>
 <th align="center">Avg Weighted Impact</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
 <th align="center">Total Occurrences</th>
 <th align="center">Total CVEs</th>
 </tr>
@@ -646,10 +664,10 @@
 <td align="center">22</td>
 <td align="center">14.84%</td>
 <td align="center">2.55%</td>
-<td align="center">79.51%</td>
-<td align="center">45.72%</td>
 <td align="center">7.40</td>
 <td align="center">6.50</td>
+<td align="center">79.51%</td>
+<td align="center">45.72%</td>
 <td align="center">132,195</td>
 <td align="center">3,897</td>
 </tr>
@@ -684,16 +702,16 @@ attacks. There may be authentication weaknesses if the application:</p>
 </li>
 <li>
 <p>Uses plain text, encrypted, or weakly hashed passwords (see
-    A3:2017-Sensitive Data Exposure).</p>
+    A2:2021-Cryptographic Failures).</p>
 </li>
 <li>
 <p>Has missing or ineffective multi-factor authentication.</p>
 </li>
 <li>
-<p>Exposes Session IDs in the URL (e.g., URL rewriting).</p>
+<p>Exposes session identifier in the URL.</p>
 </li>
 <li>
-<p>Do not rotate Session IDs after successful login.</p>
+<p>Reuse session identifier after successful login.</p>
 </li>
 <li>
 <p>Does not correctly invalidate Session IDs. User sessions or
@@ -727,13 +745,13 @@ attacks. There may be authentication weaknesses if the application:</p>
     messages for all outcomes.</p>
 </li>
 <li>
-<p>Limit or increasingly delay failed login attempts. Log all failures
+<p>Limit or increasingly delay failed login attempts, but be careful not to create a denial of service scenario. Log all failures
     and alert administrators when credential stuffing, brute force, or
     other attacks are detected.</p>
 </li>
 <li>
 <p>Use a server-side, secure, built-in session manager that generates a
-    new random session ID with high entropy after login. Session IDs
+    new random session ID with high entropy after login. Session identifier
     should not be in the URL, be securely stored, and invalidated after
     logout, idle, and absolute timeouts.</p>
 </li>
@@ -769,21 +787,21 @@ still authenticated.</p>
     Management</a></p>
 </li>
 <li>
-<p>OWASP Testing Guide: Identity, Authentication</p>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/README">OWASP Testing Guide: Identity</a>, <a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/README">Authentication</a></p>
 </li>
 <li>
 <p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html">OWASP Cheat Sheet:
     Authentication</a></p>
 </li>
 <li>
-<p>OWASP Cheat Sheet: Credential Stuffing</p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Credential_Stuffing_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: Credential Stuffing</a></p>
 </li>
 <li>
 <p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html">OWASP Cheat Sheet: Forgot
     Password</a></p>
 </li>
 <li>
-<p>OWASP Cheat Sheet: Session Management</p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html">OWASP Cheat Sheet: Session Management</a></p>
 </li>
 <li>
 <p><a href="https://owasp.org/www-project-automated-threats-to-web-applications/">OWASP Automated Threats
@@ -794,28 +812,28 @@ still authenticated.</p>
 </li>
 </ul>
 <h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
-<p>CWE-255 Credentials Management Errors</p>
-<p>CWE-259 Use of Hard-coded Password</p>
-<p>CWE-287 Improper Authentication</p>
-<p>CWE-288 Authentication Bypass Using an Alternate Path or Channel</p>
-<p>CWE-290 Authentication Bypass by Spoofing</p>
-<p>CWE-294 Authentication Bypass by Capture-replay</p>
-<p>CWE-295 Improper Certificate Validation</p>
-<p>CWE-297 Improper Validation of Certificate with Host Mismatch</p>
-<p>CWE-300 Channel Accessible by Non-Endpoint</p>
-<p>CWE-302 Authentication Bypass by Assumed-Immutable Data</p>
-<p>CWE-304 Missing Critical Step in Authentication</p>
-<p>CWE-306 Missing Authentication for Critical Function</p>
-<p>CWE-307 Improper Restriction of Excessive Authentication Attempts</p>
-<p>CWE-346 Origin Validation Error</p>
-<p>CWE-384 Session Fixation</p>
-<p>CWE-521 Weak Password Requirements</p>
-<p>CWE-613 Insufficient Session Expiration</p>
-<p>CWE-620 Unverified Password Change</p>
-<p>CWE-640 Weak Password Recovery Mechanism for Forgotten Password</p>
-<p>CWE-798 Use of Hard-coded Credentials</p>
-<p>CWE-940 Improper Verification of Source of a Communication Channel</p>
-<p>CWE-1216 Lockout Mechanism Errors</p>
+<p><a href="https://cwe.mitre.org/data/definitions/255.html">CWE-255 Credentials Management Errors</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259 Use of Hard-coded Password</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/287.html">CWE-287 Improper Authentication</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/288.html">CWE-288 Authentication Bypass Using an Alternate Path or Channel</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/290.html">CWE-290 Authentication Bypass by Spoofing</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/294.html">CWE-294 Authentication Bypass by Capture-replay</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295 Improper Certificate Validation</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/297.html">CWE-297 Improper Validation of Certificate with Host Mismatch</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/300.html">CWE-300 Channel Accessible by Non-Endpoint</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/302.html">CWE-302 Authentication Bypass by Assumed-Immutable Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/304.html">CWE-304 Missing Critical Step in Authentication</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/306.html">CWE-306 Missing Authentication for Critical Function</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/307.html">CWE-307 Improper Restriction of Excessive Authentication Attempts</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/346.html">CWE-346 Origin Validation Error</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/384.html">CWE-384 Session Fixation</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/521.html">CWE-521 Weak Password Requirements</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/613.html">CWE-613 Insufficient Session Expiration</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/620.html">CWE-620 Unverified Password Change</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/640.html">CWE-640 Weak Password Recovery Mechanism for Forgotten Password</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/798.html">CWE-798 Use of Hard-coded Credentials</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/940.html">CWE-940 Improper Verification of Source of a Communication Channel</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1216.html">CWE-1216 Lockout Mechanism Errors</a></p>
                 
               
               
@@ -835,7 +853,7 @@ still authenticated.</p>
     <nav class="md-footer__inner md-grid" aria-label="Pied de page">
       
         
-        <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: A06 Vulnerable and Outdated Components" rel="prev">
+        <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: A06 Composants vulnérables et obsolètes" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -844,20 +862,20 @@ still authenticated.</p>
               <span class="md-footer__direction">
                 Précédent
               </span>
-              A06 Vulnerable and Outdated Components
+              A06 Composants vulnérables et obsolètes
             </div>
           </div>
         </a>
       
       
         
-        <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-footer__link md-footer__link--next" aria-label="Suivant: A08 Software and Data Integrity Failures" rel="next">
+        <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="md-footer__link md-footer__link--next" aria-label="Suivant: A08 Manque d&#39;intégrité des données et du logiciel" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              A08 Software and Data Integrity Failures
+              A08 Manque d'intégrité des données et du logiciel
             </div>
           </div>
           <div class="md-footer__button md-icon">
