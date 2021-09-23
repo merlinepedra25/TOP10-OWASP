@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="OWASP Top 10:2021 (DRAFT)">
+        <meta name="description" content="OWASP Top 10:2021">
       
       
       
@@ -16,7 +16,7 @@
     
     
       
-        <title>A07 Identification and Authentication Failures - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
+        <title>A07 Identification and Authentication Failures - OWASP Top 10:2021</title>
       
     
     
@@ -74,7 +74,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-header__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+    <a href="../.." title="OWASP Top 10:2021" class="md-header__button md-logo" aria-label="OWASP Top 10:2021" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -87,7 +87,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+            OWASP Top 10:2021
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -117,20 +117,8 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../fr/" hreflang="fr" class="md-select__link">
-                    Français
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../ja/" hreflang="ja" class="md-select__link">
-                    Japanese
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    Italiano
                   </a>
                 </li>
                 
@@ -141,8 +129,20 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../it/" hreflang="it" class="md-select__link">
-                    Italiano
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    Français
                   </a>
                 </li>
                 
@@ -187,13 +187,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+    <a href="../.." title="OWASP Top 10:2021" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+    OWASP Top 10:2021
   </label>
   
     <div class="md-nav__source">
@@ -675,7 +675,8 @@
 </table>
 <h2 id="overview">Overview</h2>
 <p>Previously known as <em>Broken Authentication</em>, this category slid down
-from the second position and now includes CWEs related to identification
+from the second position and now includes Common Weakness 
+Enumerations (CWEs) related to identification
 failures. Notable CWEs included are <em>CWE-297: Improper Validation of
 Certificate with Host Mismatch</em>, <em>CWE-287: Improper Authentication</em>, and
 <em>CWE-384: Session Fixation</em>.</p>
@@ -693,7 +694,7 @@ attacks. There may be authentication weaknesses if the application:</p>
 </li>
 <li>
 <p>Permits default, weak, or well-known passwords, such as "Password1"
-    or "admin/admin. "</p>
+    or "admin/admin".</p>
 </li>
 <li>
 <p>Uses weak or ineffective credential recovery and forgot-password
@@ -701,8 +702,8 @@ attacks. There may be authentication weaknesses if the application:</p>
     safe.</p>
 </li>
 <li>
-<p>Uses plain text, encrypted, or weakly hashed passwords (see
-    A2:2021-Cryptographic Failures).</p>
+<p>Uses plain text, encrypted, or weakly hashed passwords data stores (see
+    <strong>A02:2021-Cryptographic Failures</strong>).</p>
 </li>
 <li>
 <p>Has missing or ineffective multi-factor authentication.</p>
@@ -735,7 +736,10 @@ attacks. There may be authentication weaknesses if the application:</p>
     passwords against the top 10,000 worst passwords list.</p>
 </li>
 <li>
-<p>Align password length, complexity, and rotation policies with NIST
+<p>Align password length, complexity, and rotation policies with N</p>
+</li>
+<li>
+<p>National Institute of Standards and Technology (NIST)
     800-63b's guidelines in section 5.1.1 for Memorized Secrets or other
     modern, evidence-based password policies.</p>
 </li>

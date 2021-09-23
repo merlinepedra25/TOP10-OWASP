@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="OWASP Top 10:2021 (DRAFT)">
+        <meta name="description" content="OWASP Top 10:2021">
       
       
       
@@ -16,7 +16,7 @@
     
     
       
-        <title>A10 Server Side Request Forgery (SSRF) - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
+        <title>A10 Server Side Request Forgery (SSRF) - OWASP Top 10:2021</title>
       
     
     
@@ -74,7 +74,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-header__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+    <a href=".." title="OWASP Top 10:2021" class="md-header__button md-logo" aria-label="OWASP Top 10:2021" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -87,7 +87,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+            OWASP Top 10:2021
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -117,20 +117,8 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../fr/" hreflang="fr" class="md-select__link">
-                    Français
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../ja/" hreflang="ja" class="md-select__link">
-                    Japanese
+                  <a href="../it/" hreflang="it" class="md-select__link">
+                    Italiano
                   </a>
                 </li>
                 
@@ -141,8 +129,20 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../it/" hreflang="it" class="md-select__link">
-                    Italiano
+                  <a href="../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../fr/" hreflang="fr" class="md-select__link">
+                    Français
                   </a>
                 </li>
                 
@@ -187,13 +187,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+    <a href=".." title="OWASP Top 10:2021" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+    OWASP Top 10:2021
   </label>
   
     <div class="md-nav__source">
@@ -731,7 +731,8 @@
 <p>This category is added from the Top 10 community survey (#1). The data shows a
 relatively low incidence rate with above average testing coverage and
 above-average Exploit and Impact potential ratings. As new entries are
-likely to be a single or small cluster of CWEs for attention and
+likely to be a single or small cluster of Common Weakness Enumerations (CWEs)
+for attention and
 awareness, the hope is that they are subject to focus and can be rolled
 into a larger category in a future edition.</p>
 <h2 id="description">Description</h2>
@@ -739,7 +740,7 @@ into a larger category in a future edition.</p>
 resource without validating the user-supplied URL. It allows an attacker
 to coerce the application to send a crafted request to an unexpected
 destination, even when protected by a firewall, VPN, or another type of
-network ACL.</p>
+network access control list (ACL).</p>
 <p>As modern web applications provide end-users with convenient features,
 fetching a URL becomes a common scenario. As a result, the incidence of
 SSRF is increasing. Also, the severity of SSRF is becoming higher due to
@@ -759,7 +760,7 @@ defense in depth controls:</p>
     <em>Hints:</em><br> 
     ~ Establish an ownership and a lifecycle for firewall rules based on applications.<br/>
     ~ Log all accepted <em>and</em> blocked network flows on firewalls
-    (see <strong>A09:2021-Security Logging and Monitoring Failures</strong>).</p>
+    (see <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/">A09:2021-Security Logging and Monitoring Failures</a>).</p>
 </li>
 </ul>
 <h3 id="from-application-layer"><strong>From Application layer:</strong></h3>

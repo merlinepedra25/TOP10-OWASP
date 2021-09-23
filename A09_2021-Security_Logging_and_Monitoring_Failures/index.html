@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="OWASP Top 10:2021 (DRAFT)">
+        <meta name="description" content="OWASP Top 10:2021">
       
       
       
@@ -16,7 +16,7 @@
     
     
       
-        <title>A09 Security Logging and Monitoring Failures - OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)</title>
+        <title>A09 Security Logging and Monitoring Failures - OWASP Top 10:2021</title>
       
     
     
@@ -74,7 +74,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-header__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+    <a href=".." title="OWASP Top 10:2021" class="md-header__button md-logo" aria-label="OWASP Top 10:2021" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -87,7 +87,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+            OWASP Top 10:2021
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -117,20 +117,8 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../fr/" hreflang="fr" class="md-select__link">
-                    Français
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../ja/" hreflang="ja" class="md-select__link">
-                    Japanese
+                  <a href="../it/" hreflang="it" class="md-select__link">
+                    Italiano
                   </a>
                 </li>
                 
@@ -141,8 +129,20 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../it/" hreflang="it" class="md-select__link">
-                    Italiano
+                  <a href="../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../fr/" hreflang="fr" class="md-select__link">
+                    Français
                   </a>
                 </li>
                 
@@ -187,13 +187,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)" data-md-component="logo">
+    <a href=".." title="OWASP Top 10:2021" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    OWASP Top 10:2021 (DRAFT FOR PEER REVIEW)
+    OWASP Top 10:2021
   </label>
   
     <div class="md-nav__source">
@@ -710,7 +710,7 @@ detection, monitoring, and active response occurs any time:</p>
     are not in place or effective.</p>
 </li>
 <li>
-<p>Penetration testing and scans by DAST tools (such as OWASP ZAP) do
+<p>Penetration testing and scans by dynamic application security testing (DAST) tools (such as OWASP ZAP) do
     not trigger alerts.</p>
 </li>
 <li>
@@ -719,8 +719,7 @@ detection, monitoring, and active response occurs any time:</p>
 </li>
 </ul>
 <p>You are vulnerable to information leakage by making logging and alerting
-events visible to a user or an attacker (see A01:2021 – Broken Access
-Control).</p>
+events visible to a user or an attacker (see <a href="../A01_2021-Broken_Access_Control/">A01:2021-Broken Access Control</a>).</p>
 <h2 id="how-to-prevent">How to Prevent</h2>
 <p>Developers should implement some or all the following controls, 
 depending on the risk of the application:</p>
@@ -751,13 +750,13 @@ depending on the risk of the application:</p>
 </li>
 <li>
 <p>Establish or adopt an incident response and recovery plan, such as
-    NIST 800-61r2 or later.</p>
+    National Institute of Standards and Technology (NIST) 800-61r2 or later.</p>
 </li>
 </ul>
 <p>There are commercial and open-source application protection frameworks
 such as the OWASP ModSecurity Core Rule Set, and open-source log
-correlation software, such as the ELK stack, that feature custom
-dashboards and alerting.</p>
+correlation software, such as the Elasticsearch, Logstash, Kibana (ELK)
+stack, that feature custom dashboards and alerting.</p>
 <h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
 <p><strong>Scenario #1:</strong> A childrens' health plan provider's website operator
 couldn't detect a breach due to a lack of monitoring and logging. An
