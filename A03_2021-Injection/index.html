@@ -123,6 +123,12 @@
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../ja/" hreflang="ja" class="md-select__link">
                     Japanese
                   </a>
@@ -137,12 +143,6 @@
                 <li class="md-select__item">
                   <a href="../it/" hreflang="it" class="md-select__link">
                     Italiano
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    繁體中文
                   </a>
                 </li>
                 
@@ -319,13 +319,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       <label class="md-nav__link" for="__nav_7">
-        Top 10 List
+        Top 10:2021 List
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Top 10 List" data-md-level="1">
+      <nav class="md-nav" aria-label="Top 10:2021 List" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          Top 10 List
+          Top 10:2021 List
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -740,22 +740,17 @@ deployment.</p>
 <h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
 <p><strong>Scenario #1:</strong> An application uses untrusted data in the construction
 of the following vulnerable SQL call:</p>
-<blockquote>
-<p>String query = "SELECT * FROM accounts WHERE custID='" +
-request.getParameter("id") + "'";</p>
-</blockquote>
+<pre><code>String query = &quot;SELECT \* FROM accounts WHERE custID='&quot; + request.getParameter(&quot;id&quot;) + &quot;'&quot;;
+</code></pre>
 <p><strong>Scenario #2:</strong> Similarly, an application’s blind trust in frameworks
 may result in queries that are still vulnerable, (e.g., Hibernate Query
 Language (HQL)):</p>
-<blockquote>
-<p>Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" +
-request.getParameter("id") + "'");</p>
-</blockquote>
+<pre><code> Query HQLQuery = session.createQuery(&quot;FROM accounts WHERE custID='&quot; + request.getParameter(&quot;id&quot;) + &quot;'&quot;);
+</code></pre>
 <p>In both cases, the attacker modifies the ‘id’ parameter value in their
 browser to send: ‘ or ‘1’=’1. For example:</p>
-<blockquote>
-<p>htt<span>p://example.com/app/accountView?id=' or '1'='1</span></p>
-</blockquote>
+<pre><code> http://example.com/app/accountView?id=' or '1'='1
+</code></pre>
 <p>This changes the meaning of both queries to return all the records from
 the accounts table. More dangerous attacks could modify or delete data
 or even invoke stored procedures.</p>

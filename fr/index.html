@@ -123,6 +123,12 @@
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../ja/" hreflang="ja" class="md-select__link">
                     Japanese
                   </a>
@@ -137,12 +143,6 @@
                 <li class="md-select__item">
                   <a href="../it/" hreflang="it" class="md-select__link">
                     Italiano
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    繁體中文
                   </a>
                 </li>
                 
@@ -252,18 +252,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#whats-changed-in-the-top-10-for-2021" class="md-nav__link">
-    What's changed in the Top 10 for 2021
+  <a href="#les-changements-du-top-10-pour-2021" class="md-nav__link">
+    Les changements du Top 10 pour 2021
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#methodology" class="md-nav__link">
-    Methodology
+  <a href="#methodologie" class="md-nav__link">
+    Méthodologie
   </a>
   
-    <nav class="md-nav" aria-label="Methodology">
+    <nav class="md-nav" aria-label="Méthodologie">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -435,7 +435,7 @@
   
     <li class="md-nav__item">
       <a href="A01_2021-Broken_Access_Control/" class="md-nav__link">
-        A01 Contrôle d'accès rompu
+        A01 Ruptures de contrôles d'accès
       </a>
     </li>
   
@@ -471,7 +471,7 @@
   
     <li class="md-nav__item">
       <a href="A04_2021-Insecure_Design/" class="md-nav__link">
-        A04 Conception fragile
+        A04 Conception non sécurisée
       </a>
     </li>
   
@@ -543,7 +543,7 @@
   
     <li class="md-nav__item">
       <a href="A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="md-nav__link">
-        A10 Falsification de requête côté serveur
+        A10 Falsification de requête côté serveur (SSRF)
       </a>
     </li>
   
@@ -596,18 +596,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#whats-changed-in-the-top-10-for-2021" class="md-nav__link">
-    What's changed in the Top 10 for 2021
+  <a href="#les-changements-du-top-10-pour-2021" class="md-nav__link">
+    Les changements du Top 10 pour 2021
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#methodology" class="md-nav__link">
-    Methodology
+  <a href="#methodologie" class="md-nav__link">
+    Méthodologie
   </a>
   
-    <nav class="md-nav" aria-label="Methodology">
+    <nav class="md-nav" aria-label="Méthodologie">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -682,83 +682,66 @@
                 
                 
                 <h1 id="introduction-a-lowasp-top-10-2021">Introduction à l'OWASP Top 10 2021</h1>
-<p>Welcome to the latest installment of the OWASP Top 10! The OWASP Top 10
-2021 is all-new, with a new graphic design and an available one-page
-infographic you can print or obtain from our home page.</p>
-<p>A huge thank you to everyone that contributed their time and data for
-this iteration. Without you, this installment would not happen. <strong>THANK
-YOU</strong>.</p>
-<h2 id="whats-changed-in-the-top-10-for-2021">What's changed in the Top 10 for 2021</h2>
-<p>There are three new categories, four categories with naming and scoping
-changes, and some consolidation in the Top 10 for 2021.</p>
-<p><img src="./assets/image1.png" style="width:6.5in;height:1.78889in" alt="Mapping of the relationship between the Top 10 2017 and the new Top 10 2021" /></p>
-<p><strong>A01:2021-Broken Access Control</strong> moves up from the fifth position; 94%
-of applications were tested for some form of broken access control. The
-34 CWEs mapped to Broken Access Control had more occurrences in
-applications than any other category.</p>
-<p><strong>A02:2021-Cryptographic Failures</strong> shifts up one position to #2,
-previously known as <em>Sensitive Data Exposure,</em> which was broad symptom
-rather than a root cause. The renewed focus here is on failures related
-to cryptography which often leads to sensitive data exposure or system
-compromise.</p>
-<p><strong>A03:2021-Injection</strong> slides down to the third position. 94% of the
-applications were tested for some form of injection, and the 33 CWEs
-mapped into this category have the second most occurrences in
-applications. Cross-site Scripting is now part of this category in this
-edition.</p>
-<p><strong>A04:2021-Insecure Design</strong> is a new category for 2021, with a focus on
-risks related to design flaws. If we genuinely want to "move left" as an
-industry, it calls for more use of threat modeling, secure design
-patterns and principles, and reference architectures.</p>
-<p><strong>A05:2021-Security Misconfiguration</strong> moves up from #6 in the previous
-edition; 90% of applications were tested for some form of
-misconfiguration. With more shifts into highly configurable software,
-it's not surprising to see this category move up. The former category
-for XML External Entities (XXE) is now part of this category.</p>
-<p><strong>A06:2021-Vulnerable and Outdated Components</strong> was previously titled
-<em>Using Components with Known Vulnerabilities</em> and is #2 in the industry
-survey, but also had enough data to make the Top 10 via data analysis.
-This category moves up from #9 in 2017 and is a known issue that we
-struggle to test and assess risk. It is the only category not to have
-any CVEs mapped to the included CWEs, so a default exploit and impact
-weights of 5.0 are factored into their scores.</p>
-<p><strong>A07:2021-Identification and Authentication Failures</strong> was previously
-<em>Broken Authentication</em> and is sliding down from the second position,
-and now includes CWEs that are more related to identification failures.
-This category is still an integral part of the Top 10, but the increased
-availability of standardized frameworks seems to be helping.</p>
-<p><strong>A08:2021-Software and Data Integrity Failures</strong> is a new category for
-2021, focusing on making assumptions related to software updates,
-critical data, and CI/CD pipelines without verifying integrity. One of
-the highest weighted impacts from CVE/CVSS data mapped to the 10 CWEs in
-this category. Insecure Deserialization from 2017 is now a part of this
-larger category.</p>
-<p><strong>A09:2021-Security Logging and Monitoring Failures</strong> was previously
-<em>Insufficient Logging &amp;</em> Monitoring and is added from the industry
-survey (#3), moving up from #10 previously. This category is expanded to
-include more types of failures, is challenging to test for, and isn't
-well represented in the CVE/CVSS data. However, failures in this
-category can directly impact visibility, incident alerting, and
-forensics.</p>
-<p><strong>A10:2021-Server-Side Request Forgery</strong> is added from the industry
-survey (#1). The data shows a relatively low incidence rate with above
-average testing coverage, along with above-average ratings for Exploit
-and Impact potential. This category represents the scenario where the
-industry professionals are telling us this is important, even though
-it's not illustrated in the data at this time.</p>
-<h2 id="methodology">Methodology</h2>
-<p>This installment of the Top 10 is more data-driven than ever but not
-blindly data-driven. We selected eight of the ten categories from
-contributed data and two categories from an industry survey at a high
-level. We do this for a fundamental reason, looking at the contributed
-data is looking into the past. AppSec researchers take time to find new
-vulnerabilities and new ways to test for them. It takes time to
-integrate these tests into tools and processes. By the time we can
-reliably test a weakness at scale, years have likely passed. To balance
-that view, we use an industry survey to ask people on the front lines
-what they see as essential weaknesses that the data may not show yet.</p>
-<p>There are a few critical changes that we adopted to continue to mature
-the Top 10.</p>
+<p>Bienvenue pour cette nouvelle édition de l'OWASP Top 10 ! L'OWASP Top 10 2021 apporte de nombreux changements, avec
+notamment une nouvelle interface et une nouvelle infographie, disponible sur un format d'une page qu'il est possible
+de se procurer depuis notre page d'accueil.</p>
+<p>Un très grand merci à l'ensemble des personnes qui ont contribué de leur temps et leurs données pour cette itération.
+Sans vous, cette mouture n'aurait pas vu le jour. <strong>MERCI</strong>.</p>
+<h2 id="les-changements-du-top-10-pour-2021">Les changements du Top 10 pour 2021</h2>
+<p>Il y a trois nouvelles catégories, quatre catégories avec un changement de nom et de périmètre, ainsi que des
+consolidations dans ce Top 10 2021.</p>
+<p><img src="./assets/image1.png" style="width:6.5in;height:1.78889in" alt="Représentation des relations entre le Top 10 2017 et le nouveau Top 10 2021" /></p>
+<p><strong>A01:2021-Ruptures de contrôles d'accès</strong> monte en première position depuis la cinquième place ; 94% des applications
+ont été testées sur des vulnérabilités de ce type. Les 34 CWEs associées ont eu plus d'occurrences dans les applications
+auditées que n'importe quelle autre catégorie.</p>
+<p><strong>A02:2021-Défaillances cryptographiques</strong> gagne une position et prend la deuxième place, précédemment connu sous le
+nom de <em>Exposition de données sensibles</em>, qui était un symptôme large plutôt qu'une cause principale. L'accent est mis
+sur des défaillances liées à la cryptographie, qui souvent entraînent une exposition de données sensibles ou une
+compromission de système.</p>
+<p><strong>A03:2021-Injection</strong> glisse à la troisième position. 94% des applications ont été testées sur des vulnérabilités
+de ce type. Les 33 CWEs associées à cette catégorie ont eu le deuxième plus grand nombre d'occurrences. <em>Cross-Site
+Scripting</em> fait désormais partie de cette catégorie dans cette édition.</p>
+<p><strong>A04:2021-Conception non sécurisée</strong> est une nouvelle catégorie, avec un accent sur les défauts de conception. Si nous
+voulons ajouter des contrôles en amont, cela appel à avoir recours aux modèles de menaces, aux modèles et principes de
+conception sécurisés, et aux architectures de référence.</p>
+<p><strong>A05:2021-Mauvaise configuration de sécurité</strong> gagne une place ; 90% des applications ont été testées sur des
+vulnérabilités de ce type. Avec des logiciels de plus en plus paramétrables, il n'est pas surprenant de voir cette
+catégorie prendre de l'ampleur. L'ancienne catégorie <em>XML Entités externes (XXE)</em> est incluse dans celle-ci.</p>
+<p><strong>A06:2021-Composants vulnérables et obsolètes</strong> était précédemment nommée <em>Utilisation de Composants avec des
+Vulnérabilités Connues</em>. Elle se place deuxième de l'enquête auprès de la communauté du Top 10, mais pouvait également
+entrer dans le Top 10 via l'analyse de données. Cette catégorie progresse depuis sa neuvième place en 2017, elle est un
+problème connu dont nous avons du mal à tester et à mesurer les risques. Il s'agit de la seule catégorie à n'avoir
+aucune CVE associée aux CWEs concernées, en conséquence les coefficients d'impact et de poids ont été renseignés à 5.0
+par défaut.</p>
+<p><strong>A07:2021-Identification et authentification de mauvaise qualité</strong> était précédemment <em>Authentification de mauvaise
+qualité</em>, elle perd la deuxième place. Elle inclut désormais des CWEs également liées aux échecs d'identification. Cette
+catégorie est toujours présente dans le Top 10, mais la disponibilité croissante de frameworks standardisés
+semble aider.</p>
+<p><strong>A08:2021-Manque d'intégrité des données et du logiciel</strong> est une nouvelle catégorie, se concentrant sur la formulation
+d'hypothèses sur les mises à jour logicielles, les données critiques et les pipelines CI/CD sans vérifier leur
+intégrité. L'un des impacts les plus élevés à partir des données de CVE/CVSS associées aux 10 CWEs de cette catégorie.
+<em>Désérialisation non sécurisée</em>, listée en 2017, est désormais partie intégrante de cette catégorie.</p>
+<p><strong>A09:2021-Carence des systèmes de contrôle et de journalisation</strong>, précédemment <em>Supervision et Journalisation
+Insuffisantes</em>, est ajoutée de l'enquête auprès de l'industrie (3ème), précédemment à la dixième place. Cette catégorie
+a été étendue pour inclure plus de types de défaillances, est difficile à tester et est dès lors mal représentée dans les
+données CVE/CVSS. Toutefois, des incidents dans cette catégorie peuvent impacter directement la visibilité, la levée
+d'alertes et l'analyse forensique.</p>
+<p><strong>A10:2021-Falsification de requête côté serveur</strong> provient de l'enquête auprès de la communauté Top 10 (1ère). Les
+données montrent une incidence faible, avec un taux de couverture des tests supérieur à la moyenne, accompagné de notes
+de potentiel d'exploitabilité et d'impact supérieur à la moyenne. Cette catégorie est un exemple où les professionnels
+de l'industrie nous indiquent que cette catégorie est importante, même si cela ne transparaît pas encore dans les
+données.</p>
+<h2 id="methodologie">Méthodologie</h2>
+<p>Cette version du Top 10 est bien plus basée sur des données que les précédentes, mais elle n'est pas pour autant
+aveuglée par celles-ci. Parmi les dix catégories, huit proviennent des données fournies et les deux dernières
+proviennent d'une enquête à haut niveau auprès de la communauté. Nous faisons ceci pour une raison fondamentale,
+observer les données consiste à observer le passé. Les chercheurs en sécurité s'investissent pour trouver de nouvelles
+vulnérabilités et de nouveaux moyens pour les détecter. Un temps certain est nécessaire pour intégrer ces tests au sein
+des outils et des processus. Au moment où nous pouvons tester ces vulnérabilités à l'échelle, des années se sont bien
+souvent écoulées. Pour équilibrer cette approche, nous avons utilisé une enquête communautaire pour demander aux experts
+en sécurité applicative et en développement, en première ligne, ce qu'ils constatent comme failles essentielles, que les
+données pourraient ne pas encore montrer.</p>
+<p>Nous avons adopté quelques changements importants pour continuer à faire mûrir le Top 10.</p>
 <h3 id="how-the-categories-are-structured">How the categories are structured</h3>
 <p>A few categories have changed from the previous installment of the OWASP
 Top Ten. Here is a high-level summary of the category changes.</p>
@@ -834,7 +817,7 @@ automated and run against a large population of applications. Everything
 we find is looking back in the past and might be missing trends from the
 last year, which are not present in the data.</p>
 <p>Therefore, we only pick eight of ten categories from the data because
-it's incomplete. The other two categories are from the industry survey.
+it's incomplete. The other two categories are from the Top 10 community survey.
 It allows the practitioners on the front lines to vote for what they see
 as the highest risks that might not be in the data (and may never be
 expressed in data).</p>

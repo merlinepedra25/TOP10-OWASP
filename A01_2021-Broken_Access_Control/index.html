@@ -123,6 +123,12 @@
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../ja/" hreflang="ja" class="md-select__link">
                     Japanese
                   </a>
@@ -137,12 +143,6 @@
                 <li class="md-select__item">
                   <a href="../it/" hreflang="it" class="md-select__link">
                     Italiano
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    繁體中文
                   </a>
                 </li>
                 
@@ -319,13 +319,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       <label class="md-nav__link" for="__nav_7">
-        Top 10 List
+        Top 10:2021 List
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Top 10 List" data-md-level="1">
+      <nav class="md-nav" aria-label="Top 10:2021 List" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          Top 10 List
+          Top 10:2021 List
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -747,7 +747,10 @@ check or metadata.</p>
     automated attack tooling.</p>
 </li>
 <li>
-<p>JWT tokens should be invalidated on the server after logout.</p>
+<p>Stateful session identifiers should be invalidated on the server after logout.
+    Stateless JWT tokens should rather be short-lived so that the window of 
+    opportunity for an attacker is minimized. For longer lived JWTs it's highy recommended to
+    follow the OAUTH standards to revoke access.</p>
 </li>
 </ul>
 <p>Developers and QA staff should include functional access control unit
@@ -755,20 +758,19 @@ and integration tests.</p>
 <h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
 <p><strong>Scenario #1:</strong> The application uses unverified data in a SQL call that
 is accessing account information:</p>
-<blockquote>
-<p>pstmt.setString(1, request.getParameter("acct"));</p>
-<p>ResultSet results = pstmt.executeQuery( );</p>
-</blockquote>
+<pre><code> pstmt.setString(1, request.getParameter(&quot;acct&quot;));
+ ResultSet results = pstmt.executeQuery( );
+</code></pre>
 <p>An attacker simply modifies the browser's 'acct' parameter to send
 whatever account number they want. If not correctly verified, the
 attacker can access any user's account.</p>
-<p>https://example.com/app/accountInfo?acct=notmyacct</p>
+<pre><code> https://example.com/app/accountInfo?acct=notmyacct
+</code></pre>
 <p><strong>Scenario #2:</strong> An attacker simply forces browses to target URLs. Admin
 rights are required for access to the admin page.</p>
-<blockquote>
-<p>https://example.com/app/getappInfo</p>
-<p>https://example.com/app/admin_getappInfo</p>
-</blockquote>
+<pre><code> https://example.com/app/getappInfo
+ https://example.com/app/admin_getappInfo
+</code></pre>
 <p>If an unauthenticated user can access either page, it's a flaw. If a
 non-admin can access the admin page, this is a flaw.</p>
 <h2 id="references">References</h2>
@@ -794,6 +796,9 @@ non-admin can access the admin page, this is a flaw.</p>
 <li>
 <p><a href="https://portswigger.net/blog/exploiting-cors-misconfigurations-for-bitcoins-and-bounties">PortSwigger: Exploiting CORS
     misconfiguration</a></p>
+</li>
+<li>
+<p><a href="https://www.oauth.com/oauth2-servers/listing-authorizations/revoking-access/">OAUTH </a></p>
 </li>
 </ul>
 <h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
