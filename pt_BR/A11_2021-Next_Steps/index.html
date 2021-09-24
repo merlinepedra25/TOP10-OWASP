@@ -118,12 +118,6 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../fr/" hreflang="fr" class="md-select__link">
-                    Français
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
                   <a href="../" hreflang="pt_BR" class="md-select__link">
                     Português (Brasil)
                   </a>
@@ -136,14 +130,20 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../ja/" hreflang="ja" class="md-select__link">
-                    Japanese
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    Italiano
                   </a>
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../it/" hreflang="it" class="md-select__link">
-                    Italiano
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    Japanese
                   </a>
                 </li>
                 
@@ -629,10 +629,10 @@ identify and remediate.</p>
 <th align="center">CWEs Mapped </th>
 <th align="center">Max Incidence Rate </th>
 <th align="center">Avg Incidence Rate </th>
-<th align="center">Max Coverage </th>
-<th align="center">Avg Coverage </th>
 <th align="center">Avg Weighted Exploit </th>
 <th align="center">Avg Weighted Impact </th>
+<th align="center">Max Coverage </th>
+<th align="center">Avg Coverage </th>
 <th align="center">Total Occurrences </th>
 <th align="center">Total CVEs </th>
 </tr>
@@ -642,10 +642,10 @@ identify and remediate.</p>
 <td align="center">38</td>
 <td align="center">49.46%</td>
 <td align="center">2.22%</td>
+<td align="center">7.1</td>
+<td align="center">6.7</td>
 <td align="center">60.85%</td>
 <td align="center">23.42%</td>
-<td align="center"></td>
-<td align="center"></td>
 <td align="center">101736</td>
 <td align="center">7564</td>
 </tr>
@@ -675,6 +675,17 @@ identify and remediate.</p>
     sensitive information by exploiting a race condition using a
     statically shared variable across multiple threads.</p>
 </li>
+<li>
+<p><strong>References</strong></p>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-pdf-archive/OWASP_Code_Review_Guide_v2.pdf">OWASP Code Review Guide</a></p>
+</li>
+<li>
+<p><a href="https://google.github.io/eng-practices/review/">Google Code Review Guide</a></p>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="denial-of-service">Denial of Service</h2>
 <table>
@@ -683,10 +694,10 @@ identify and remediate.</p>
 <th align="center">CWEs Mapped </th>
 <th align="center">Max Incidence Rate </th>
 <th align="center">Avg Incidence Rate </th>
-<th align="center">Max Coverage </th>
-<th align="center">Avg Coverage </th>
 <th align="center">Avg Weighted Exploit </th>
 <th align="center">Avg Weighted Impact </th>
+<th align="center">Max Coverage </th>
+<th align="center">Avg Coverage </th>
 <th align="center">Total Occurrences </th>
 <th align="center">Total CVEs </th>
 </tr>
@@ -696,10 +707,10 @@ identify and remediate.</p>
 <td align="center">8</td>
 <td align="center">17.54%</td>
 <td align="center">4.89%</td>
+<td align="center">8.3</td>
+<td align="center">5.9</td>
 <td align="center">79.58%</td>
 <td align="center">33.26%</td>
-<td align="center"></td>
-<td align="center"></td>
 <td align="center">66985</td>
 <td align="center">973</td>
 </tr>
@@ -719,13 +730,24 @@ identify and remediate.</p>
     usage, re-architect, optimize, or cache expensive operations.
     Consider access controls for larger objects to ensure that only
     authorized individuals can access huge files or objects or serve
-    them by an edge caching network.</p>
+    them by an edge caching network. </p>
 </li>
 <li>
 <p><strong>Example attack scenarios</strong>. An attacker might determine that an
     operation takes 5-10 seconds to complete. When running four
     concurrent threads, the server seems to stop responding. The
     attacker uses 1000 threads and takes the entire system offline.</p>
+</li>
+<li>
+<p><strong>References</strong></p>
+<ul>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html">OWASP Cheet Sheet: Denial of Service</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-community/attacks/Denial_of_Service">OWASP Attacks: Denial of Service</a></p>
+</li>
+</ul>
 </li>
 </ul>
 <h2 id="memory-management-errors">Memory Management Errors</h2>
@@ -735,10 +757,10 @@ identify and remediate.</p>
 <th align="center">CWEs Mapped </th>
 <th align="center">Max Incidence Rate </th>
 <th align="center">Avg Incidence Rate </th>
-<th align="center">Max Coverage </th>
-<th align="center">Avg Coverage </th>
 <th align="center">Avg Weighted Exploit </th>
 <th align="center">Avg Weighted Impact </th>
+<th align="center">Max Coverage </th>
+<th align="center">Avg Coverage </th>
 <th align="center">Total Occurrences </th>
 <th align="center">Total CVEs </th>
 </tr>
@@ -748,10 +770,10 @@ identify and remediate.</p>
 <td align="center">14</td>
 <td align="center">7.03%</td>
 <td align="center">1.16%</td>
+<td align="center">6.7</td>
+<td align="center">8.1</td>
 <td align="center">56.06%</td>
 <td align="center">31.74%</td>
-<td align="center"></td>
-<td align="center"></td>
 <td align="center">26576</td>
 <td align="center">16184</td>
 </tr>
@@ -778,7 +800,21 @@ identify and remediate.</p>
 </li>
 <li>
 <p><strong>Example attack scenarios</strong>. Buffer and heap overflows have been a
-    mainstay of</p>
+    mainstay of attackers over the years. The attacker sends data to a program, which it stores in an undersized stack buffer. The result is that information on the call stack is overwritten, including the function’s return pointer. The data sets the value of the return pointer so that when the function returns, it transfers control to malicious code contained in the attacker’s data.</p>
+</li>
+<li>
+<p><strong>References</strong></p>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-community/vulnerabilities/Buffer_Overflow">OWASP Vulnerabilities: Buffer Overflow</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-community/attacks/Buffer_overflow_attack">OWASP Attacks: Buffer Overflow</a></p>
+</li>
+<li>
+<p><a href="https://www.sciencedirect.com/topics/computer-science/integer-overflow">Science Direct: Integer Overflow</a></p>
+</li>
+</ul>
 </li>
 </ul>
                 
