@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -72,7 +72,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="OWASP Top 10:2021" class="md-header__button md-logo" aria-label="OWASP Top 10:2021" data-md-component="logo">
       
@@ -122,14 +124,14 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../" hreflang="it" class="md-select__link">
-                    Italiano
+                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
+                    Português (Brasil)
                   </a>
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
-                    Português (Brasil)
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    繁體中文
                   </a>
                 </li>
                 
@@ -140,8 +142,8 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    繁體中文
+                  <a href="../" hreflang="it" class="md-select__link">
+                    Italiano
                   </a>
                 </li>
                 
@@ -166,11 +168,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -316,10 +321,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
-      <label class="md-nav__link" for="__nav_7">
-        Lista top 10:2021
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Lista top 10:2021
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Lista top 10:2021" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -328,6 +337,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -338,8 +348,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -350,8 +362,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -362,8 +376,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -483,8 +499,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -495,8 +513,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -507,8 +527,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -519,8 +541,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -531,8 +555,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -543,8 +569,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -555,6 +583,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -726,41 +755,15 @@
 </tbody>
 </table>
 <h2 id="overview">Overview</h2>
-<p>A new category for 2021 focuses on risks related to design and
-architectural flaws, with a call for more use of threat modeling, secure
-design patterns, and reference architectures. Notable Common Weakness Enumerations (CWEs) include
-<em>CWE-209: Generation of Error Message Containing Sensitive Information</em>,
-<em>CWE-256: Unprotected Storage of Credentials</em>, <em>CWE-501: Trust Boundary
-Violation</em>, and <em>CWE-522: Insufficiently Protected Credentials</em>.</p>
+<p>A new category for 2021 focuses on risks related to design and architectural flaws, with a call for more use of threat modeling, secure design patterns, and reference architectures. As a community we need to move beyond  "shift-left" in the coding space to pre-code activities that are critical for the principles of Secure by Design. Notable Common Weakness Enumerations (CWEs) include <em>CWE-209: Generation of Error Message Containing Sensitive Information</em>, <em>CWE-256: Unprotected Storage of Credentials</em>, <em>CWE-501: Trust Boundary Violation</em>, and <em>CWE-522: Insufficiently Protected Credentials</em>.</p>
 <h2 id="description">Description</h2>
-<p>Insecure design is a broad category representing many different
-weaknesses, expressed as “missing or ineffective control design.”
-Missing insecure design is where a control is absent. For example,
-imagine code that should be encrypting sensitive data, but there is no
-method. Ineffective insecure design is where an attacker could realize a threat,
-but insufficient domain (business) logic validation prevents the action.
-For example, imagine domain logic that is supposed to process pandemic
-tax relief based upon income brackets but does not validate that all
-inputs are correctly signed and provides a much more significant relief
-benefit than should be granted.</p>
+<p>Insecure design is a broad category representing different weaknesses, expressed as “missing or ineffective control design.” Insecure design is not the source for all other Top 10 risk categories. There is a difference between insecure design and insecure implementation. We differentiate between design flaws and implementation defects for a reason, they have different root causes and remediation. A secure design can still have implementation defects leading to vulnerabilities that may be exploited. An insecure design cannot be fixed by a perfect implementation as by definition, needed security controls were never created to defend against specific attacks. One of the factors that contribute to insecure design is the lack of business risk profiling inherent in the software or system being developed, and thus the failure to determine what level of security design is required.</p>
 <h3 id="requirements-and-resource-management">Requirements and Resource Management</h3>
-<p>Collect and negotiate the business requirements for an application with the
-business, including the protection requirements concerning confidentiality,
-authenticity, integrity, availability of all data assets, and the expected
-business logic. Take into account how exposed your application will be and
-if you need segregation of tenants (additionally to access control). Compile
-the technical requirements, including functional and non-functional security
-requirements. Plan and negotiate the budget covering all design, build,
-testing, and operation, including security activities.</p>
+<p>Collect and negotiate the business requirements for an application with the business, including the protection requirements concerning confidentiality, integrity, availability, and authenticity of all data assets and the expected business logic. Take into account how exposed your application will be and if you need segregation of tenants (additionally to access control). Compile the technical requirements, including functional and non-functional security requirements. Plan and negotiate the budget covering all design, build, testing, and operation, including security activities.</p>
 <h3 id="secure-design">Secure Design</h3>
-<p>Secure design is a culture and methodology that constantly evaluates
-threats and ensures that code is robustly designed and tested to prevent
-known attack methods. Learn from mistakes and offer positive incentives to promote improvements. Secure design is neither an add-on nor a tool that you can add to software.</p>
+<p>Secure design is a culture and methodology that constantly evaluates threats and ensures that code is robustly designed and tested to prevent known attack methods. Threat modeling should be integrated into grooming sessions (or similar activities), look for changes in data flows and access control or other security controls. In the user story development determine the correct flow and failure states, ensure they are well understood and agreed upon by responsible and impacted parties. Analyze assumptions and conditions for expected and failure flows, ensure they are still accurate and desirable. Determine how to validate the assumptions and enforce conditions needed for proper behaviors. Ensure the results are documented in the user story. Learn from mistakes and offer positive incentives to promote improvements. Secure design is neither an add-on nor a tool that you can add to software.</p>
 <h3 id="secure-development-lifecycle">Secure Development Lifecycle</h3>
-<p>Secure software requires a secure development lifecycle, some form of secure 
-design pattern or paved road componentlibrary or tooling, and threat modeling. 
-Reach out for your security specialists at the beginning of a software project
-throughout the whole project and maintenance of your software.</p>
+<p>Secure software requires a secure development lifecycle, some form of secure design pattern or paved road component library or tooling, and threat modeling. Reach out for your security specialists at the beginning of a software project throughout the whole project and maintenance of your software. Consider leveraging the <a href="https://owaspsamm.org">OWASP Software Assurance Maturity Model (SAMM)</a> to help structure your secure software development efforts.</p>
 <h2 id="how-to-prevent">How to Prevent</h2>
 <ul>
 <li>
@@ -775,6 +778,9 @@ throughout the whole project and maintenance of your software.</p>
 <li>
 <p>Use threat modeling for critical authentication, access control,
     business logic, and key flows</p>
+</li>
+<li>
+<p>Integrate security language and controls into user stories</p>
 </li>
 <li>
 <p>Integrate plausibility checks at each tier of your application
@@ -818,7 +824,13 @@ rejected such transactions.</p>
 <h2 id="references">References</h2>
 <ul>
 <li>
-<p><a href="TBD">OWASP Cheat Sheet: Secure Design Principles</a></p>
+<p><a href="Coming Soon">OWASP Cheat Sheet: Secure Design Principles</a></p>
+</li>
+<li>
+<p><a href="https://owaspsamm.org/model/design/security-architecture/">OWASP SAMM: Design:Security Architecture</a></p>
+</li>
+<li>
+<p><a href="https://owaspsamm.org/model/design/threat-assessment/">OWASP SAMM: Design:Threat Assessment</a> </p>
 </li>
 <li>
 <p><a href="https://www.nist.gov/system/files/documents/2021/07/13/Developer%20Verification%20of%20Software.pdf">NIST – Guidelines on Minimum Standards for Developer Verification of Software</a></p>
@@ -930,10 +942,12 @@ rejected such transactions.</p>
             © Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
           </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -945,10 +959,10 @@ rejected such transactions.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copia", "clipboard.copied": "Copiato", "search.config.lang": "it", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Cerca", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copia", "clipboard.copied": "Copiato", "search.config.lang": "it", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Cerca", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
       
     
   </body>
