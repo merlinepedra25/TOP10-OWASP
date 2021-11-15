@@ -16,7 +16,7 @@
     
     
       
-        <title>A01 Ruptures de contrôles d'accès - OWASP Top 10:2021</title>
+        <title>A01 Contrôles d'accès défaillants - OWASP Top 10:2021</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#a012021-ruptures-de-controles-dacces" class="md-skip">
+        <a href="#a012021-controles-dacces-defaillants" class="md-skip">
           Aller au contenu
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              A01 Ruptures de contrôles d'accès
+              A01 Contrôles d'accès défaillants
             
           </span>
         </div>
@@ -116,32 +116,38 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../" hreflang="fr" class="md-select__link">
-                    Français
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../it/" hreflang="it" class="md-select__link">
-                    Italiano
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
                   <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
                     繁體中文
                   </a>
                 </li>
                 
                 <li class="md-select__item">
+                  <a href="../" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
                   <a href="../../ja/" hreflang="ja" class="md-select__link">
-                    Japanese
+                    日本語
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ar/" hreflang="ar" class="md-select__link">
+                    العربية
                   </a>
                 </li>
                 
                 <li class="md-select__item">
                   <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
                     Português (Brasil)
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    Italiano
                   </a>
                 </li>
                 
@@ -342,12 +348,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          A01 Ruptures de contrôles d'accès
+          A01 Contrôles d'accès défaillants
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        A01 Ruptures de contrôles d'accès
+        A01 Contrôles d'accès défaillants
       </a>
       
         
@@ -641,7 +647,7 @@
                   </a>
                 
                 
-                <h1 id="a012021-ruptures-de-controles-dacces">A01:2021 - Ruptures de contrôles d'accès</h1>
+                <h1 id="a012021-controles-dacces-defaillants">A01:2021 – Contrôles d'accès défaillants   <img align="right" alt="icon" src="../../assets/TOP_10_Icons_Final_Broken_Access_Control.png" style="height:80px;width:80px" /></h1>
 <h2 id="factors">Factors</h2>
 <table>
 <thead>
@@ -649,10 +655,10 @@
 <th align="center">CWEs Mapped</th>
 <th align="center">Max Incidence Rate</th>
 <th align="center">Avg Incidence Rate</th>
-<th align="center">Max Coverage</th>
-<th align="center">Avg Coverage</th>
 <th align="center">Avg Weighted Exploit</th>
 <th align="center">Avg Weighted Impact</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
 <th align="center">Total Occurrences</th>
 <th align="center">Total CVEs</th>
 </tr>
@@ -662,10 +668,10 @@
 <td align="center">34</td>
 <td align="center">55.97%</td>
 <td align="center">3.81%</td>
-<td align="center">94.55%</td>
-<td align="center">47.72%</td>
 <td align="center">6.92</td>
 <td align="center">5.93</td>
+<td align="center">94.55%</td>
+<td align="center">47.72%</td>
 <td align="center">318,487</td>
 <td align="center">19,013</td>
 </tr>
@@ -673,8 +679,7 @@
 </table>
 <h2 id="overview">Overview</h2>
 <p>Moving up from the fifth position, 94% of applications were tested for
-some form of broken access control. Notable CWEs included are <em>CWE-200:
-Exposure of Sensitive Information to an Unauthorized Actor</em>, <em>CWE-201:
+some form of broken access control with the average incidence rate of 3.81%, and has the most occurrences in the contributed dataset with over 318k. Notable Common Weakness Enumerations (CWEs) included are <em>CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</em>, <em>CWE-201:
 Exposure of Sensitive Information Through Sent Data</em>, and <em>CWE-352:
 Cross-Site Request Forgery</em>.</p>
 <h2 id="description">Description</h2>
@@ -685,13 +690,21 @@ performing a business function outside the user's limits. Common access
 control vulnerabilities include:</p>
 <ul>
 <li>
-<p>Bypassing access control checks by modifying the URL, internal
-    application state, or the HTML page, or simply using a custom API
-    attack tool.</p>
+<p>Violation of the principle of least privilege or deny by default,
+    where access should only be granted for particular capabilities,
+    roles, or users, but is available to anyone.</p>
 </li>
 <li>
-<p>Allowing the primary key to be changed to another user's record,
-    permitting viewing or editing someone else's account.</p>
+<p>Bypassing access control checks by modifying the URL (parameter
+    tampering or force browsing), internal application state, or the
+    HTML page, or by using an attack tool modifying API requests.</p>
+</li>
+<li>
+<p>Permitting viewing or editing someone else's account, by providing
+    its unique identifier (insecure direct object references)</p>
+</li>
+<li>
+<p>Accessing API with missing access controls for POST, PUT and DELETE.</p>
 </li>
 <li>
 <p>Elevation of privilege. Acting as a user without being logged in or
@@ -703,12 +716,12 @@ control vulnerabilities include:</p>
     manipulated to elevate privileges or abusing JWT invalidation.</p>
 </li>
 <li>
-<p>CORS misconfiguration allows unauthorized API access.</p>
+<p>CORS misconfiguration allows API access from unauthorized/untrusted
+    origins.</p>
 </li>
 <li>
 <p>Force browsing to authenticated pages as an unauthenticated user or
-    to privileged pages as a standard user. Accessing API with missing
-    access controls for POST, PUT and DELETE.</p>
+    to privileged pages as a standard user.</p>
 </li>
 </ul>
 <h2 id="how-to-prevent">How to Prevent</h2>
@@ -721,7 +734,7 @@ check or metadata.</p>
 </li>
 <li>
 <p>Implement access control mechanisms once and re-use them throughout
-    the application, including minimizing CORS usage.</p>
+    the application, including minimizing Cross-Origin Resource Sharing (CORS) usage.</p>
 </li>
 <li>
 <p>Model access controls should enforce record ownership rather than
@@ -745,7 +758,10 @@ check or metadata.</p>
     automated attack tooling.</p>
 </li>
 <li>
-<p>JWT tokens should be invalidated on the server after logout.</p>
+<p>Stateful session identifiers should be invalidated on the server after logout.
+    Stateless JWT tokens should rather be short-lived so that the window of
+    opportunity for an attacker is minimized. For longer lived JWTs it's highy recommended to
+    follow the OAuth standards to revoke access.</p>
 </li>
 </ul>
 <p>Developers and QA staff should include functional access control unit
@@ -753,20 +769,19 @@ and integration tests.</p>
 <h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
 <p><strong>Scenario #1:</strong> The application uses unverified data in a SQL call that
 is accessing account information:</p>
-<blockquote>
-<p>pstmt.setString(1, request.getParameter("acct"));</p>
-<p>ResultSet results = pstmt.executeQuery( );</p>
-</blockquote>
+<pre><code> pstmt.setString(1, request.getParameter(&quot;acct&quot;));
+ ResultSet results = pstmt.executeQuery( );
+</code></pre>
 <p>An attacker simply modifies the browser's 'acct' parameter to send
 whatever account number they want. If not correctly verified, the
 attacker can access any user's account.</p>
-<p>https://example.com/app/accountInfo?acct=notmyacct</p>
+<pre><code> https://example.com/app/accountInfo?acct=notmyacct
+</code></pre>
 <p><strong>Scenario #2:</strong> An attacker simply forces browses to target URLs. Admin
 rights are required for access to the admin page.</p>
-<blockquote>
-<p>https://example.com/app/getappInfo</p>
-<p>https://example.com/app/admin_getappInfo</p>
-</blockquote>
+<pre><code> https://example.com/app/getappInfo
+ https://example.com/app/admin_getappInfo
+</code></pre>
 <p>If an unauthenticated user can access either page, it's a flaw. If a
 non-admin can access the admin page, this is a flaw.</p>
 <h2 id="references">References</h2>
@@ -784,54 +799,55 @@ non-admin can access the admin page, this is a flaw.</p>
     Testing</a></p>
 </li>
 <li>
-<p><a href="">OWASP Cheat Sheet: Access Control</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html">OWASP Cheat Sheet: Access Control</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html">OWASP Cheat Sheet: Authorization</a></p>
 </li>
 <li>
 <p><a href="https://portswigger.net/blog/exploiting-cors-misconfigurations-for-bitcoins-and-bounties">PortSwigger: Exploiting CORS
     misconfiguration</a></p>
 </li>
+<li>
+<p><a href="https://www.oauth.com/oauth2-servers/listing-authorizations/revoking-access/">OAuth: Revoking Access</a></p>
+</li>
 </ul>
 <h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
-<p>CWE-22 Improper Limitation of a Pathname to a Restricted Directory
-('Path Traversal')</p>
-<p>CWE-23 Relative Path Traversal</p>
-<p>CWE-35 Path Traversal: '.../...//'</p>
-<p>CWE-59 Improper Link Resolution Before File Access ('Link Following')</p>
-<p>CWE-200 Exposure of Sensitive Information to an Unauthorized Actor</p>
-<p>CWE-201 Exposure of Sensitive Information Through Sent Data</p>
-<p>CWE-219 Storage of File with Sensitive Data Under Web Root</p>
-<p>CWE-264 Permissions, Privileges, and Access Controls (should no longer
-be used)</p>
-<p>CWE-275 Permission Issues</p>
-<p>CWE-276 Incorrect Default Permissions</p>
-<p>CWE-284 Improper Access Control</p>
-<p>CWE-285 Improper Authorization</p>
-<p>CWE-352 Cross-Site Request Forgery (CSRF)</p>
-<p>CWE-359 Exposure of Private Personal Information to an Unauthorized
-Actor</p>
-<p>CWE-377 Insecure Temporary File</p>
-<p>CWE-402 Transmission of Private Resources into a New Sphere ('Resource
-Leak')</p>
-<p>CWE-425 Direct Request ('Forced Browsing')</p>
-<p>CWE-441 Unintended Proxy or Intermediary ('Confused Deputy')</p>
-<p>CWE-497 Exposure of Sensitive System Information to an Unauthorized
-Control Sphere</p>
-<p>CWE-538 Insertion of Sensitive Information into Externally-Accessible
-File or Directory</p>
-<p>CWE-540 Inclusion of Sensitive Information in Source Code</p>
-<p>CWE-548 Exposure of Information Through Directory Listing</p>
-<p>CWE-552 Files or Directories Accessible to External Parties</p>
-<p>CWE-566 Authorization Bypass Through User-Controlled SQL Primary Key</p>
-<p>CWE-601 URL Redirection to Untrusted Site ('Open Redirect')</p>
-<p>CWE-639 Authorization Bypass Through User-Controlled Key</p>
-<p>CWE-651 Exposure of WSDL File Containing Sensitive Information</p>
-<p>CWE-668 Exposure of Resource to Wrong Sphere</p>
-<p>CWE-706 Use of Incorrectly-Resolved Name or Reference</p>
-<p>CWE-862 Missing Authorization</p>
-<p>CWE-863 Incorrect Authorization</p>
-<p>CWE-913 Improper Control of Dynamically-Managed Code Resources</p>
-<p>CWE-922 Insecure Storage of Sensitive Information</p>
-<p>CWE-1275 Sensitive Cookie with Improper SameSite Attribute</p>
+<p><a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22 Improper Limitation of a Pathname to a Restricted Directory
+('Path Traversal')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/23.html">CWE-23 Relative Path Traversal</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/35.html">CWE-35 Path Traversal: '.../...//'</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/59.html">CWE-59 Improper Link Resolution Before File Access ('Link Following')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/200.html">CWE-200 Exposure of Sensitive Information to an Unauthorized Actor</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/201.html">CWE-201 Exposure of Sensitive Information Through Sent Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/219.html">CWE-219 Storage of File with Sensitive Data Under Web Root</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/264.html">CWE-264 Permissions, Privileges, and Access Controls (should no longer be used)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/275.html">CWE-275 Permission Issues</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/276.html">CWE-276 Incorrect Default Permissions</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/284.html">CWE-284 Improper Access Control</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/285.html">CWE-285 Improper Authorization</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352 Cross-Site Request Forgery (CSRF)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/359.html">CWE-359 Exposure of Private Personal Information to an Unauthorized Actor</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/377.html">CWE-377 Insecure Temporary File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/402.html">CWE-402 Transmission of Private Resources into a New Sphere ('Resource Leak')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/425.html">CWE-425 Direct Request ('Forced Browsing')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/441.html">CWE-441 Unintended Proxy or Intermediary ('Confused Deputy')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/497.html">CWE-497 Exposure of Sensitive System Information to an Unauthorized Control Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/538.html">CWE-538 Insertion of Sensitive Information into Externally-Accessible File or Directory</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/540.html">CWE-540 Inclusion of Sensitive Information in Source Code</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/548.html">CWE-548 Exposure of Information Through Directory Listing</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552 Files or Directories Accessible to External Parties</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/566.html">CWE-566 Authorization Bypass Through User-Controlled SQL Primary Key</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601 URL Redirection to Untrusted Site ('Open Redirect')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/639.html">CWE-639 Authorization Bypass Through User-Controlled Key</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/651.html">CWE-651 Exposure of WSDL File Containing Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/668.html">CWE-668 Exposure of Resource to Wrong Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/706.html">CWE-706 Use of Incorrectly-Resolved Name or Reference</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/862.html">CWE-862 Missing Authorization</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/863.html">CWE-863 Incorrect Authorization</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/913.html">CWE-913 Improper Control of Dynamically-Managed Code Resources</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/922.html">CWE-922 Insecure Storage of Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1275.html">CWE-1275 Sensitive Cookie with Improper SameSite Attribute</a></p>
                 
               
               
