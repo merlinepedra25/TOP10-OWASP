@@ -1,0 +1,869 @@
+
+<!doctype html>
+<html lang="id" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OWASP Top 10:2021">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.7">
+    
+    
+      
+        <title>A08 Kegagalan Integritas Data dan Perangkat Lunak - OWASP Top 10:2021</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3c7cdd75.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a082021-kegagalan-integritas-data-dan-perangkat-lunak" class="md-skip">
+          Lewati ke isi
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OWASP Top 10:2021" class="md-header__button md-logo" aria-label="OWASP Top 10:2021" data-md-component="logo">
+      
+  <img src="../../assets/OWASP_Logo_Transp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OWASP Top 10:2021
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A08 Kegagalan Integritas Data dan Perangkat Lunak
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="en" class="md-select__link">
+                    en - English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    zh_TW - 繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ar/" hreflang="ar" class="md-select__link">
+                    ar - العربية
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    ja - 日本語
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    fr - Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_CN/" hreflang="zh_CN" class="md-select__link">
+                    zh_CN - 简体中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    it - Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../" hreflang="id" class="md-select__link">
+                    id - Indonesian
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../es/" hreflang="es" class="md-select__link">
+                    es - Español
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OWASP/Top10/" title="Menuju repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OWASP Top 10:2021" class="md-nav__button md-logo" aria-label="OWASP Top 10:2021" data-md-component="logo">
+      
+  <img src="../../assets/OWASP_Logo_Transp.png" alt="logo">
+
+    </a>
+    OWASP Top 10:2021
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OWASP/Top10/" title="Menuju repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OWASP/Top10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Rumah
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0x00-notice/" class="md-nav__link">
+        Memperhatikan
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_Introduction/" class="md-nav__link">
+        Pengenalan
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="md-nav__link">
+        Bagaimana cara menggunakan OWASP Top 10 sebagai sebuah standarisasi
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-nav__link">
+        Bagaimana cara untuk memulai program AppSec dengan OWASP Top 10
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A00-about-owasp/" class="md-nav__link">
+        Tentang OWASP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Daftar top 10:2021
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Daftar top 10:2021" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Daftar top 10:2021
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A01_2021-Broken_Access_Control/" class="md-nav__link">
+        A01 Kerusakan Akses Kontrol
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A02_2021-Cryptographic_Failures/" class="md-nav__link">
+        A02 Kegagalan Kriptografi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A03_2021-Injection/" class="md-nav__link">
+        A03 Injeksi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A04_2021-Insecure_Design/" class="md-nav__link">
+        A04 Insecure Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A05_2021-Security_Misconfiguration/" class="md-nav__link">
+        A05 Miskonfigurasi Keamanan
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="md-nav__link">
+        A06 Komponen yang Rentan dan Kedaluwarsa
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-nav__link">
+        A07 Kegagalan Identifikasi dan Otentikasi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          A08 Kegagalan Integritas Data dan Perangkat Lunak
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        A08 Kegagalan Integritas Data dan Perangkat Lunak
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Daftar isi
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faktor" class="md-nav__link">
+    Faktor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#penjelasan-singkat" class="md-nav__link">
+    Penjelasan Singkat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deskripsi" class="md-nav__link">
+    Deskripsi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bagaimana-cara-mencegahnya" class="md-nav__link">
+    Bagaimana Cara Mencegahnya
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contoh-skenario-penyerangan" class="md-nav__link">
+    Contoh Skenario Penyerangan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referensi" class="md-nav__link">
+    Referensi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daftar-klasifikasi-cwe" class="md-nav__link">
+    Daftar Klasifikasi CWE
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-nav__link">
+        A09 Keamanan dalam mencatat dan Kesalahan dalam Memonitor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A10_2021-Server-Side_Request_Forgery_(SSRF)/" class="md-nav__link">
+        A10 Server-Side Request Forgery (SSRF) - Pemalsuan Permintaan di Sisi Server
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A11_2021-Next_Steps/" class="md-nav__link">
+        Langkah Selanjutnya
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Daftar isi
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faktor" class="md-nav__link">
+    Faktor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#penjelasan-singkat" class="md-nav__link">
+    Penjelasan Singkat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deskripsi" class="md-nav__link">
+    Deskripsi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bagaimana-cara-mencegahnya" class="md-nav__link">
+    Bagaimana Cara Mencegahnya
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contoh-skenario-penyerangan" class="md-nav__link">
+    Contoh Skenario Penyerangan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referensi" class="md-nav__link">
+    Referensi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daftar-klasifikasi-cwe" class="md-nav__link">
+    Daftar Klasifikasi CWE
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/OWASP/Top10/edit/master/docs/A08_2021-Software_and_Data_Integrity_Failures.id.md" title="Ubah halaman ini" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="a082021-kegagalan-integritas-data-dan-perangkat-lunak">A08:2021 - Kegagalan Integritas Data dan Perangkat Lunak</h1>
+<p><img src="https://raw.githubusercontent.com/OWASP/Top10/master/2021/docs/assets/TOP_10_Icons_Final_Software_and_Data_Integrity_Failures.png" alt="icon" height=80px width=80px align="center"></p>
+<h2 id="faktor">Faktor</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Klasifikasi CWE</th>
+<th align="center">Tingkat Kejadian Maksimum</th>
+<th align="center">Rata-rata Tingkat Kejadian</th>
+<th align="center">Cakupan Maksimum</th>
+<th align="center">Rata-rata Cakupan</th>
+<th align="center">Rata-rata Bobot Exploitasi</th>
+<th align="center">Rata-rata Bobot Dampak</th>
+<th align="center">Total Kejadian</th>
+<th align="center">Total CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">10</td>
+<td align="center">16.67%</td>
+<td align="center">2.05%</td>
+<td align="center">75.04%</td>
+<td align="center">45.35%</td>
+<td align="center">6.94</td>
+<td align="center">7.94</td>
+<td align="center">47,972</td>
+<td align="center">1,152</td>
+</tr>
+</tbody>
+</table>
+<h2 id="penjelasan-singkat">Penjelasan Singkat</h2>
+<p>Kategori baru pada tahun 2021 yang berfokus pada membuat asumsi terkait pembaruan perangkat lunak, data kritis, dan pipeline CI/CD tanpa memverifikasi integritas. Satu dari dampak dibobot tertinggi dari data Common Vulnerability and Exposures/Common Vulnerability Scoring System (CVE/CVSS). CWE yang patut diperhatikan <em>CWE-829: Inclusion of Functionality from Untrusted Control Sphere</em>, <em>CWE-494: Download of Code Without Integrity Check</em>, dan <em>CWE-502: Deserialization of Untrusted Data</em>.</p>
+<h2 id="deskripsi">Deskripsi</h2>
+<p><em>Software and data integrity failures relate to code and infrastructure that does not protect against integrity violations. An example of this is where an application relies upon plugins, libraries, or modules from untrusted sources, repositories, and content delivery networks (CDNs). An insecure CI/CD pipeline can introduce the potential for unauthorized access, malicious code, or system compromise. Lastly, many applications now include auto-update functionality, where updates are downloaded without sufficient integrity verification and applied to the previously trusted application. Attackers could potentially upload their own updates to be distributed and run on all installations. Another example is where objects or data are encoded or serialized into a structure that an attacker can see and modify is vulnerable to insecure deserialization.</em></p>
+<p>Gagalnya Menjaga Integritas Data dan Perangkat Lunak disebabkan oleh kode dan infrastruktur yang tidak mencegah terjadinya pelanggaran integritas.
+Contohnya sebuah objek/data yang telah di enkoding/diserialisasi di dalam struktur yang dapat dilihat dan dimodifikasi oleh penyerang rentan terhadap deserialisasi yang tidak aman.</p>
+<p>Contoh lainnya adalah aplikasi yang bergantung pada <em>plugins</em>, <em>libraries</em>, atau <em>modules</em> yang asalnya dari sumber yang tidak dipercaya, repositori - repositori, <em>Content Delivery Network (CDNs)</em>.
+<em>CI/CD Pipeline</em> yang tidak aman dapat menyebabkan munculnya akses illegal/tidak sah, kode yang berbahaya, atau kerusakan sistem.</p>
+<p>Terakhir, aplikasi sekarang banyak yang memiliki fitur pembaharuan otomatis, yang dimana pembaharuan - pembaharuan yang ada diunduh tanpa adanya verifikasi integritas dan diterapkan/digunakan terhadap aplikasi yang sebelumnya terpercaya.
+Penyerang memiliki kemungkinan besar untuk mengunggah pembaharuan milik mereka sendiri untuk di distribusikan dan dijalankan/diterapkan pada semua instalasi/pembaharuan.</p>
+<h2 id="bagaimana-cara-mencegahnya">Bagaimana Cara Mencegahnya</h2>
+<ul>
+<li><em>Use digital signatures or similar mechanisms to verify the software or data is from the expected source and has not been altered.</em></li>
+<li>
+<p>Gunakan tanda tangan digital atau mekanisme yang sama untuk memverifikasi bahwa perangkat lunak atau data berasal dari sumber yang diharapkan dan tidak di manipulasi.</p>
+</li>
+<li>
+<p><em>Ensure libraries and dependencies, such as npm or Maven, are consuming trusted repositories. If you have a higher risk profile, consider hosting an internal known-good repository that's vetted.</em></p>
+</li>
+<li>
+<p>Pastikan <em>libaries</em> dan dependensi seperti npm atau Maven menggunakan repositori yang terpercaya. Apabila anda merupakan target berisiko tinggi, pertimbangkan untuk hos repositori yang dikenal baik dan sudah di periksa kepercayaannya.</p>
+</li>
+<li>
+<p><em>Ensure that a software supply chain security tool, such as OWASP Dependency Check or OWASP CycloneDX, is used to verify that components do not contain known vulnerabilities.</em></p>
+</li>
+<li>
+<p>Pastikan alat keamanan rantai pasokan perangkat lunak, seperti OWASP Dependency Check atau OWASP CycloneDX digunakan untuk memverifikasi bahwa komponen komponen tersebut tidak memiliki kerentanan yang sudah diketahui.</p>
+</li>
+<li>
+<p><em>Ensure that there is a review process for code and configuration changes to minimize the chance that malicious code or configuration could be introduced into your software pipeline.</em></p>
+</li>
+<li>
+<p>Pastikan adanya proses review ketika mengubah kode dan konfigurasi untuk meminimalisir kemungkinan kode atau konfigurasi berbahaya masuk ke dalam <em>pipeline</em> perangkat lunak anda.</p>
+</li>
+<li>
+<p><em>Ensure that your CI/CD pipeline has proper segregation, configuration, and access control to ensure the integrity of the code flowing through the build and deploy processes.</em></p>
+</li>
+<li>
+<p>Pastikan <em>CI/CD pipeline</em> anda memiliki metode pemisahan, konfigurasi dan akses kontrol yang tepat untuk memastikan integritas kode yang masuk mulai dari proses <em>build</em> / pembangunan hinga proses <em>deployment</em> / penyebaran perangkat lunak.</p>
+</li>
+<li>
+<p><em>Ensure that unsigned or unencrypted serialized data is not sent to untrusted clients without some form of integrity check or digital signature to detect tampering or replay of the serialized data</em></p>
+</li>
+<li>Pastikan data yang belum di tanda tangani atau tidak terenkripsi ini tidak terkirim ke klien yang tidak dipercaya tanpa adanya pengecekan integritas atau tanda tangan digital untuk mendeteksi apakah data telah di manipulasi atau pemutaran ulang data yang telah di serialisasi.</li>
+</ul>
+<h2 id="contoh-skenario-penyerangan">Contoh Skenario Penyerangan</h2>
+<p><em><strong>Scenario #1 Update without signing:</strong> Many home routers, set-top
+boxes, device firmware, and others do not verify updates via signed
+firmware. Unsigned firmware is a growing target for attackers and is
+expected to only get worse. This is a major concern as many times there
+is no mechanism to remediate other than to fix in a future version and
+wait for previous versions to age out.</em></p>
+<p><strong>Skenario #1 Pembaharuan tanpa tanda tangan</strong>: Mayoritas dari router rumahan, decoder, firmware perangkat, dan perangkat lainnya tidak memverifikasi pembaharuan lewat firmware yang telah di tandatangani/sudah valid.
+Firmware yang tidak ditandatangani / tidak valid merupakan target yang menarik bagi penyerang dan diperkirakan daya tariknya semakin lama akan semakin tinggi
+Hal ini merupakan persoalan/ancaman yang cukup besar karena seringkali tidak ada mekanisme untuk memulihkan/memperbaiki selain memperbaikinya menggunakan versi firmware yang baru dan menunggu versi firmware sebelumnya kadaluarsa.</p>
+<p><em><strong>Scenario #2 SolarWinds malicious update</strong>: Nation-states have been
+known to attack update mechanisms, with a recent notable attack being
+the SolarWinds Orion attack. The company that develops the software had
+secure build and update integrity processes. Still, these were able to
+be subverted, and for several months, the firm distributed a highly
+targeted malicious update to more than 18,000 organizations, of which
+around 100 or so were affected. This is one of the most far-reaching and
+most significant breaches of this nature in history.</em></p>
+<p><strong>Skenario #2 Pembaharuan berbahaya SolarWinds</strong>: Serangan siber bertingkat nasional atau serangan yang melibatkan suatu negara / bangsa terkenal dengan serangannya terhadap mekanisme pembaharuan, <strong>SolarWinds Orion attack</strong> merupakan salah satu serangan bertingkat nasional yang patut diperhatikan. Perlu diketahui perusahaan yang mengembangkan SolarWinds memiliki proses pembaharuan yang berintegritas atau aman dan proses pembuatan perangkat lunak yang aman. Meskipun demikian proses yang aman ini masih dapat di tumbangkan atau diganggu, dan selama beberapa bulan perusahaan ini mendistribusikan pembaharuan berbahaya yang ditargetkan ke lebih dari 18.000 organisasi, sekitar 100 atau lebih organisasi terkena dampak dari pembaharuan ini.
+Insiden ini termasuk salah satu insiden yang konsekuensi nya dapat berpengaruh besar, mempengaruhi banyak hal dan salah satu insiden yang paling signifikan dalam sejarah <strong>Gagalnya Menjaga Integritas Data dan Perangkat Lunak</strong>.</p>
+<p><em><strong>Scenario #3 Insecure Deserialization:</strong> A React application calls a
+set of Spring Boot microservices. Being functional programmers, they
+tried to ensure that their code is immutable. The solution they came up
+with is serializing the user state and passing it back and forth with
+each request. An attacker notices the "rO0" Java object signature (in base64) and
+uses the Java Serial Killer tool to gain remote code execution on the
+application server.</em></p>
+<p><strong>Skenario #3 Deserialisasi Yang Tidak Aman</strong>: Aplikasi React memanggil satu set layanan mikro Spring Boot. Sebagai programmer fungsional, mereka mencoba memastikan bahwa kode mereka tidak dapat diubah. Solusi yang mereka hasilkan adalah membuat serial status pengguna dan meneruskannya bolak-balik dengan setiap permintaan. Seorang penyerang memperhatikan tanda tangan objek Java "R00", dan menggunakan alat Pembunuh Serial Java untuk mendapatkan eksekusi kode jarak jauh pada server aplikasi.</p>
+<h2 id="referensi">Referensi</h2>
+<ul>
+<li>[OWASP Cheat Sheet: Software Supply Chain Security] (Akan Segera Datang)</li>
+<li>[OWASP Cheat Sheet: Secure build and deployment] (Akan Segera Datang)</li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html">OWASP Cheat Sheet: Infrastructure as Code</a></li>
+<li><a href="https://www.owasp.org/index.php/Deserialization_Cheat_Sheet">OWASP Cheat Sheet: Deserialization</a></li>
+<li><a href="https://safecode.org/publication/SAFECode_Software_Integrity_Controls0610.pdf">SAFECode Software Integrity Controls</a></li>
+<li><a href="https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack">A 'Worst Nightmare' Cyberattack: The Untold Story Of The SolarWinds Hack</a></li>
+<li><a href="https://about.codecov.io/security-update">CodeCov Bash Uploader Compromise</a></li>
+<li><a href="https://www.manning.com/books/securing-devops">Securing DevOps by Julien Vehent</a></li>
+</ul>
+<h2 id="daftar-klasifikasi-cwe">Daftar Klasifikasi CWE</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/345.html">CWE-345 Insufficient Verification of Data Authenticity</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353 Missing Support for Integrity Check</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/426.html">CWE-426 Untrusted Search Path</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/494.html">CWE-494 Download of Code Without Integrity Check</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502 Deserialization of Untrusted Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/565.html">CWE-565 Reliance on Cookies without Validation and Integrity Checking</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/784.html">CWE-784 Reliance on Cookies without Validation and Integrity Checking in a Security Decision</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/829.html">CWE-829 Inclusion of Functionality from Untrusted Control Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/830.html">CWE-830 Inclusion of Web Functionality from an Untrusted Source</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/915.html">CWE-915 Improperly Controlled Modification of Dynamically-Determined Object Attributes</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../A07_2021-Identification_and_Authentication_Failures/" class="md-footer__link md-footer__link--prev" aria-label="Sebelumnya: A07 Kegagalan Identifikasi dan Otentikasi" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Sebelumnya
+              </span>
+              A07 Kegagalan Identifikasi dan Otentikasi
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-footer__link md-footer__link--next" aria-label="Selanjutnya: A09 Keamanan dalam mencatat dan Kesalahan dalam Memonitor" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Selanjutnya
+              </span>
+              A09 Keamanan dalam mencatat dan Kesalahan dalam Memonitor
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Salin ke memori", "clipboard.copied": "Tersalin ke memori", "search.config.lang": "en", "search.config.pipeline": " ", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Cari", "search.result.placeholder": "Ketik untuk mulai pencarian", "search.result.none": "Tidak ada dokumen yang sesuai", "search.result.one": "1 dokumen ditemukan", "search.result.other": "# dokumen ditemukan", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.94ec81fe.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.48dfec6c.min.js"></script>
+      
+    
+  </body>
+</html>

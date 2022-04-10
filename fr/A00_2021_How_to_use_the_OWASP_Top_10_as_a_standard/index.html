@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.7">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3c7cdd75.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-use-the-owasp-top-10-as-a-standard" class="md-skip">
+        <a href="#comment-utiliser-le-top-10-owasp-en-tant-que-standard" class="md-skip">
           Aller au contenu
         </a>
       
@@ -111,43 +111,55 @@
               
                 <li class="md-select__item">
                   <a href="../../" hreflang="en" class="md-select__link">
-                    English
+                    en - English
                   </a>
                 </li>
                 
                 <li class="md-select__item">
                   <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../" hreflang="fr" class="md-select__link">
-                    Français
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../ja/" hreflang="ja" class="md-select__link">
-                    日本語
+                    zh_TW - 繁體中文
                   </a>
                 </li>
                 
                 <li class="md-select__item">
                   <a href="../../ar/" hreflang="ar" class="md-select__link">
-                    العربية
+                    ar - العربية
                   </a>
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
-                    Português (Brasil)
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    ja - 日本語
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../" hreflang="fr" class="md-select__link">
+                    fr - Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_CN/" hreflang="zh_CN" class="md-select__link">
+                    zh_CN - 简体中文
                   </a>
                 </li>
                 
                 <li class="md-select__item">
                   <a href="../../it/" hreflang="it" class="md-select__link">
-                    Italiano
+                    it - Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../id/" hreflang="id" class="md-select__link">
+                    id - Indonesian
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../es/" hreflang="es" class="md-select__link">
+                    es - Español
                   </a>
                 </li>
                 
@@ -239,7 +251,7 @@
   
     <li class="md-nav__item">
       <a href="../0x00-notice/" class="md-nav__link">
-        Notice
+        Note
       </a>
     </li>
   
@@ -294,7 +306,7 @@
   
     <li class="md-nav__item">
       <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-nav__link">
-        Comment démarrer un programme AppSec avec le Top 10 OWASP
+        Comment démarrer un programme SecApp avec l'OWASP Top 10
       </a>
     </li>
   
@@ -454,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="md-nav__link">
+      <a href="../A10_2021-Server-Side_Request_Forgery_(SSRF)/" class="md-nav__link">
         A10 Falsification de requête côté serveur (SSRF)
       </a>
     </li>
@@ -511,105 +523,109 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/OWASP/Top10/edit/master/docs/A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.md" title="Editer cette page" class="md-content__button md-icon">
+                  <a href="https://github.com/OWASP/Top10/edit/master/docs/A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.fr.md" title="Editer cette page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="how-to-use-the-owasp-top-10-as-a-standard">How to use the OWASP Top 10 as a standard</h1>
-<p>The OWASP Top 10 is primarily an awareness document. However, this has
-not stopped organizations using it as a de facto industry AppSec
-standard since its inception in 2003. If you want to use the OWASP Top
-10 as a coding or testing standard, know that it is the bare minimum and
-just a starting point.</p>
-<p>One of the difficulties of using the OWASP Top 10 as a standard is that
-we document appsec risks, and not necessarily easily testable issues.
-For example, A04:2021-Insecure Design is beyond the scope of most forms
-of testing. Another example is testing in place, in use, and effective
-logging and monitoring can only be done with interviews and requesting a
-sampling of effective incident responses. A static code analysis tool
-can look for the absence of logging, but it might be impossible to
-determine if business logic or access control is logging critical
-security breaches. Penetration testers may only be able to determine
-that they have invoked incident response in a test environment, which
-are rarely monitored in the same way as production.</p>
-<p>Here are our recommendations for when it is appropriate to use the OWASP
-Top 10:</p>
+                <h1 id="comment-utiliser-le-top-10-owasp-en-tant-que-standard">Comment utiliser le Top 10 OWASP en tant que standard</h1>
+<p>Le Top 10 OWASP est avant tout un document informatif. Cependant, cela n'a
+pas empêché un bon nombre d'organisations de l'utiliser en tant que standard
+de facto dans l'industrie de la sécurité des applications depuis son lancement
+en 2003. Si vous souhaitez utiliser le TOP 10 OWASP en tant que standard
+de développement ou de réalisation de tests, sachez qu'il doit être considéré
+comme point de départ et qu'il ne couvre que le strict minimum.</p>
+<p>Une des difficultés a utiliser le TOP 10 OWASP en tant que standard est que
+nous ne documentons que les risques de sécurité des applications et que
+certains problèmes ne sont pas nécessairement simples à tester. Par exemple,
+le [A04:2021-Conception non sécurisée] va au-delà de la plupart des méthodes
+de tests. Un autre exemple est le test de l'efficacité des pratiques de
+journalisation et de surveillance en place, qui ne peut être fait que par le biais
+d'interviews et d'une demande d'exemples concrets de réponses à incident.
+Un outil d'analyse de code statique peut vérifier l'absence de journalisation,
+mais il lui sera sans doute incapable de déterminer si les parties de
+logique métier ou de contrôle d'accès journalisent les atteintes critiques à 
+la sécurité. De même des pentesters ne pourraient qu'être capables de déterminer
+s'ils ont provoqué une réponse à incident dans environnement de test,
+qui est rarement surveillé de la même manière qu'un environnement de
+production.</p>
+<p>Voici nos recommendations sur les utilisations appropriées du Top 10 OWASP:</p>
 <table>
 <thead>
 <tr>
-<th>Use Case</th>
+<th>Cas d'utilisation</th>
 <th align="center">OWASP Top 10 2021</th>
-<th align="center">OWASP Application Security Verification Standard</th>
+<th align="center">Standard OWASP de vérification de la sécurité applicative</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Awareness</td>
-<td align="center">Yes</td>
+<td>Sensibilisation</td>
+<td align="center">Oui</td>
 <td align="center"></td>
 </tr>
 <tr>
-<td>Training</td>
-<td align="center">Entry level</td>
-<td align="center">Comprehensive</td>
+<td>Entraînement</td>
+<td align="center">Niveau débutant</td>
+<td align="center">Global</td>
 </tr>
 <tr>
-<td>Design and architecture</td>
-<td align="center">Occasionally</td>
-<td align="center">Yes</td>
+<td>Conception et architecture</td>
+<td align="center">Parfois</td>
+<td align="center">Oui</td>
 </tr>
 <tr>
-<td>Coding standard</td>
-<td align="center">Bare minimum</td>
-<td align="center">Yes</td>
+<td>Normes de codage</td>
+<td align="center">Strict minimum</td>
+<td align="center">Oui</td>
 </tr>
 <tr>
-<td>Secure Code review</td>
-<td align="center">Bare minimum</td>
-<td align="center">Yes</td>
+<td>Revue de code</td>
+<td align="center">Strict minimum</td>
+<td align="center">Oui</td>
 </tr>
 <tr>
-<td>Peer review checklist</td>
-<td align="center">Bare minimum</td>
-<td align="center">Yes</td>
+<td>Examen par des pairs (checklist)</td>
+<td align="center">Strict minimum</td>
+<td align="center">Oui</td>
 </tr>
 <tr>
-<td>Unit testing</td>
-<td align="center">Occasionally</td>
-<td align="center">Yes</td>
+<td>Tests unitaires</td>
+<td align="center">Parfois</td>
+<td align="center">Oui</td>
 </tr>
 <tr>
-<td>Integration testing</td>
-<td align="center">Occasionally</td>
-<td align="center">Yes</td>
+<td>Tests d'integration</td>
+<td align="center">Parfois</td>
+<td align="center">Oui</td>
 </tr>
 <tr>
-<td>Penetration testing</td>
-<td align="center">Bare minimum</td>
-<td align="center">Yes</td>
+<td>Tests d'intrusion</td>
+<td align="center">Strict minimum</td>
+<td align="center">Oui</td>
 </tr>
 <tr>
-<td>Tool support</td>
-<td align="center">Bare minimum</td>
-<td align="center">Yes</td>
+<td>Outil de support</td>
+<td align="center">Strict minimum</td>
+<td align="center">Oui</td>
 </tr>
 <tr>
-<td>Secure Supply Chain</td>
-<td align="center">Occasionally</td>
-<td align="center">Yes</td>
+<td>Chaîne logistique sécurisée</td>
+<td align="center">Parfois</td>
+<td align="center">Oui</td>
 </tr>
 </tbody>
 </table>
-<p>We would encourage anyone wanting to adopt an application security
-standard to use the <a href="https://owasp.org/www-project-application-security-verification-standard/">OWASP Application Security Verification Standard</a>
-(ASVS), as it’s designed to be verifiable and tested, and can be used in
-all parts of a secure development lifecycle.</p>
-<p>The ASVS is the only acceptable choice for tool vendors. Tools cannot
-comprehensively detect, test, or protect against the OWASP Top 10 due to
-the nature of several of the OWASP Top 10 risks, with reference to
-A04:2021-Insecure Design. OWASP discourages any claims of full coverage
-of the OWASP Top 10, because it’s simply untrue.</p>
+<p>Nous encourageons quiconque voulant adopter un standard de sécurité des applications
+à utiliser le <a href="https://owasp.org/www-project-application-security-verification-standard/">Standard de vérification de sécurité des applications OWASP</a>
+(SVSA), celui-ci est conçu pour la vérification et les tests et peut
+être utilisé au cours de chaque étape d'un cycle de développement sécurisé.</p>
+<p>Le SVSA est le seul choix acceptable pour les fournisseurs de solutions.
+Les outils ne peuvent pas tester, détecter ou protéger de tous les risques
+du Top 10 OWASP en raison de la nature de plusieurs de ceux-ci 
+(ex. A04:2021-Conception non sécurisée). L'OWASP décourage toute affirmation
+qu'un outil offre une couverture complète du Top 10 OWASP, car c'est
+simplement faux.</p>
                 
               
               
@@ -645,13 +661,13 @@ of the OWASP Top 10, because it’s simply untrue.</p>
       
       
         
-        <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Comment démarrer un programme AppSec avec le Top 10 OWASP" rel="next">
+        <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Comment démarrer un programme SecApp avec l&#39;OWASP Top 10" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Comment démarrer un programme AppSec avec le Top 10 OWASP
+              Comment démarrer un programme SecApp avec l'OWASP Top 10
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -684,10 +700,10 @@ of the OWASP Top 10, because it’s simply untrue.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.94ec81fe.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.48dfec6c.min.js"></script>
       
     
   </body>

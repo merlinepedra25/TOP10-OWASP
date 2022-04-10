@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.7">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3c7cdd75.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -111,43 +111,55 @@
               
                 <li class="md-select__item">
                   <a href="../../" hreflang="en" class="md-select__link">
-                    English
+                    en - English
                   </a>
                 </li>
                 
                 <li class="md-select__item">
                   <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../fr/" hreflang="fr" class="md-select__link">
-                    Français
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../ja/" hreflang="ja" class="md-select__link">
-                    日本語
+                    zh_TW - 繁體中文
                   </a>
                 </li>
                 
                 <li class="md-select__item">
                   <a href="../../ar/" hreflang="ar" class="md-select__link">
-                    العربية
+                    ar - العربية
                   </a>
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../pt_BR/" hreflang="pt_BR" class="md-select__link">
-                    Português (Brasil)
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    ja - 日本語
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    fr - Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../zh_CN/" hreflang="zh_CN" class="md-select__link">
+                    zh_CN - 简体中文
                   </a>
                 </li>
                 
                 <li class="md-select__item">
                   <a href="../../it/" hreflang="it" class="md-select__link">
-                    Italiano
+                    it - Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../id/" hreflang="id" class="md-select__link">
+                    id - Indonesian
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../es/" hreflang="es" class="md-select__link">
+                    es - Español
                   </a>
                 </li>
                 
@@ -680,7 +692,7 @@
 <h2 id="overview">Overview</h2>
 <p>Moving up from the fifth position, 94% of applications were tested for
 some form of broken access control with the average incidence rate of 3.81%, and has the most occurrences in the contributed dataset with over 318k. Notable Common Weakness Enumerations (CWEs) included are <em>CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</em>, <em>CWE-201:
-Exposure of Sensitive Information Through Sent Data</em>, and <em>CWE-352:
+Insertion of Sensitive Information Into Sent Data</em>, and <em>CWE-352:
 Cross-Site Request Forgery</em>.</p>
 <h2 id="description">Description</h2>
 <p>Access control enforces policy such that users cannot act outside of
@@ -760,7 +772,7 @@ check or metadata.</p>
 <li>
 <p>Stateful session identifiers should be invalidated on the server after logout.
     Stateless JWT tokens should rather be short-lived so that the window of 
-    opportunity for an attacker is minimized. For longer lived JWTs it's highy recommended to
+    opportunity for an attacker is minimized. For longer lived JWTs it's highly recommended to
     follow the OAuth standards to revoke access.</p>
 </li>
 </ul>
@@ -797,9 +809,6 @@ non-admin can access the admin page, this is a flaw.</p>
 <li>
 <p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/README">OWASP Testing Guide: Authorization
     Testing</a></p>
-</li>
-<li>
-<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html">OWASP Cheat Sheet: Access Control</a></p>
 </li>
 <li>
 <p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html">OWASP Cheat Sheet: Authorization</a></p>
@@ -922,10 +931,10 @@ non-admin can access the admin page, this is a flaw.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.94ec81fe.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.48dfec6c.min.js"></script>
       
     
   </body>
