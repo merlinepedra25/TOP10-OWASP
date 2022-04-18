@@ -116,38 +116,14 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    zh_TW - 繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../ar/" hreflang="ar" class="md-select__link">
-                    ar - العربية
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../ja/" hreflang="ja" class="md-select__link">
-                    ja - 日本語
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../fr/" hreflang="fr" class="md-select__link">
-                    fr - Français
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
                   <a href="../../zh_CN/" hreflang="zh_CN" class="md-select__link">
                     zh_CN - 简体中文
                   </a>
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../it/" hreflang="it" class="md-select__link">
-                    it - Italiano
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    zh_TW - 繁體中文
                   </a>
                 </li>
                 
@@ -160,6 +136,30 @@
                 <li class="md-select__item">
                   <a href="../../es/" hreflang="es" class="md-select__link">
                     es - Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ar/" hreflang="ar" class="md-select__link">
+                    ar - العربية
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../it/" hreflang="it" class="md-select__link">
+                    it - Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    fr - Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    ja - 日本語
                   </a>
                 </li>
                 
@@ -236,7 +236,7 @@
   
     <li class="md-nav__item">
       <a href="../" class="md-nav__link">
-        Rumah
+        Beranda
       </a>
     </li>
   
@@ -251,7 +251,7 @@
   
     <li class="md-nav__item">
       <a href="../0x00-notice/" class="md-nav__link">
-        Memperhatikan
+        Pemberitahuan
       </a>
     </li>
   
@@ -335,13 +335,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       <label class="md-nav__link" for="__nav_7">
-        Daftar top 10:2021
+        Daftar Top 10:2021
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Daftar top 10:2021" data-md-level="1">
+      <nav class="md-nav" aria-label="Daftar Top 10:2021" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          Daftar top 10:2021
+          Daftar Top 10:2021
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -399,7 +399,7 @@
   
     <li class="md-nav__item">
       <a href="../A05_2021-Security_Misconfiguration/" class="md-nav__link">
-        A05 Miskonfigurasi Keamanan
+        A05 Kesalahan Konfigurasi Keamanan
       </a>
     </li>
   
@@ -529,7 +529,7 @@
   
     <li class="md-nav__item">
       <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-nav__link">
-        A09 Keamanan dalam mencatat dan Kesalahan dalam Memonitor
+        A09 Kegagalan dalam Keamanan Logging dan Monitoring
       </a>
     </li>
   
@@ -541,7 +541,7 @@
   
     <li class="md-nav__item">
       <a href="../A10_2021-Server-Side_Request_Forgery_(SSRF)/" class="md-nav__link">
-        A10 Server-Side Request Forgery (SSRF) - Pemalsuan Permintaan di Sisi Server
+        A10 Server-Side Request Forgery (SSRF)
       </a>
     </li>
   
@@ -702,66 +702,31 @@ Contohnya sebuah objek/data yang telah di enkoding/diserialisasi di dalam strukt
 Penyerang memiliki kemungkinan besar untuk mengunggah pembaharuan milik mereka sendiri untuk di distribusikan dan dijalankan/diterapkan pada semua instalasi/pembaharuan.</p>
 <h2 id="bagaimana-cara-mencegahnya">Bagaimana Cara Mencegahnya</h2>
 <ul>
-<li><em>Use digital signatures or similar mechanisms to verify the software or data is from the expected source and has not been altered.</em></li>
 <li>
 <p>Gunakan tanda tangan digital atau mekanisme yang sama untuk memverifikasi bahwa perangkat lunak atau data berasal dari sumber yang diharapkan dan tidak di manipulasi.</p>
-</li>
-<li>
-<p><em>Ensure libraries and dependencies, such as npm or Maven, are consuming trusted repositories. If you have a higher risk profile, consider hosting an internal known-good repository that's vetted.</em></p>
 </li>
 <li>
 <p>Pastikan <em>libaries</em> dan dependensi seperti npm atau Maven menggunakan repositori yang terpercaya. Apabila anda merupakan target berisiko tinggi, pertimbangkan untuk hos repositori yang dikenal baik dan sudah di periksa kepercayaannya.</p>
 </li>
 <li>
-<p><em>Ensure that a software supply chain security tool, such as OWASP Dependency Check or OWASP CycloneDX, is used to verify that components do not contain known vulnerabilities.</em></p>
-</li>
-<li>
 <p>Pastikan alat keamanan rantai pasokan perangkat lunak, seperti OWASP Dependency Check atau OWASP CycloneDX digunakan untuk memverifikasi bahwa komponen komponen tersebut tidak memiliki kerentanan yang sudah diketahui.</p>
-</li>
-<li>
-<p><em>Ensure that there is a review process for code and configuration changes to minimize the chance that malicious code or configuration could be introduced into your software pipeline.</em></p>
 </li>
 <li>
 <p>Pastikan adanya proses review ketika mengubah kode dan konfigurasi untuk meminimalisir kemungkinan kode atau konfigurasi berbahaya masuk ke dalam <em>pipeline</em> perangkat lunak anda.</p>
 </li>
 <li>
-<p><em>Ensure that your CI/CD pipeline has proper segregation, configuration, and access control to ensure the integrity of the code flowing through the build and deploy processes.</em></p>
-</li>
-<li>
 <p>Pastikan <em>CI/CD pipeline</em> anda memiliki metode pemisahan, konfigurasi dan akses kontrol yang tepat untuk memastikan integritas kode yang masuk mulai dari proses <em>build</em> / pembangunan hinga proses <em>deployment</em> / penyebaran perangkat lunak.</p>
 </li>
 <li>
-<p><em>Ensure that unsigned or unencrypted serialized data is not sent to untrusted clients without some form of integrity check or digital signature to detect tampering or replay of the serialized data</em></p>
+<p>Pastikan data yang belum di tanda tangani atau tidak terenkripsi ini tidak terkirim ke klien yang tidak dipercaya tanpa adanya pengecekan integritas atau tanda tangan digital untuk mendeteksi apakah data telah di manipulasi atau pemutaran ulang data yang telah di serialisasi.</p>
 </li>
-<li>Pastikan data yang belum di tanda tangani atau tidak terenkripsi ini tidak terkirim ke klien yang tidak dipercaya tanpa adanya pengecekan integritas atau tanda tangan digital untuk mendeteksi apakah data telah di manipulasi atau pemutaran ulang data yang telah di serialisasi.</li>
 </ul>
 <h2 id="contoh-skenario-penyerangan">Contoh Skenario Penyerangan</h2>
-<p><em><strong>Scenario #1 Update without signing:</strong> Many home routers, set-top
-boxes, device firmware, and others do not verify updates via signed
-firmware. Unsigned firmware is a growing target for attackers and is
-expected to only get worse. This is a major concern as many times there
-is no mechanism to remediate other than to fix in a future version and
-wait for previous versions to age out.</em></p>
 <p><strong>Skenario #1 Pembaharuan tanpa tanda tangan</strong>: Mayoritas dari router rumahan, decoder, firmware perangkat, dan perangkat lainnya tidak memverifikasi pembaharuan lewat firmware yang telah di tandatangani/sudah valid.
 Firmware yang tidak ditandatangani / tidak valid merupakan target yang menarik bagi penyerang dan diperkirakan daya tariknya semakin lama akan semakin tinggi
 Hal ini merupakan persoalan/ancaman yang cukup besar karena seringkali tidak ada mekanisme untuk memulihkan/memperbaiki selain memperbaikinya menggunakan versi firmware yang baru dan menunggu versi firmware sebelumnya kadaluarsa.</p>
-<p><em><strong>Scenario #2 SolarWinds malicious update</strong>: Nation-states have been
-known to attack update mechanisms, with a recent notable attack being
-the SolarWinds Orion attack. The company that develops the software had
-secure build and update integrity processes. Still, these were able to
-be subverted, and for several months, the firm distributed a highly
-targeted malicious update to more than 18,000 organizations, of which
-around 100 or so were affected. This is one of the most far-reaching and
-most significant breaches of this nature in history.</em></p>
 <p><strong>Skenario #2 Pembaharuan berbahaya SolarWinds</strong>: Serangan siber bertingkat nasional atau serangan yang melibatkan suatu negara / bangsa terkenal dengan serangannya terhadap mekanisme pembaharuan, <strong>SolarWinds Orion attack</strong> merupakan salah satu serangan bertingkat nasional yang patut diperhatikan. Perlu diketahui perusahaan yang mengembangkan SolarWinds memiliki proses pembaharuan yang berintegritas atau aman dan proses pembuatan perangkat lunak yang aman. Meskipun demikian proses yang aman ini masih dapat di tumbangkan atau diganggu, dan selama beberapa bulan perusahaan ini mendistribusikan pembaharuan berbahaya yang ditargetkan ke lebih dari 18.000 organisasi, sekitar 100 atau lebih organisasi terkena dampak dari pembaharuan ini.
 Insiden ini termasuk salah satu insiden yang konsekuensi nya dapat berpengaruh besar, mempengaruhi banyak hal dan salah satu insiden yang paling signifikan dalam sejarah <strong>Gagalnya Menjaga Integritas Data dan Perangkat Lunak</strong>.</p>
-<p><em><strong>Scenario #3 Insecure Deserialization:</strong> A React application calls a
-set of Spring Boot microservices. Being functional programmers, they
-tried to ensure that their code is immutable. The solution they came up
-with is serializing the user state and passing it back and forth with
-each request. An attacker notices the "rO0" Java object signature (in base64) and
-uses the Java Serial Killer tool to gain remote code execution on the
-application server.</em></p>
 <p><strong>Skenario #3 Deserialisasi Yang Tidak Aman</strong>: Aplikasi React memanggil satu set layanan mikro Spring Boot. Sebagai programmer fungsional, mereka mencoba memastikan bahwa kode mereka tidak dapat diubah. Solusi yang mereka hasilkan adalah membuat serial status pengguna dan meneruskannya bolak-balik dengan setiap permintaan. Seorang penyerang memperhatikan tanda tangan objek Java "R00", dan menggunakan alat Pembunuh Serial Java untuk mendapatkan eksekusi kode jarak jauh pada server aplikasi.</p>
 <h2 id="referensi">Referensi</h2>
 <ul>
@@ -820,13 +785,13 @@ application server.</em></p>
       
       
         
-        <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-footer__link md-footer__link--next" aria-label="Selanjutnya: A09 Keamanan dalam mencatat dan Kesalahan dalam Memonitor" rel="next">
+        <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="md-footer__link md-footer__link--next" aria-label="Selanjutnya: A09 Kegagalan dalam Keamanan Logging dan Monitoring" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Selanjutnya
               </span>
-              A09 Keamanan dalam mencatat dan Kesalahan dalam Memonitor
+              A09 Kegagalan dalam Keamanan Logging dan Monitoring
             </div>
           </div>
           <div class="md-footer__button md-icon">
