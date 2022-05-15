@@ -116,8 +116,14 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../ar/" hreflang="ar" class="md-select__link">
-                    ar - العربية
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    zh_TW - 繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    fr - Français
                   </a>
                 </li>
                 
@@ -128,8 +134,20 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../fr/" hreflang="fr" class="md-select__link">
-                    fr - Français
+                  <a href="../" hreflang="ja" class="md-select__link">
+                    ja - 日本語
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ar/" hreflang="ar" class="md-select__link">
+                    ar - العربية
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../id/" hreflang="id" class="md-select__link">
+                    id - Indonesian
                   </a>
                 </li>
                 
@@ -142,24 +160,6 @@
                 <li class="md-select__item">
                   <a href="../../zh_CN/" hreflang="zh_CN" class="md-select__link">
                     zh_CN - 简体中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    zh_TW - 繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../" hreflang="ja" class="md-select__link">
-                    ja - 日本語
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../id/" hreflang="id" class="md-select__link">
-                    id - Indonesian
                   </a>
                 </li>
                 
@@ -659,7 +659,7 @@
                   </a>
                 
                 
-                <h1 id="a012021">A01:2021 – アクセス制御の不備</h1>
+                <h1 id="a012021">A01:2021 – アクセス制御の不備    <img align="right" alt="icon" src="../../assets/TOP_10_Icons_Final_Broken_Access_Control.png" style="height:80px;width:80px" /></h1>
 <h2 id="_1">因子</h2>
 <table>
 <thead>
@@ -728,7 +728,7 @@
 <p>公開リソースへのアクセスを除いて、アクセスを原則として拒否する。</p>
 </li>
 <li>
-<p>Cross-Origin Resource Sharing (CORS) の使用箇所を最小限に抑えるなど、アクセス制御メカニズムを一か所で実装しアプリケーション全体でそれを再利用する。</p>
+<p>オリジン間リソース共有 (CORS) の使用箇所を最小限に抑えるなど、アクセス制御メカニズムを一か所で実装しアプリケーション全体でそれを再利用する。</p>
 </li>
 <li>
 <p>アクセス制御モデルは、ユーザがどのようなレコードでも作成、読取、更新、または削除できるようにするのではなく、レコードの所有権があることを前提としなければならない。</p>
@@ -825,7 +825,7 @@
 <p><a href="https://cwe.mitre.org/data/definitions/913.html">CWE-913 Improper Control of Dynamically-Managed Code Resources</a></p>
 <p><a href="https://cwe.mitre.org/data/definitions/922.html">CWE-922 Insecure Storage of Sensitive Information</a></p>
 <p><a href="https://cwe.mitre.org/data/definitions/1275.html">CWE-1275 Sensitive Cookie with Improper SameSite Attribute</a></p>
-<h1 id="a012021-broken-access-control">A01:2021 – Broken Access Control</h1>
+<h1 id="a012021-broken-access-control">A01:2021 – Broken Access Control    <img align="right" alt="icon" src="../../assets/TOP_10_Icons_Final_Broken_Access_Control.png" style="height:80px;width:80px" /></h1>
 <h2 id="factors">Factors</h2>
 <table>
 <thead>
@@ -937,7 +937,7 @@ check or metadata.</p>
 </li>
 <li>
 <p>Stateful session identifiers should be invalidated on the server after logout.
-    Stateless JWT tokens should rather be short-lived so that the window of 
+    Stateless JWT tokens should rather be short-lived so that the window of
     opportunity for an attacker is minimized. For longer lived JWTs it's highly recommended to
     follow the OAuth standards to revoke access.</p>
 </li>

@@ -116,8 +116,14 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../ar/" hreflang="ar" class="md-select__link">
-                    ar - العربية
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    zh_TW - 繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../" hreflang="fr" class="md-select__link">
+                    fr - Français
                   </a>
                 </li>
                 
@@ -128,8 +134,20 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../" hreflang="fr" class="md-select__link">
-                    fr - Français
+                  <a href="../../ja/" hreflang="ja" class="md-select__link">
+                    ja - 日本語
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ar/" hreflang="ar" class="md-select__link">
+                    ar - العربية
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../id/" hreflang="id" class="md-select__link">
+                    id - Indonesian
                   </a>
                 </li>
                 
@@ -142,24 +160,6 @@
                 <li class="md-select__item">
                   <a href="../../zh_CN/" hreflang="zh_CN" class="md-select__link">
                     zh_CN - 简体中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    zh_TW - 繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../ja/" hreflang="ja" class="md-select__link">
-                    ja - 日本語
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../id/" hreflang="id" class="md-select__link">
-                    id - Indonesian
                   </a>
                 </li>
                 
@@ -699,14 +699,14 @@
 <li>autorise les mots de passe par défaut, faibles ou bien connus, tels que "Password1" ou "admin / admin" ;</li>
 <li>utilise des processus de récupération des informations d'identification faibles ou inefficaces et des processus de mot de passe oublié, tels que «&nbsp;Questions secrètes&nbsp;», qui ne peuvent être sécurisées ;</li>
 <li>utilise des mots de passe en texte brut, chiffrés ou faiblement hachés (voir <strong>A02:2021 – Défaillances cryptographiques</strong>) ;</li>
-<li>absence ou utilisation inefficace de l’authentification multi-facteur ;</li>
+<li>absence ou utilisation inefficace de l’authentification multifacteur ;</li>
 <li>exposition des identifiants de session dans l'URL ;</li>
 <li>réutilisation de l'identifiant de session après une connexion réussie ;</li>
 <li>n'invalide pas correctement les identifiants de session. Les sessions utilisateurs ou les jetons d'authentification (en particulier les jetons SSO) ne sont pas correctement invalidés lors de la déconnexion ou après une période d'inactivité.</li>
 </ul>
 <h2 id="comment-sen-premunir">Comment s'en prémunir</h2>
 <ul>
-<li>lorsque cela est possible, implémentez l'authentification multi-facteur pour éviter les attaques automatisées, le bourrage des informations d'identification, la force brute et la réutilisation des informations d'identification volées ;</li>
+<li>lorsque cela est possible, implémentez l'authentification multifacteur pour éviter les attaques automatisées, le bourrage des informations d'identification, la force brute et la réutilisation des informations d'identification volées ;</li>
 <li>ne pas livrer ou déployer avec des informations d'identification par défaut, en particulier pour les utilisateurs avec privilèges ;</li>
 <li>intégrer des tests de mots de passes faibles, à la création ou au changement. Comparer ce mot de passe avec la liste des 10000 mots de passe les plus faibles ;</li>
 <li>respecter la longueur, la complexité et la rotation des mots de passe par rapport aux directives du <em>National Institute of Standards and Technology</em> (NIST) 800-63 B à la section 5.1.1 ou autres directives modernes ;</li>
@@ -716,7 +716,7 @@
 </ul>
 <h2 id="exemple-de-scenarios-dattaque">Exemple de scénarios d'attaque</h2>
 <p><strong>Scénario 1</strong> : La réutilisation de mots de passe, l’utilisation de mots de passe connus, est une attaque classique. Supposons une application qui n’implémente pas une protection automatisée contre le bourrage d'informations ou l'utilisation des mots de passe connus. Dans ce cas, l'application peut être utilisée comme un oracle pour déterminer si les mots de passe sont valides.</p>
-<p><strong>Scénario 2</strong> : La plupart des attaques d’authentification se produisent en raison de l’utilisation de mots de passe comme facteur unique. Une fois considérées, les exigences de rotation et de complexité des mots de passe, sont considérées comme encourageant les utilisateurs à utiliser et réutiliser des mots de passe faibles. Il est maintenant recommandé d’arrêter ces pratiques selon les directives NIST 800-63 et d’utiliser du multi-facteur.</p>
+<p><strong>Scénario 2</strong> : La plupart des attaques d’authentification se produisent en raison de l’utilisation de mots de passe comme facteur unique. Une fois considérées, les exigences de rotation et de complexité des mots de passe, sont considérées comme encourageant les utilisateurs à utiliser et réutiliser des mots de passe faibles. Il est maintenant recommandé d’arrêter ces pratiques selon les directives NIST 800-63 et d’utiliser du multifacteur.</p>
 <p><strong>Scénario 3</strong> : Les timeouts de session d’application ne sont pas paramétrés correctement. Un utilisateur utilise un ordinateur public pour accéder à une application. À la place de se déconnecter correctement, l’utilisateur ferme le navigateur et quitte l’ordinateur. Un attaquant utilise ensuite le même navigateur quelque temps après et l’utilisateur est toujours authentifié.</p>
 <h2 id="references">Références</h2>
 <ul>

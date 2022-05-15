@@ -116,8 +116,14 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../ar/" hreflang="ar" class="md-select__link">
-                    ar - العربية
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    zh_TW - 繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    fr - Français
                   </a>
                 </li>
                 
@@ -128,8 +134,20 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../fr/" hreflang="fr" class="md-select__link">
-                    fr - Français
+                  <a href="../" hreflang="ja" class="md-select__link">
+                    ja - 日本語
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ar/" hreflang="ar" class="md-select__link">
+                    ar - العربية
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../id/" hreflang="id" class="md-select__link">
+                    id - Indonesian
                   </a>
                 </li>
                 
@@ -142,24 +160,6 @@
                 <li class="md-select__item">
                   <a href="../../zh_CN/" hreflang="zh_CN" class="md-select__link">
                     zh_CN - 简体中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    zh_TW - 繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../" hreflang="ja" class="md-select__link">
-                    ja - 日本語
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../id/" hreflang="id" class="md-select__link">
-                    id - Indonesian
                   </a>
                 </li>
                 
@@ -692,7 +692,7 @@
 <h2 id="_2">概要</h2>
 <p>これは2021年に新設されたカテゴリーで、ソフトウェアの更新、重要なデータを、CI/CDパイプラインにおいて整合性を検証せずに見込みで進めることによる問題にフォーカスしています。
 共通脆弱性識別子/共通脆弱性評価システム (CVE/CVSS) のデータから最も重大な影響を受けたものの1つです。
-注目すべき共通脆弱性識別子 (CWEs) は、<em>CWE-829: 信頼できない制御領域からの機能の組み込み</em>、<em>CWE-494: ダウンロードしたコードの完全性検証不備</em>、そして<em>CWE-502: 信頼できないデータのデシリアライゼーション</em>です。</p>
+注目すべき共通脆弱性タイプ一覧 (CWE) は、<em>CWE-829: 信頼できない制御領域からの機能の組み込み</em>、<em>CWE-494: ダウンロードしたコードの完全性検証不備</em>、そして<em>CWE-502: 信頼できないデータのデシリアライゼーション</em>です。</p>
 <h2 id="_3">説明</h2>
 <p>ソフトウェアとデータの整合性の不具合は、コードやインフラストラクチャが整合性違反から保護されていないことに関連しています。
 例として、アプリケーションが信頼されていないソースに由来するプラグインやライブラリ、モジュール、コンテンツデリバリーネットワーク (CDNs) に依存している場合が挙げられます。
@@ -729,7 +729,7 @@
 そのソフトウェアを開発した企業は、安全なビルドとアップデートの整合プロセスを備えていました。
 しかし、それらは破壊することが可能であったために、その企業は、数ヶ月にわたって、高度に標的化された悪意のあるアップデートを18,000を超える組織に配信し、そのうち100ほどの組織が影響を受けました。
 この一件は、この類の侵害としては、歴史上最も広範囲に影響が広がり、また最も重大であったものの一つです。</p>
-<p><strong>シナリオ #3 安全でないでシリアライゼーション:</strong> Reactアプリケーションが、一連のSpring Bootマイクロサービスを呼び出します。
+<p><strong>シナリオ #3 安全でないデシリアライゼーション:</strong> Reactアプリケーションが、一連のSpring Bootマイクロサービスを呼び出します。
 関数型言語のプログラマーは、イミュータブルなコードを書こうとします。
 そこで、プログラマーは、呼び出しの前後でシリアライズしたユーザーの状態を渡す、と言う解決策を思いつきます。
 攻撃者は (base64でエンコードされていることを示す) "rO0" というJavaオブジェクトのシグネチャに気づき、Java Serial Killerツールを使用してアプリケーションサーバ上でリモートコードを実行します。</p>

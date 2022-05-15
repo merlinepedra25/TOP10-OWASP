@@ -116,8 +116,14 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../ar/" hreflang="ar" class="md-select__link">
-                    ar - العربية
+                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
+                    zh_TW - 繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../fr/" hreflang="fr" class="md-select__link">
+                    fr - Français
                   </a>
                 </li>
                 
@@ -128,8 +134,20 @@
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../fr/" hreflang="fr" class="md-select__link">
-                    fr - Français
+                  <a href="../" hreflang="ja" class="md-select__link">
+                    ja - 日本語
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ar/" hreflang="ar" class="md-select__link">
+                    ar - العربية
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../id/" hreflang="id" class="md-select__link">
+                    id - Indonesian
                   </a>
                 </li>
                 
@@ -142,24 +160,6 @@
                 <li class="md-select__item">
                   <a href="../../zh_CN/" hreflang="zh_CN" class="md-select__link">
                     zh_CN - 简体中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../zh_TW/" hreflang="zh_TW" class="md-select__link">
-                    zh_TW - 繁體中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../" hreflang="ja" class="md-select__link">
-                    ja - 日本語
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="../../id/" hreflang="id" class="md-select__link">
-                    id - Indonesian
                   </a>
                 </li>
                 
@@ -410,7 +410,7 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    解説
+    説明
   </a>
   
 </li>
@@ -438,7 +438,7 @@
       
         <li class="md-nav__item">
   <a href="#cwe" class="md-nav__link">
-    対応するCWE一覧
+    対応する CWE のリスト
   </a>
   
 </li>
@@ -609,7 +609,7 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    解説
+    説明
   </a>
   
 </li>
@@ -637,7 +637,7 @@
       
         <li class="md-nav__item">
   <a href="#cwe" class="md-nav__link">
-    対応するCWE一覧
+    対応する CWE のリスト
   </a>
   
 </li>
@@ -659,20 +659,20 @@
                   </a>
                 
                 
-                <h1 id="a022021">A02:2021 – 暗号化の失敗</h1>
+                <h1 id="a022021">A02:2021 – 暗号化の失敗    <img align="right" alt="icon" src="../../assets/TOP_10_Icons_Final_Crypto_Failures.png" style="height:80px;width:80px" /></h1>
 <h2 id="_1">因子</h2>
 <table>
 <thead>
 <tr>
-<th align="center">CWEs Mapped</th>
-<th align="center">Max Incidence Rate</th>
-<th align="center">Avg Incidence Rate</th>
-<th align="center">Max Coverage</th>
-<th align="center">Avg Coverage</th>
-<th align="center">Avg Weighted Exploit</th>
-<th align="center">Avg Weighted Impact</th>
-<th align="center">Total Occurrences</th>
-<th align="center">Total CVEs</th>
+<th align="center">対応する CWE 数</th>
+<th align="center">最大発生率</th>
+<th align="center">平均発生率</th>
+<th align="center">加重平均（攻撃の難易度）</th>
+<th align="center">加重平均（攻撃による影響）</th>
+<th align="center">最大網羅率</th>
+<th align="center">平均網羅率</th>
+<th align="center">総発生数</th>
+<th align="center">CVE 合計件数</th>
 </tr>
 </thead>
 <tbody>
@@ -680,10 +680,10 @@
 <td align="center">29</td>
 <td align="center">46.44%</td>
 <td align="center">4.49%</td>
-<td align="center">79.33%</td>
-<td align="center">34.85%</td>
 <td align="center">7.29</td>
 <td align="center">6.81</td>
+<td align="center">79.33%</td>
+<td align="center">34.85%</td>
 <td align="center">233,788</td>
 <td align="center">3,075</td>
 </tr>
@@ -692,24 +692,46 @@
 <h2 id="_2">概要</h2>
 <p>前回から順位を一つ上げたこのカテゴリは、以前は<em>機微な情報の露出</em>として知られていたものです。
 このカテゴリは根本的な要因よりも、暗号化技術の不適切な使用、または暗号化の欠如に関連した幅広い障害に焦点を当てています。こうした障害は、時に機微な情報の露出を結果としてもたらします。
-考慮すべきCWEには、<em>CWE-259:ハードコードされたパスワードの使用</em>、<em>CWE-327:不適切な暗号化アルゴリズム</em>、<em>CWE-331:不十分なエントロピー</em>があります。</p>
-<h2 id="_3">解説</h2>
+考慮すべき共通脆弱性タイプ一覧 (CWE)には、<em>CWE-259:ハードコードされたパスワードの使用</em>、<em>CWE-327:不適切な暗号化アルゴリズム</em>、<em>CWE-331:不十分なエントロピー</em>があります。</p>
+<h2 id="_3">説明</h2>
 <p>まず、送信あるいは保存するデータが保護を必要とするか見極めます。例えば、パスワード、クレジットカード番号、健康記録、個人データやビジネス上の機密は特別な保護が必要になります。データに対して、EUの一般データ保護規則(GDPR)のようなプライバシー関連の法律が適用される場合、また、PCIデータセキュリティスタンダード(PCI DSS)など金融の情報保護の要求があるような規定がある場合には、特に注意が必要です。そのようなデータすべてについて、以下を確認してください:</p>
 <ul>
 <li>
-<p>どんなデータであれ平文で送信していないか。これは、HTTP、SMTP、FTPのようなプロトコルを使っている場合に該当する。外部インターネットへのトラフィックは危険である。また、ロードバランサー、Webサーバー、バックエンドシステムなどの内部の通信もすべて確認すること。</p>
+<p>どんなデータであれ平文で送信していないか。これは、HTTP、SMTP、FTP、あるいはSTARTTLSのようなTLS upgradesのプロトコルを使っている場合に該当する。外部インターネットへのトラフィックは危険である。また、ロードバランサー、Webサーバー、バックエンドシステムなどの内部の通信もすべて確認すること。</p>
 </li>
 <li>
-<p>古いまたは脆弱な暗号アルゴリズムを初期設定のまま、または古いコードで使っていないか。</p>
+<p>古いまたは脆弱な暗号アルゴリズムやプロトコルを初期設定のまま、または古いコードで使っていないか。</p>
 </li>
 <li>
-<p>初期値のままの暗号鍵の使用、弱い暗号鍵を生成または再利用、適切な暗号鍵管理または鍵のローテーションをしていない、これらの該当する箇所はないか。</p>
+<p>初期値のままの暗号鍵の使用、弱い暗号鍵を生成または再利用、適切な暗号鍵管理または鍵のローテーションをしていない、これらの該当する箇所はないか。暗号鍵がソースコードリポジトリに含まれていないか。</p>
 </li>
 <li>
-<p>ユーザーエージェント（ブラウザ）のセキュリティに関するディレクティブやヘッダーが欠落しているなど、暗号化が強制されていない箇所はないか。</p>
+<p>HTTPヘッダー（ブラウザ）のセキュリティに関するディレクティブやヘッダーが欠落しているなど、暗号化が強制されていない箇所はないか。</p>
 </li>
 <li>
-<p>アプリ、メールクライアントなどのユーザエージェントが受信したサーバー証明書が正当なものか検証していない箇所はないか。</p>
+<p>受け取ったサーバー証明書とその信頼チェーンが適切に検証されているか。</p>
+</li>
+<li>
+<p>初期化ベクトルが無視されたり、再利用されたりしていないか。また、暗号利用モードにとって十分にセキュアではない状態で生成されていないか。
+    ECBといった安全でないモードが使用されていないか。
+    認証付き暗号がより適切な場合において、認証付き暗号でない暗号が使用されていないか。</p>
+</li>
+<li>
+<p>鍵導出関数を使うことなしにパスワードを暗号鍵として使用していないか。</p>
+</li>
+<li>
+<p>暗号学的要件を満たすように設計されていない目的でランダム性が使用されていないか。
+    適切な関数が選ばれている場合でも、関数は開発者による初期化が必要か。
+    必要でない場合、開発者が十分なエントロピーや予測不可能性を欠いたシードを用いて組み込みの強力な初期化機能を上書きしていないか。</p>
+</li>
+<li>
+<p>MD5やSHA1といった非推奨のハッシュ関数が使用されていないか。また暗号学的ハッシュ関数が必要とされる場合において、暗号学的でないハッシュ関数が使用されていないか。</p>
+</li>
+<li>
+<p>PKCS#1 v1.5といった非推奨の暗号学的パディング方式が使用されていないか。</p>
+</li>
+<li>
+<p>暗号化時のエラーメッセージやサイドチャネルの情報が、パディングオラクル攻撃のような種類の攻撃に利用可能ではないか。</p>
 </li>
 </ul>
 <p>ASVS Crypto (V7)、Data Protection (V9)、および SSL/TLS (V10) を参照。</p>
@@ -718,9 +740,6 @@
 <ul>
 <li>
 <p>アプリケーションごとに処理するデータ、保存するデータ、送信するデータを分類する。そして、どのデータがプライバシー関連の法律・規則の要件に該当するか、またどのデータがビジネス上必要なデータか判定する。</p>
-</li>
-<li>
-<p>前述の分類をもとにアクセス制御を実装する。</p>
 </li>
 <li>
 <p>必要のない機微な情報を保存しない。できる限りすぐにそのような機微な情報を破棄するか、PCI DSSに準拠したトークナイゼーションまたはトランケーションを行う。データが残っていなければ盗まれない。</p>
@@ -732,13 +751,38 @@
 <p>最新の暗号強度の高い標準アルゴリズム、プロトコル、暗号鍵を実装しているか確認する。そして適切に暗号鍵を管理する。</p>
 </li>
 <li>
-<p>前方秘匿性(PFS)を有効にしたTLS、サーバーサイドによる暗号スイートの優先度決定、セキュアパラメータなどのセキュアなプロトコルで、通信経路上のすべてのデータを暗号化する。HTTP Strict Transport Security (HSTS)のようなディレクティブで暗号化を強制する。</p>
+<p>前方秘匿性(FS)を有効にしたTLS、サーバーサイドによる暗号スイートの優先度決定、セキュアパラメータなどのセキュアなプロトコルで、通信経路上のすべてのデータを暗号化する。HTTP Strict Transport Security (HSTS)のようなディレクティブで暗号化を強制する。</p>
 </li>
 <li>
 <p>機微な情報を含むレスポンスのキャッシングを無効にする。</p>
 </li>
 <li>
+<p>データ分類に応じて必要なセキュリティ制御を適用する。</p>
+</li>
+<li>
+<p>FTPやSMTPといったレガシーなプロトコルを機密データの伝送に使用しない。</p>
+</li>
+<li>
 <p>パスワードを保存する際、Argon2、scrypt、bcrypt、PBKDF2のようなワークファクタ(遅延ファクタ)のある、強くかつ適応可能なレベルのソルト付きハッシュ関数を用いる。</p>
+</li>
+<li>
+<p>初期化ベクトルは利用モードに応じて適切なものを選択しなければならない。これは多くのモードにおいてCSPRNG(暗号論的擬似乱数生成器)を使用することを意味する。
+    nonceを必要とするモードの場合は、初期化ベクトル(IV)はCSPRNGを必要としない。
+    すべての場合において、IVは単一の固定の鍵に対し二度使ってはならない。</p>
+</li>
+<li>
+<p>単なる暗号ではなく、認証付き暗号を常に使用する。</p>
+</li>
+<li>
+<p>鍵は暗号学的にランダムに生成し、またバイト配列としてメモリーに保存する。
+    もしパスワードを使用する場合は、適切な鍵導出関数を用いて鍵へと変換されなければならない。</p>
+</li>
+<li>
+<p>暗号学的乱数が適切な場所で使用されていること、またそれらが予測可能な方法や低いエントロピーによって初期化されていないことを確認する。
+    多くのモダンなAPIでは、セキュリティを確保するために開発者がCSPRNGを初期化する必要はない。</p>
+</li>
+<li>
+<p>MD5やSHA1、PKCS#1 v1.5といった非推奨の暗号学的関数やパディング方式の使用を避ける。</p>
 </li>
 <li>
 <p>設定とその設定値がそれぞれ独立して効果があるか検証する。</p>
@@ -767,50 +811,47 @@
     Protection</a></p>
 </li>
 <li>
-<p>OWASP Cheat Sheet: Password and Cryptographic Storage</p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html">OWASP Cheat Sheet: Password and Cryptographic Storage</a></p>
 </li>
 <li>
 <p><a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html">OWASP Cheat Sheet:
     HSTS</a></p>
 </li>
 <li>
-<p>OWASP Testing Guide: Testing for weak cryptography</p>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/README">OWASP Testing Guide: Testing for weak cryptography</a></p>
 </li>
 </ul>
-<h2 id="cwe">対応するCWE一覧</h2>
-<p>CWE-261 Weak Encoding for Password</p>
-<p>CWE-296 Improper Following of a Certificate's Chain of Trust</p>
-<p>CWE-310 Cryptographic Issues</p>
-<p>CWE-319 Cleartext Transmission of Sensitive Information</p>
-<p>CWE-321 Use of Hard-coded Cryptographic Key</p>
-<p>CWE-322 Key Exchange without Entity Authentication</p>
-<p>CWE-323 Reusing a Nonce, Key Pair in Encryption</p>
-<p>CWE-324 Use of a Key Past its Expiration Date</p>
-<p>CWE-325 Missing Required Cryptographic Step</p>
-<p>CWE-326 Inadequate Encryption Strength</p>
-<p>CWE-327 Use of a Broken or Risky Cryptographic Algorithm</p>
-<p>CWE-328 Reversible One-Way Hash</p>
-<p>CWE-329 Not Using a Random IV with CBC Mode</p>
-<p>CWE-330 Use of Insufficiently Random Values</p>
-<p>CWE-331 Insufficient Entropy</p>
-<p>CWE-335 Incorrect Usage of Seeds in Pseudo-Random Number Generator
-(PRNG)</p>
-<p>CWE-336 Same Seed in Pseudo-Random Number Generator (PRNG)</p>
-<p>CWE-337 Predictable Seed in Pseudo-Random Number Generator (PRNG)</p>
-<p>CWE-338 Use of Cryptographically Weak Pseudo-Random Number Generator
-(PRNG)</p>
-<p>CWE-340 Generation of Predictable Numbers or Identifiers</p>
-<p>CWE-347 Improper Verification of Cryptographic Signature</p>
-<p>CWE-523 Unprotected Transport of Credentials</p>
-<p>CWE-720 OWASP Top Ten 2007 Category A9 - Insecure Communications</p>
-<p>CWE-757 Selection of Less-Secure Algorithm During Negotiation
-('Algorithm Downgrade')</p>
-<p>CWE-759 Use of a One-Way Hash without a Salt</p>
-<p>CWE-760 Use of a One-Way Hash with a Predictable Salt</p>
-<p>CWE-780 Use of RSA Algorithm without OAEP</p>
-<p>CWE-818 Insufficient Transport Layer Protection</p>
-<p>CWE-916 Use of Password Hash With Insufficient Computational Effort</p>
-<h1 id="a022021-cryptographic-failures">A02:2021 – Cryptographic Failures</h1>
+<h2 id="cwe">対応する CWE のリスト</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/261.html">CWE-261 Weak Encoding for Password</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/296.html">CWE-296 Improper Following of a Certificate's Chain of Trust</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/310.html">CWE-310 Cryptographic Issues</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319 Cleartext Transmission of Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321 Use of Hard-coded Cryptographic Key</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/322.html">CWE-322 Key Exchange without Entity Authentication</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/323.html">CWE-323 Reusing a Nonce, Key Pair in Encryption</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/324.html">CWE-324 Use of a Key Past its Expiration Date</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/325.html">CWE-325 Missing Required Cryptographic Step</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/326.html">CWE-326 Inadequate Encryption Strength</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327 Use of a Broken or Risky Cryptographic Algorithm</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/328.html">CWE-328 Reversible One-Way Hash</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/329.html">CWE-329 Not Using a Random IV with CBC Mode</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330 Use of Insufficiently Random Values</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/331.html">CWE-331 Insufficient Entropy</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/335.html">CWE-335 Incorrect Usage of Seeds in Pseudo-Random Number Generator(PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/336.html">CWE-336 Same Seed in Pseudo-Random Number Generator (PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/337.html">CWE-337 Predictable Seed in Pseudo-Random Number Generator (PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/338.html">CWE-338 Use of Cryptographically Weak Pseudo-Random Number Generator(PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/340.html">CWE-340 Generation of Predictable Numbers or Identifiers</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/347.html">CWE-347 Improper Verification of Cryptographic Signature</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/523.html">CWE-523 Unprotected Transport of Credentials</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/720.html">CWE-720 OWASP Top Ten 2007 Category A9 - Insecure Communications</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/757.html">CWE-757 Selection of Less-Secure Algorithm During Negotiation('Algorithm Downgrade')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/759.html">CWE-759 Use of a One-Way Hash without a Salt</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/760.html">CWE-760 Use of a One-Way Hash with a Predictable Salt</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/780.html">CWE-780 Use of RSA Algorithm without OAEP</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/818.html">CWE-818 Insufficient Transport Layer Protection</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/916.html">CWE-916 Use of Password Hash With Insufficient Computational Effort</a></p>
+<h1 id="a022021-cryptographic-failures">A02:2021 – Cryptographic Failures    <img align="right" alt="icon" src="../../assets/TOP_10_Icons_Final_Crypto_Failures.png" style="height:80px;width:80px" /></h1>
 <h2 id="factors">Factors</h2>
 <table>
 <thead>
@@ -818,10 +859,10 @@
 <th align="center">CWEs Mapped</th>
 <th align="center">Max Incidence Rate</th>
 <th align="center">Avg Incidence Rate</th>
-<th align="center">Max Coverage</th>
-<th align="center">Avg Coverage</th>
 <th align="center">Avg Weighted Exploit</th>
 <th align="center">Avg Weighted Impact</th>
+<th align="center">Max Coverage</th>
+<th align="center">Avg Coverage</th>
 <th align="center">Total Occurrences</th>
 <th align="center">Total CVEs</th>
 </tr>
@@ -831,10 +872,10 @@
 <td align="center">29</td>
 <td align="center">46.44%</td>
 <td align="center">4.49%</td>
-<td align="center">79.33%</td>
-<td align="center">34.85%</td>
 <td align="center">7.29</td>
 <td align="center">6.81</td>
+<td align="center">79.33%</td>
+<td align="center">34.85%</td>
 <td align="center">233,788</td>
 <td align="center">3,075</td>
 </tr>
@@ -844,7 +885,7 @@
 <p>Shifting up one position to #2, previously known as <em>Sensitive Data
 Exposure</em>, which is more of a broad symptom rather than a root cause,
 the focus is on failures related to cryptography (or lack thereof).
-Which often lead to exposure of sensitive data. Notable CWEs included
+Which often lead to exposure of sensitive data. Notable Common Weakness Enumerations (CWEs) included
 are <em>CWE-259: Use of Hard-coded Password</em>, <em>CWE-327: Broken or Risky
 Crypto Algorithm</em>, and <em>CWE-331 Insufficient Entropy</em> .</p>
 <h2 id="description">Description</h2>
@@ -858,25 +899,55 @@ For all such data:</p>
 <ul>
 <li>
 <p>Is any data transmitted in clear text? This concerns protocols such
-    as HTTP, SMTP, and FTP. External internet traffic is hazardous.
-    Verify all internal traffic, e.g., between load balancers, web
-    servers, or back-end systems.</p>
+    as HTTP, SMTP, FTP also using TLS upgrades like STARTTLS. External
+    internet traffic is hazardous. Verify all internal traffic, e.g.,
+    between load balancers, web servers, or back-end systems.</p>
 </li>
 <li>
-<p>Are any old or weak cryptographic algorithms used either by default
-    or in older code?</p>
+<p>Are any old or weak cryptographic algorithms or protocols used either
+    by default or in older code?</p>
 </li>
 <li>
 <p>Are default crypto keys in use, weak crypto keys generated or
-    re-used, or is proper key management or rotation missing?</p>
+    re-used, or is proper key management or rotation missing?
+    Are crypto keys checked into source code repositories?</p>
 </li>
 <li>
-<p>Is encryption not enforced, e.g., are any user agent (browser)
+<p>Is encryption not enforced, e.g., are any HTTP headers (browser)
     security directives or headers missing?</p>
 </li>
 <li>
-<p>Does the user agent (e.g., app, mail client) not verify if the
-    received server certificate is valid?</p>
+<p>Is the received server certificate and the trust chain properly validated?</p>
+</li>
+<li>
+<p>Are initialization vectors ignored, reused, or not generated
+    sufficiently secure for the cryptographic mode of operation?
+    Is an insecure mode of operation such as ECB in use? Is encryption
+    used when authenticated encryption is more appropriate?</p>
+</li>
+<li>
+<p>Are passwords being used as cryptographic keys in absence of a
+    password base key derivation function?</p>
+</li>
+<li>
+<p>Is randomness used for cryptographic purposes that was not designed
+    to meet cryptographic requirements? Even if the correct function is
+    chosen, does it need to be seeded by the developer, and if not, has
+    the developer over-written the strong seeding functionality built into
+    it with a seed that lacks sufficient entropy/unpredictability?</p>
+</li>
+<li>
+<p>Are deprecated hash functions such as MD5 or SHA1 in use, or are
+    non-cryptographic hash functions used when cryptographic hash functions
+    are needed?</p>
+</li>
+<li>
+<p>Are deprecated cryptographic padding methods such as PKCS number 1 v1.5
+    in use?</p>
+</li>
+<li>
+<p>Are cryptographic error messages or side channel information
+    exploitable, for example in the form of padding oracle attacks?</p>
 </li>
 </ul>
 <p>See ASVS Crypto (V7), Data Protection (V9), and SSL/TLS (V10)</p>
@@ -887,9 +958,6 @@ For all such data:</p>
 <p>Classify data processed, stored, or transmitted by an application.
     Identify which data is sensitive according to privacy laws,
     regulatory requirements, or business needs.</p>
-</li>
-<li>
-<p>Apply controls as per the classification.</p>
 </li>
 <li>
 <p>Don't store sensitive data unnecessarily. Discard it as soon as
@@ -905,7 +973,7 @@ For all such data:</p>
 </li>
 <li>
 <p>Encrypt all data in transit with secure protocols such as TLS with
-    perfect forward secrecy (PFS) ciphers, cipher prioritization by the
+    forward secrecy (FS) ciphers, cipher prioritization by the
     server, and secure parameters. Enforce encryption using directives
     like HTTP Strict Transport Security (HSTS).</p>
 </li>
@@ -913,9 +981,41 @@ For all such data:</p>
 <p>Disable caching for response that contain sensitive data.</p>
 </li>
 <li>
+<p>Apply required security controls as per the data classification.</p>
+</li>
+<li>
+<p>Do not use legacy protocols such as FTP and SMTP for transporting
+    sensitive data.</p>
+</li>
+<li>
 <p>Store passwords using strong adaptive and salted hashing functions
     with a work factor (delay factor), such as Argon2, scrypt, bcrypt or
     PBKDF2.</p>
+</li>
+<li>
+<p>Initialization vectors must be chosen appropriate for the mode of
+    operation.  For many modes, this means using a CSPRNG (cryptographically
+    secure pseudo random number generator).  For modes that require a
+    nonce, then the initialization vector (IV) does not need a CSPRNG.  In all cases, the IV
+    should never be used twice for a fixed key.</p>
+</li>
+<li>
+<p>Always use authenticated encryption instead of just encryption.</p>
+</li>
+<li>
+<p>Keys should be generated cryptographically randomly and stored in
+    memory as byte arrays. If a password is used, then it must be converted
+    to a key via an appropriate password base key derivation function.</p>
+</li>
+<li>
+<p>Ensure that cryptographic randomness is used where appropriate, and
+    that it has not been seeded in a predictable way or with low entropy.
+    Most modern APIs do not require the developer to seed the CSPRNG to
+    get security.</p>
+</li>
+<li>
+<p>Avoid deprecated cryptographic functions and padding schemes, such as
+    MD5, SHA1, PKCS number 1 v1.5 .</p>
 </li>
 <li>
 <p>Verify independently the effectiveness of configuration and
@@ -960,49 +1060,46 @@ salted.</p>
     Protection</a></p>
 </li>
 <li>
-<p>OWASP Cheat Sheet: Password and Cryptographic Storage</p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html">OWASP Cheat Sheet: Password and Cryptographic Storage</a></p>
 </li>
 <li>
 <p><a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html">OWASP Cheat Sheet:
     HSTS</a></p>
 </li>
 <li>
-<p>OWASP Testing Guide: Testing for weak cryptography</p>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/README">OWASP Testing Guide: Testing for weak cryptography</a></p>
 </li>
 </ul>
 <h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
-<p>CWE-261 Weak Encoding for Password</p>
-<p>CWE-296 Improper Following of a Certificate's Chain of Trust</p>
-<p>CWE-310 Cryptographic Issues</p>
-<p>CWE-319 Cleartext Transmission of Sensitive Information</p>
-<p>CWE-321 Use of Hard-coded Cryptographic Key</p>
-<p>CWE-322 Key Exchange without Entity Authentication</p>
-<p>CWE-323 Reusing a Nonce, Key Pair in Encryption</p>
-<p>CWE-324 Use of a Key Past its Expiration Date</p>
-<p>CWE-325 Missing Required Cryptographic Step</p>
-<p>CWE-326 Inadequate Encryption Strength</p>
-<p>CWE-327 Use of a Broken or Risky Cryptographic Algorithm</p>
-<p>CWE-328 Reversible One-Way Hash</p>
-<p>CWE-329 Not Using a Random IV with CBC Mode</p>
-<p>CWE-330 Use of Insufficiently Random Values</p>
-<p>CWE-331 Insufficient Entropy</p>
-<p>CWE-335 Incorrect Usage of Seeds in Pseudo-Random Number Generator
-(PRNG)</p>
-<p>CWE-336 Same Seed in Pseudo-Random Number Generator (PRNG)</p>
-<p>CWE-337 Predictable Seed in Pseudo-Random Number Generator (PRNG)</p>
-<p>CWE-338 Use of Cryptographically Weak Pseudo-Random Number Generator
-(PRNG)</p>
-<p>CWE-340 Generation of Predictable Numbers or Identifiers</p>
-<p>CWE-347 Improper Verification of Cryptographic Signature</p>
-<p>CWE-523 Unprotected Transport of Credentials</p>
-<p>CWE-720 OWASP Top Ten 2007 Category A9 - Insecure Communications</p>
-<p>CWE-757 Selection of Less-Secure Algorithm During Negotiation
-('Algorithm Downgrade')</p>
-<p>CWE-759 Use of a One-Way Hash without a Salt</p>
-<p>CWE-760 Use of a One-Way Hash with a Predictable Salt</p>
-<p>CWE-780 Use of RSA Algorithm without OAEP</p>
-<p>CWE-818 Insufficient Transport Layer Protection</p>
-<p>CWE-916 Use of Password Hash With Insufficient Computational Effort</p>
+<p><a href="https://cwe.mitre.org/data/definitions/261.html">CWE-261 Weak Encoding for Password</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/296.html">CWE-296 Improper Following of a Certificate's Chain of Trust</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/310.html">CWE-310 Cryptographic Issues</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319 Cleartext Transmission of Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321 Use of Hard-coded Cryptographic Key</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/322.html">CWE-322 Key Exchange without Entity Authentication</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/323.html">CWE-323 Reusing a Nonce, Key Pair in Encryption</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/324.html">CWE-324 Use of a Key Past its Expiration Date</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/325.html">CWE-325 Missing Required Cryptographic Step</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/326.html">CWE-326 Inadequate Encryption Strength</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327 Use of a Broken or Risky Cryptographic Algorithm</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/328.html">CWE-328 Reversible One-Way Hash</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/329.html">CWE-329 Not Using a Random IV with CBC Mode</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330 Use of Insufficiently Random Values</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/331.html">CWE-331 Insufficient Entropy</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/335.html">CWE-335 Incorrect Usage of Seeds in Pseudo-Random Number Generator(PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/336.html">CWE-336 Same Seed in Pseudo-Random Number Generator (PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/337.html">CWE-337 Predictable Seed in Pseudo-Random Number Generator (PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/338.html">CWE-338 Use of Cryptographically Weak Pseudo-Random Number Generator(PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/340.html">CWE-340 Generation of Predictable Numbers or Identifiers</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/347.html">CWE-347 Improper Verification of Cryptographic Signature</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/523.html">CWE-523 Unprotected Transport of Credentials</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/720.html">CWE-720 OWASP Top Ten 2007 Category A9 - Insecure Communications</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/757.html">CWE-757 Selection of Less-Secure Algorithm During Negotiation('Algorithm Downgrade')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/759.html">CWE-759 Use of a One-Way Hash without a Salt</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/760.html">CWE-760 Use of a One-Way Hash with a Predictable Salt</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/780.html">CWE-780 Use of RSA Algorithm without OAEP</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/818.html">CWE-818 Insufficient Transport Layer Protection</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/916.html">CWE-916 Use of Password Hash With Insufficient Computational Effort</a></p>
                 
               
               
